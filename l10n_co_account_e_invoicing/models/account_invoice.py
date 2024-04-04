@@ -724,6 +724,11 @@ class AccountInvoice(models.Model):
 
         return res
 
+    @api.onchange('supplier_uuid')
+    def _onchange_supplier_uuid(self):
+        if self.supplier_uuid and self.invoice_type_code == "05":
+            self.invoice_type_code = "01"
+
     @api.multi
     def action_cancel(self):
         msg = _("You cannot cancel a invoice sent to the DIAN and that was approved.")

@@ -136,7 +136,7 @@
                     attrs="{'invisible': [('sequence_resolution_id', '=', False)]}"
                     groups="l10n_co_account_e_invoicing.group_view_operation_type_field"/>
                 <field name="invoice_type_code" required="1"
-                    attrs="{'invisible': [('sequence_resolution_id', '=', False)]}"
+                    attrs="{'invisible': [('sequence_resolution_id', '=', False), ('supplier_uuid', '=', False)]}"
                     groups="l10n_co_account_e_invoicing.group_view_invoice_type_field"/>
             </xpath>
 

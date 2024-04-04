@@ -607,7 +607,7 @@ class AccountInvoiceDianDocument(models.Model):
         DocumentReference = {
             "ID": self.invoice_id.reference,
             "UUID": self.invoice_id.supplier_uuid,
-            "DocumentTypeCode": "01",
+            "DocumentTypeCode": self.invoice_id.invoice_type_code or "01",
         }
 
         if ResponseCode == "030":
