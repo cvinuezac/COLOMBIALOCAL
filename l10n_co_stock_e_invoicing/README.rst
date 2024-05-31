@@ -11,5 +11,5 @@ Credits
 
 Contributors
 ------------
-* Alejandro Olano <https://github.com/alejo-code>
+* Joan Marín <https://github.com/JoanMarin>
 

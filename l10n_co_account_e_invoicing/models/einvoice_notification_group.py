@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Joan Marín <Github@JoanMarin>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import re
@@ -9,6 +9,7 @@ from odoo.exceptions import ValidationError
 
 class EInvoiceNotificationGroup(models.Model):
     _name = "einvoice.notification.group"
+    _description = "Notification Group"
 
     name = fields.Char(string="Name")
     email = fields.Char(string="Email")

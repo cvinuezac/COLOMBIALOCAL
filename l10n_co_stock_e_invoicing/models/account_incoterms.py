@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# Copyright 2021 Alejandro Olano <Github@alejo-code>
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Copyright 2024 Joan Marín <Github@JoanMarin>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
 
@@ -12,12 +12,13 @@ class AccountIncoterms(models.Model):
 
     def name_get(self):
         res = []
+
         for record in self:
             if record.is_einvoicing:
-                name = u'[DIAN][%s] %s' % (record.code or '', record.name
-                                           or '')
+                name = "[DIAN][%s] %s" % (record.code or "", record.name or "")
             else:
-                name = u'[%s] %s' % (record.code or '', record.name or '')
+                name = "[%s] %s" % (record.code or "", record.name or "")
+
             res.append((record.id, name))
 
         return res

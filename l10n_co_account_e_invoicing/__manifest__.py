@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Joan Marín <Github@JoanMarin>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 {
     "name": "Colombian Account E-Invoicing",
     "category": "E-Invoicing",
@@ -24,7 +25,6 @@
         "partner_coc",
         "partner_commercial_name",
         "product_brand",
-        "product_manufacturer",
         "sale",
     ],
     "external_dependencies": {

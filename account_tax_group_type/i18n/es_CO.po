@@ -81,7 +81,7 @@ msgid "Tax Group Type"
 msgstr "Tipo de Grupo"
 
 #. module: account_tax_group_type
-#: code:addons/account_tax_group_type/models/account_tax_group_type.py:21
+#: code:addons/account_tax_group_type/models/account_tax_group_type.py:22
 #, python-format
 msgid "The code of Tax Group Type must be unique!"
 msgstr "¡El código del Tipo de Grupo Impuesto debe ser único!"
@@ -98,8 +98,8 @@ msgstr "Impuesto de Retención"
 
 #. module: account_tax_group_type
 #: model:ir.model,name:account_tax_group_type.model_account_tax_group_type
-msgid "account.tax.group.type"
-msgstr ""
+msgid "Tax Group Type"
+msgstr "Tipo de grupo de impuesto"
 
 #. module: account_tax_group_type
 #: sql_constraint:account.tax.group.type:0

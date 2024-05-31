@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Joan Marín <Github@JoanMarin>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import pytz
 from dateutil import tz
 from datetime import datetime, timedelta
 from pytz import timezone
@@ -151,7 +150,7 @@ class AccountInvoice(models.Model):
     invoice_datetime = fields.Datetime(string="Invoice Datetime", copy=False)
     delivery_datetime = fields.Datetime(string="Delivery Datetime", copy=False)
     send_invoice_to_dian = fields.Selection(
-        selection=[("0", "Immediately"), ("1", "After 1 Day"), ("2", "After 2 Days")],
+        selection=[("0", "Immediately"), ("1", "Delayed")],
         string="Send Invoice to DIAN?",
         default=_default_send_invoice_to_dian,
         copy=False,
@@ -288,12 +287,12 @@ class AccountInvoice(models.Model):
                         dian_document_state_done = True
                         billing_reference["ID"] = self.refund_invoice_id.number
                         billing_reference["UUID"] = dian_document.cufe_cude
-                        billing_reference[
-                            "IssueDate"
-                        ] = self.refund_invoice_id.date_invoice
-                        billing_reference[
-                            "CustomizationID"
-                        ] = self.refund_invoice_id.operation_type
+                        billing_reference["IssueDate"] = (
+                            self.refund_invoice_id.date_invoice
+                        )
+                        billing_reference["CustomizationID"] = (
+                            self.refund_invoice_id.operation_type
+                        )
 
                     if dian_document.state == "cancel":
                         dian_document_state_cancel = True
@@ -314,18 +313,17 @@ class AccountInvoice(models.Model):
         return billing_reference
 
     def _get_payment_exchange_rate(self):
-        company_currency = self.company_id.currency_id
+        company_currency_id = self.company_id.currency_id
         rate = 1
         date = self._get_currency_rate_date() or fields.Date.context_today(self)
 
-        if self.currency_id != company_currency:
-            currency = self.currency_id.with_context(date=date)
-            rate = currency.compute(rate, company_currency)
+        if self.currency_id != company_currency_id:
+            currency_id = self.currency_id.with_context(date=date)
+            rate = currency_id.compute(rate, company_currency_id)
 
         return {
-            "SourceCurrencyCode": self.currency_id.name,
-            "TargetCurrencyCode": company_currency.name,
-            "CalculationRate": rate,
+            "SourceCurrencyBaseRate": rate,
+            "TargetCurrencyCode": currency_id.name,
             "Date": date,
         }
 
@@ -484,39 +482,35 @@ class AccountInvoice(models.Model):
             if total_wo_disc != 0 and invoice_line.discount != 0:
                 disc_amount = (total_wo_disc * invoice_line.discount) / 100
 
-            if not invoice_line.product_id or not invoice_line.product_id.default_code:
+            if not invoice_line.product_id:
                 raise UserError(msg2 % invoice_line.name)
 
             if invoice_line.price_subtotal <= 0 and invoice_line.reference_price <= 0:
-                raise UserError(msg3 % invoice_line.product_id.default_code)
+                raise UserError(msg3 % invoice_line.product_id.display_name)
 
             if self.invoice_type_code == "02":
                 if invoice_line.product_id.product_brand_id:
-                    brand_name = invoice_line.product_id.product_brand_id.name
+                    brand_name = str(invoice_line.product_id.product_brand_id.id)
 
-                model_name = invoice_line.product_id.manufacturer_pref
+                model_name = str(invoice_line.product_id.id)
 
             invoice_lines[count] = {}
             invoice_lines[count]["unitCode"] = invoice_line.uom_id.uom_code_id.code
             invoice_lines[count]["Quantity"] = "{:.2f}".format(invoice_line.quantity)
-            invoice_lines[count]["PricingReferencePriceAmount"] = "{:.2f}".format(
-                invoice_line.reference_price
-            )
-            invoice_lines[count]["LineExtensionAmount"] = "{:.2f}".format(
-                invoice_line.price_subtotal
-            )
+            invoice_lines[count][
+                "PricingReferencePriceAmount"
+            ] = invoice_line.reference_price
+            invoice_lines[count]["LineExtensionAmount"] = invoice_line.price_subtotal
             invoice_lines[count]["MultiplierFactorNumeric"] = "{:.2f}".format(
                 invoice_line.discount
             )
-            invoice_lines[count]["AllowanceChargeAmount"] = "{:.2f}".format(disc_amount)
-            invoice_lines[count]["AllowanceChargeBaseAmount"] = "{:.2f}".format(
-                total_wo_disc
-            )
+            invoice_lines[count]["AllowanceChargeAmount"] = disc_amount
+            invoice_lines[count]["AllowanceChargeBaseAmount"] = total_wo_disc
             invoice_lines[count]["TaxesTotal"] = {}
             invoice_lines[count]["WithholdingTaxesTotal"] = {}
-            invoice_lines[count][
-                "StandardItemIdentification"
-            ] = invoice_line.product_id.default_code
+            invoice_lines[count]["StandardItemIdentification"] = str(
+                invoice_line.product_id.id
+            )
 
             for tax in invoice_line.invoice_line_tax_ids:
                 if tax.amount_type == "group":
@@ -538,12 +532,12 @@ class AccountInvoice(models.Model):
                             raise UserError(msg6 % tax_id.name)
 
                         if tax_type == "withholding_tax" and tax_id.amount > 0:
-                            invoice_lines[count][
-                                "WithholdingTaxesTotal"
-                            ] = invoice_line._get_invoice_lines_taxes(
-                                tax_id,
-                                tax_id.amount,
-                                invoice_lines[count]["WithholdingTaxesTotal"],
+                            invoice_lines[count]["WithholdingTaxesTotal"] = (
+                                invoice_line._get_invoice_lines_taxes(
+                                    tax_id,
+                                    tax_id.amount,
+                                    invoice_lines[count]["WithholdingTaxesTotal"],
+                                )
                             )
                         elif tax_type == "withholding_tax" and tax_id.amount < 0:
                             # TODO 3.0 Las retenciones se recomienda no enviarlas a la DIAN.
@@ -551,12 +545,12 @@ class AccountInvoice(models.Model):
                             # pide que se envie la parte negativa, seria quitar o comentar este if
                             pass
                         else:
-                            invoice_lines[count][
-                                "TaxesTotal"
-                            ] = invoice_line._get_invoice_lines_taxes(
-                                tax_id,
-                                tax_id.amount,
-                                invoice_lines[count]["TaxesTotal"],
+                            invoice_lines[count]["TaxesTotal"] = (
+                                invoice_line._get_invoice_lines_taxes(
+                                    tax_id,
+                                    tax_id.amount,
+                                    invoice_lines[count]["TaxesTotal"],
+                                )
                             )
 
             if "01" not in invoice_lines[count]["TaxesTotal"]:
@@ -594,13 +588,13 @@ class AccountInvoice(models.Model):
 
             invoice_lines[count]["BrandName"] = brand_name
             invoice_lines[count]["ModelName"] = model_name
-            invoice_lines[count]["ItemDescription"] = invoice_line.name
+            invoice_lines[count]["ItemDescription"] = (
+                invoice_line.product_id.name or invoice_line.name
+            )
             invoice_lines[count][
                 "InformationContentProviderParty"
             ] = invoice_line._get_information_content_provider_party_values()
-            invoice_lines[count]["PriceAmount"] = "{:.2f}".format(
-                invoice_line.price_unit
-            )
+            invoice_lines[count]["PriceAmount"] = invoice_line.price_unit
             count += 1
 
         return invoice_lines
@@ -632,9 +626,9 @@ class AccountInvoice(models.Model):
             "The 'delivery date' must be equal or greater per maximum 10 days to "
             "the 'invoice date'."
         )
-        timezone = pytz.timezone(self.env.user.tz or "America/Bogota")
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         from_zone = tz.gettz("UTC")
-        to_zone = tz.gettz(timezone.zone)
+        to_zone = tz.gettz(to_timezone.zone)
 
         for invoice in self:
             if not invoice.company_id.einvoicing_enabled:
@@ -681,15 +675,15 @@ class AccountInvoice(models.Model):
             ar_xml_filename = False
             ad_zipped_filename = False
 
-            for dian_document in invoice.dian_document_ids:
-                xml_filename = dian_document.xml_filename
-                zipped_filename = dian_document.zipped_filename
-                ar_xml_filename = dian_document.ar_xml_filename
-                ad_zipped_filename = dian_document.ad_zipped_filename
+            for dian_document_id in invoice.dian_document_ids:
+                xml_filename = dian_document_id.xml_filename
+                zipped_filename = dian_document_id.zipped_filename
+                ar_xml_filename = dian_document_id.ar_xml_filename
+                ad_zipped_filename = dian_document_id.ad_zipped_filename
                 break
 
             dian_document_obj = self.env["account.invoice.dian.document"]
-            dian_document = dian_document_obj.create(
+            dian_document_id = dian_document_obj.create(
                 {
                     "invoice_id": invoice.id,
                     "company_id": invoice.company_id.id,
@@ -699,16 +693,16 @@ class AccountInvoice(models.Model):
                     "ad_zipped_filename": ad_zipped_filename,
                 }
             )
-            set_files = dian_document.action_set_files()
+            set_files = dian_document_id.action_set_files()
 
             if invoice.send_invoice_to_dian == "0":
                 if set_files:
                     if invoice.invoice_type_code in ("01", "02"):
-                        dian_document.action_send_zipped_file()
+                        dian_document_id.action_send_zipped_file()
                     elif invoice.invoice_type_code == "04":
-                        dian_document.action_send_email()
+                        dian_document_id.action_send_email()
                 else:
-                    dian_document.send_failure_email()
+                    dian_document_id.send_failure_email()
 
         return True
 
@@ -724,7 +718,7 @@ class AccountInvoice(models.Model):
 
         return res
 
-    @api.onchange('supplier_uuid')
+    @api.onchange("supplier_uuid")
     def _onchange_supplier_uuid(self):
         if self.supplier_uuid and self.invoice_type_code == "05":
             self.invoice_type_code = "01"
@@ -744,9 +738,9 @@ class AccountInvoice(models.Model):
         return res
 
     def set_dian_document_ApplicationResponse(self, application_response_type):
-        timezone = pytz.timezone(self.env.user.tz or "America/Bogota")
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         from_zone = tz.gettz("UTC")
-        to_zone = tz.gettz(timezone.zone)
+        to_zone = tz.gettz(to_timezone.zone)
 
         for invoice_id in self:
             if not invoice_id.company_id.einvoicing_enabled:
@@ -757,12 +751,11 @@ class AccountInvoice(models.Model):
                 and d.application_response_type == application_response_type
             )
 
-            issue_datetime = datetime.now().replace(tzinfo=from_zone)
-            issue_datetime = issue_datetime.astimezone(to_zone).strftime(
-                "%Y-%m-%d %H:%M:%S"
-            )
-
             if not dian_document_id:
+                issue_datetime = datetime.now().replace(tzinfo=from_zone)
+                issue_datetime = issue_datetime.astimezone(to_zone).strftime(
+                    "%Y-%m-%d %H:%M:%S"
+                )
                 dian_document_id = self.env["account.invoice.dian.document"].create(
                     {
                         "company_id": invoice_id.company_id.id,

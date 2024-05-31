@@ -296,6 +296,7 @@ msgid "Local Check"
 msgstr "Cheque Local"
 
 #. module: l10n_co_account_invoice_payment_mean
+#: model:ir.model,name:l10n_co_account_invoice_payment_mean.model_account_payment_mean_code
 #: model:ir.model.fields,field_description:l10n_co_account_invoice_payment_mean.field_account_invoice__payment_mean_code_id
 msgid "Mean of Payment"
 msgstr "Medio de Pago"
@@ -340,6 +341,7 @@ msgid "Payment Means"
 msgstr "Medios de Pago"
 
 #. module: l10n_co_account_invoice_payment_mean
+#: model:ir.model,name:l10n_co_account_invoice_payment_mean.model_account_payment_mean
 #: model:ir.model.fields,field_description:l10n_co_account_invoice_payment_mean.field_account_invoice__payment_mean_id
 msgid "Payment Method"
 msgstr "Método de pago"
@@ -518,14 +520,4 @@ msgstr "Giro urgente"
 #: model:account.payment.mean.code,name:l10n_co_account_invoice_payment_mean.account_payment_mean_code_072
 msgid "Vouchers"
 msgstr "Vales"
-
-#. module: l10n_co_account_invoice_payment_mean
-#: model:ir.model,name:l10n_co_account_invoice_payment_mean.model_account_payment_mean
-msgid "account.payment.mean"
-msgstr ""
-
-#. module: l10n_co_account_invoice_payment_mean
-#: model:ir.model,name:l10n_co_account_invoice_payment_mean.model_account_payment_mean_code
-msgid "account.payment.mean.code"
-msgstr ""
 

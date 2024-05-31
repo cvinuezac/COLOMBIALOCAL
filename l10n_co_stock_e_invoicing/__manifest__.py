@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-# Copyright 2021 Alejandro Olano <Github@alejo-code>
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# Copyright 2024 Joan Marín <Github@JoanMarin>
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
     "name": "Colombian Stock E-Invoicing",
     "version": "12.0.1.0.0",
     "website": "https://github.com/odooloco/l10n-colombia",
-    "author": "EXA Auto Parts Github@exaap, "
-    "Alejandro Olano Github@alejo-code",
+    "author": "EXA Auto Parts Github@exaap, Joan Marín Github@JoanMarin",
     "category": "E-Invoicing",
     "summary": "Colombian Stock E-Invoicing",
     "depends": [

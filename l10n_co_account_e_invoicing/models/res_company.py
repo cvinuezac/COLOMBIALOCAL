@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Joan Marín <Github@JoanMarin>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
-from urllib.error import URLError, HTTPError
 from requests import post, exceptions
 from lxml import etree
 import ssl
@@ -26,7 +25,7 @@ class ResCompany(models.Model):
         default=False,
     )
     send_invoice_to_dian = fields.Selection(
-        selection=[("0", "Immediately"), ("1", "After 1 Day"), ("2", "After 2 Days")],
+        selection=[("0", "Immediately"), ("1", "Delayed")],
         string="Send Invoice to DIAN?",
         default="0",
     )
@@ -114,9 +113,9 @@ class ResCompany(models.Model):
         xml_soap_values["softwareCode"] = self.software_id
 
         if self.have_technological_provider:
-            xml_soap_values[
-                "accountCodeT"
-            ] = self.technological_provider_id.identification_document
+            xml_soap_values["accountCodeT"] = (
+                self.technological_provider_id.identification_document
+            )
 
         return xml_soap_values
 
@@ -173,13 +172,8 @@ class ResCompany(models.Model):
             )
 
             for dian_document in dian_documents:
-                today = fields.Date.context_today(self)
-                date_from = dian_document.invoice_id.date_invoice
-                days = (today - date_from).days
-
-                if int(dian_document.invoice_id.send_invoice_to_dian) <= days:
-                    dian_document.action_process()
-                    count += 1
+                dian_document.action_process()
+                count += 1
 
                 if count == 10:
                     return True

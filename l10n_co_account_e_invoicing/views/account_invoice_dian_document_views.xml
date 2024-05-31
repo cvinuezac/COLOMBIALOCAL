@@ -85,6 +85,8 @@
                             <field name="mail_sent"/>
                         </group>
                         <group string="Codes">
+                            <field name="issue_datetime" readonly="1"/>
+                            <field name="application_response_type" readonly="1"/>
                             <field name="cufe_cude_uncoded" readonly="1"/>
                             <field name="cufe_cude" readonly="1"/>
                             <field name="software_security_code_uncoded" readonly="1"/>

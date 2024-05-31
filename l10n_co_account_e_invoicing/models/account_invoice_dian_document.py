@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Joan Marín <Github@JoanMarin>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import pytz
 from dateutil import tz
-import urllib.request
 from io import BytesIO
 from datetime import datetime
 from base64 import b64encode, b64decode
@@ -42,6 +40,8 @@ DIAN_CLAIM = {
 
 class AccountInvoiceDianDocument(models.Model):
     _name = "account.invoice.dian.document"
+    _order = "create_date desc"
+    _description = "DIAN Document"
 
     def go_to_dian_document(self):
         return {
@@ -350,6 +350,8 @@ class AccountInvoiceDianDocument(models.Model):
         ValImp3 = einvoicing_taxes["TaxesTotal"]["03"]["total"]
         ValOtroIm = ValImp2 - ValImp3
         TaxInclusiveAmount = ValFac + ValImp1 + ValImp2 + ValImp3
+        PaymentExchangeRate = self.invoice_id._get_payment_exchange_rate()
+        rate = PaymentExchangeRate["SourceCurrencyBaseRate"]
         # El valor a pagar puede verse afectado, por anticipos, y descuentos y
         # cargos a nivel de factura
         PayableAmount = TaxInclusiveAmount
@@ -357,14 +359,14 @@ class AccountInvoiceDianDocument(models.Model):
             ID,
             IssueDate,
             IssueTime,
-            str("{:.2f}".format(ValFac)),
+            str("{:.2f}".format(ValFac * rate)),
             "01",
-            str("{:.2f}".format(ValImp1)),
+            str("{:.2f}".format(ValImp1 * rate)),
             CodImp2,
-            str("{:.2f}".format(ValImp2)),
+            str("{:.2f}".format(ValImp2 * rate)),
             CodImp3,
-            str("{:.2f}".format(ValImp3)),
-            str("{:.2f}".format(TaxInclusiveAmount)),
+            str("{:.2f}".format(ValImp3 * rate)),
+            str("{:.2f}".format(TaxInclusiveAmount * rate)),
             AccountingSupplierParty["CompanyID"],
             AccountingCustomerParty["CompanyID"],
             ClTec,
@@ -400,7 +402,6 @@ class AccountInvoiceDianDocument(models.Model):
             "ValOtroIm": "{:.2f}".format(ValOtroIm),
             "DueDate": self.invoice_id.date_due,
             "Note": self.invoice_id.comment or "",
-            "DocumentCurrencyCode": self.invoice_id.currency_id.name,
             "LineCountNumeric": len(self.invoice_id.invoice_line_ids),
             "OrderReferenceID": self.invoice_id.name,
             "ReceiptDocumentReferenceID": self.invoice_id.receipt_document_reference,
@@ -413,13 +414,13 @@ class AccountInvoiceDianDocument(models.Model):
             "PaymentMeansID": self.invoice_id.payment_mean_id.code,
             "PaymentMeansCode": self.invoice_id.payment_mean_code_id.code,
             "PaymentDueDate": self.invoice_id.date_due,
-            "PaymentExchangeRate": self.invoice_id._get_payment_exchange_rate(),
+            "PaymentExchangeRate": PaymentExchangeRate,
             "TaxesTotal": einvoicing_taxes["TaxesTotal"],
             "WithholdingTaxesTotal": einvoicing_taxes["WithholdingTaxesTotal"],
-            "LineExtensionAmount": "{:.2f}".format(self.invoice_id.amount_untaxed),
-            "TaxExclusiveAmount": "{:.2f}".format(einvoicing_taxes["TaxesTotalBase"]),
-            "TaxInclusiveAmount": "{:.2f}".format(TaxInclusiveAmount),
-            "PayableAmount": "{:.2f}".format(PayableAmount),
+            "LineExtensionAmount": self.invoice_id.amount_untaxed,
+            "TaxExclusiveAmount": einvoicing_taxes["TaxesTotalBase"],
+            "TaxInclusiveAmount": TaxInclusiveAmount,
+            "PayableAmount": PayableAmount,
         }
 
     def _get_invoice_values(self):
@@ -524,12 +525,12 @@ class AccountInvoiceDianDocument(models.Model):
         xml_values["CreditNoteTypeCode"] = "91"
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values[
-            "DiscrepancyResponseCode"
-        ] = self.invoice_id.discrepancy_response_code_id.code
-        xml_values[
-            "DiscrepancyDescription"
-        ] = self.invoice_id.discrepancy_response_code_id.name
+        xml_values["DiscrepancyResponseCode"] = (
+            self.invoice_id.discrepancy_response_code_id.code
+        )
+        xml_values["DiscrepancyDescription"] = (
+            self.invoice_id.discrepancy_response_code_id.name
+        )
         xml_values["Delivery"] = delivery._get_delivery_values()
         xml_values["CreditNoteLines"] = self.invoice_id._get_invoice_lines()
 
@@ -577,12 +578,12 @@ class AccountInvoiceDianDocument(models.Model):
         # xml_values['DebitNoteTypeCode'] = '92'
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values[
-            "DiscrepancyResponseCode"
-        ] = self.invoice_id.discrepancy_response_code_id.code
-        xml_values[
-            "DiscrepancyDescription"
-        ] = self.invoice_id.discrepancy_response_code_id.name
+        xml_values["DiscrepancyResponseCode"] = (
+            self.invoice_id.discrepancy_response_code_id.code
+        )
+        xml_values["DiscrepancyDescription"] = (
+            self.invoice_id.discrepancy_response_code_id.name
+        )
         xml_values["Delivery"] = delivery._get_delivery_values()
         xml_values["DebitNoteLines"] = self.invoice_id._get_invoice_lines()
 
@@ -779,12 +780,12 @@ class AccountInvoiceDianDocument(models.Model):
         xml_values["CreditNoteTypeCode"] = "95"
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values[
-            "DiscrepancyResponseCode"
-        ] = self.invoice_id.discrepancy_response_code_id.code
-        xml_values[
-            "DiscrepancyDescription"
-        ] = self.invoice_id.discrepancy_response_code_id.name
+        xml_values["DiscrepancyResponseCode"] = (
+            self.invoice_id.discrepancy_response_code_id.code
+        )
+        xml_values["DiscrepancyDescription"] = (
+            self.invoice_id.discrepancy_response_code_id.name
+        )
         xml_values["CreditNoteLines"] = self.invoice_id._get_invoice_lines()
 
         return xml_values
@@ -908,9 +909,9 @@ class AccountInvoiceDianDocument(models.Model):
         ProfileExecutionID = self.company_id.profile_execution_id
         ad_zipped_filename = self.ad_zipped_filename
         ID = ad_zipped_filename.replace(".zip", "")
-        timezone = pytz.timezone(self.env.user.tz or "America/Bogota")
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         from_zone = tz.gettz("UTC")
-        to_zone = tz.gettz(timezone.zone)
+        to_zone = tz.gettz(to_timezone.zone)
         issue_datetime = datetime.now().replace(tzinfo=from_zone)
         IssueDate = issue_datetime.astimezone(to_zone).strftime("%Y-%m-%d")
         IssueTime = issue_datetime.astimezone(to_zone).strftime("%H:%M:%S-05:00")

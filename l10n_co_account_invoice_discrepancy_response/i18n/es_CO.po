@@ -51,6 +51,7 @@ msgid "Code"
 msgstr "Código"
 
 #. module: l10n_co_account_invoice_discrepancy_response
+#: model:ir.model,name:l10n_co_account_invoice_discrepancy_response.model_account_invoice_discrepancy_response_code
 #: model:ir.model.fields,field_description:l10n_co_account_invoice_discrepancy_response.field_account_invoice__discrepancy_response_code_id
 #: model:ir.model.fields,field_description:l10n_co_account_invoice_discrepancy_response.field_account_invoice_debit_note__discrepancy_response_code_id
 #: model:ir.model.fields,field_description:l10n_co_account_invoice_discrepancy_response.field_account_invoice_refund__discrepancy_response_code_id
@@ -271,9 +272,4 @@ msgstr "Podrá editar y validar esta\n"
 "nota débito directamente o dejarla como borrador, \n"
 "en espera de que su proveedor/cliente expida el \n"
 "documento correspondiente."
-
-#. module: l10n_co_account_invoice_discrepancy_response
-#: model:ir.model,name:l10n_co_account_invoice_discrepancy_response.model_account_invoice_discrepancy_response_code
-msgid "account.invoice.discrepancy.response.code"
-msgstr ""
 

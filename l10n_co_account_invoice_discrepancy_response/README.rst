@@ -29,8 +29,4 @@ Credits
 
 Contributors
 ------------
-
-* Alejandro Olano <https://github.com/alejo-code>
-* Juan Camilo Zuluaga Serna <https://github.com/camilozuluaga>
 * Joan Marín <https://github.com/JoanMarin>
-
