@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-03 06:00+0000\n"
-"PO-Revision-Date: 2024-05-03 06:00+0000\n"
+"POT-Creation-Date: 2024-06-14 22:56+0000\n"
+"PO-Revision-Date: 2024-06-14 22:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgid "'%s' does not have a country established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:179
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:177
 #: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:250
 #, python-format
 msgid "'%s' does not have a document type established."
@@ -60,7 +60,7 @@ msgid "'%s' does not have a fiscal position established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:180
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:178
 #: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:101
 #: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:251
 #, python-format
@@ -68,7 +68,7 @@ msgid "'%s' does not have a identification document established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:298
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:296
 #, python-format
 msgid "'%s' does not have a isic code established."
 msgstr ""
@@ -87,7 +87,7 @@ msgid "'%s' does not have a state established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:297
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:295
 #, python-format
 msgid "'%s' does not have a valid isic code"
 msgstr ""
@@ -115,7 +115,7 @@ msgid "AIU"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1082
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1080
 #, python-format
 msgid "ALERT! Invoice %s was not sent to DIAN."
 msgstr ""
@@ -245,7 +245,7 @@ msgid "Contingency Checkbook E-Invoicing"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1083
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1081
 #, python-format
 msgid "Cordial Saludo,<br/><br/>La factura  del cliente  no pudo ser enviada a la Dian según el protocolo establecido previamente. Por favor revise el estado de la misma en el menú Documentos Dian e intente reprocesarla según el procedimiento definido.<br/>."
 msgstr ""
@@ -440,10 +440,10 @@ msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/ir_sequence.py:8
-#: selection:ir.sequence,dian_type:0
 #: model:ir.module.category,name:l10n_co_account_e_invoicing.category_einvoicing
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.product_template_form_view
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.view_company_form
+#: selection:ir.sequence,dian_type:0
 #, python-format
 msgid "E-Invoicing"
 msgstr ""
@@ -535,6 +535,7 @@ msgid "Enter the email where the invoice will be sent when the customer does not
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
 #: selection:account.invoice,dian_document_state:0
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.invoice_supplier_form
 msgid "Express Acceptance"
@@ -694,6 +695,7 @@ msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice__receipt_document_reference
+#: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_sale_order__receipt_document_reference
 msgid "Merchandise / Service Receipt Document"
 msgstr ""
 
@@ -709,17 +711,12 @@ msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: selection:res.partner,is_einvoicing_agent:0
-msgid "No"
-msgstr ""
-
-#. module: l10n_co_account_e_invoicing
-#: selection:res.partner,is_einvoicing_agent:0
 msgid "No, but has email"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_res_company__notification_group_ids
 #: model:ir.model,name:l10n_co_account_e_invoicing.model_einvoice_notification_group
+#: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_res_company__notification_group_ids
 msgid "Notification Group"
 msgstr ""
 
@@ -751,6 +748,8 @@ msgid "Process"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
+#: model:ir.actions.server,name:l10n_co_account_e_invoicing.ir_cron_process_dian_documents_ir_actions_server
+#: model:ir.cron,cron_name:l10n_co_account_e_invoicing.ir_cron_process_dian_documents
 #: model:ir.cron,name:l10n_co_account_e_invoicing.ir_cron_process_dian_documents
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.view_company_form
 msgid "Process DIAN Documents"
@@ -809,6 +808,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_dian_document__get_status_zip_response
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_dian_document_line__send_async_response
 msgid "Response"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
+#: model:ir.model,name:l10n_co_account_e_invoicing.model_sale_order
+msgid "Sale Order"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
@@ -974,13 +978,13 @@ msgid "The\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:631
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:625
 #, python-format
 msgid "The 'delivery date' must be equal or greater per maximum 10 days to the 'invoice date'."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:220
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:219
 #: sql_constraint:account.invoice:0
 #, python-format
 msgid "The Supplier CUFE must be unique"
@@ -1007,7 +1011,7 @@ msgid "The document type of '%s' does not seem to correspond with the person typ
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:178
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:176
 #, python-format
 msgid "The document type of '%s' is not NIT"
 msgstr ""
@@ -1027,13 +1031,13 @@ msgid "The invoice line %s has no reference"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:441
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:439
 #, python-format
 msgid "The invoice type selected is not valid to this invoice."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1077
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1075
 #, python-format
 msgid "The notification group for e-invoice failures is not set.\n"
 "You won't be notified if something goes wrong.\n"
@@ -1050,13 +1054,13 @@ msgid "There is no\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:894
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:892
 #, python-format
 msgid "There is no an active certificate."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:181
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:179
 #, python-format
 msgid "There is no date range corresponding to the date of your invoice."
 msgstr ""
@@ -1072,7 +1076,7 @@ msgid "Unknown"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1397
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1395
 #, python-format
 msgid "Unknown Error,\n"
 "Status Code: %s,\n"
@@ -1082,7 +1086,7 @@ msgid "Unknown Error,\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1245
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1243
 #, python-format
 msgid "Unknown Error,\n"
 "Status Code: %s,\n"
@@ -1092,7 +1096,7 @@ msgid "Unknown Error,\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1324
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1322
 #, python-format
 msgid "Unknown Error,\n"
 "Status Code: %s,\n"
@@ -1102,7 +1106,7 @@ msgid "Unknown Error,\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_company.py:124
+#: code:addons/l10n_co_account_e_invoicing/models/res_company.py:123
 #, python-format
 msgid "Unknown Error,\n"
 "Status Code: %s,\n"
@@ -1110,7 +1114,7 @@ msgid "Unknown Error,\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1250
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1248
 #, python-format
 msgid "Unknown Error: %s\n"
 "\n"
@@ -1118,8 +1122,8 @@ msgid "Unknown Error: %s\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1328
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1401
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1326
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1399
 #, python-format
 msgid "Unknown Error: %s\n"
 "\n"
@@ -1127,7 +1131,7 @@ msgid "Unknown Error: %s\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_company.py:125
+#: code:addons/l10n_co_account_e_invoicing/models/res_company.py:124
 #, python-format
 msgid "Unknown Error: %s\n"
 "."
@@ -1187,7 +1191,7 @@ msgid "View Invoice Refund Buttons"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:77
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:75
 #, python-format
 msgid "WITHOUT VALIDATE"
 msgstr ""
@@ -1208,25 +1212,25 @@ msgid "Yes"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:270
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:269
 #, python-format
 msgid "You can not make a refund invoice of an invoice with DIAN documents with state 'Draft', 'Sent' or 'Cancelled'."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:266
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:265
 #, python-format
 msgid "You can not make a refund invoice of an invoice with state different to 'Open' or 'Paid'."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:734
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:728
 #, python-format
 msgid "You cannot cancel a invoice sent to the DIAN and that was approved."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:237
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:236
 #, python-format
 msgid "You do not have an active dian resolution, contact with your administrator."
 msgstr ""
@@ -1238,69 +1242,69 @@ msgid "Your Unit of Measure: '%s', has no Unit of Measure Code, contact with you
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:430
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:428
 #, python-format
 msgid "Your active dian resolution has no technical key, contact with your administrator."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1049
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:1047
 #, python-format
 msgid "Your invoice has not been validated"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:490
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:742
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:488
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:740
 #, python-format
 msgid "Your journal: %s, has no a credit note sequence"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:542
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:540
 #, python-format
 msgid "Your journal: %s, has no a debit note sequence"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:429
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:705
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:427
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:703
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:437
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:435
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to Contingency Checkbook E-Invoicing"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:491
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:489
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to E-Credit Note"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:543
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:541
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to E-Debit Note"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:434
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:432
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to E-Invoicing"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:706
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:704
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to E-Support Document"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:743
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:741
 #, python-format
 msgid "Your journal: %s, has no a invoice sequence with type equal to E-Support Document Credit Note"
 msgstr ""
