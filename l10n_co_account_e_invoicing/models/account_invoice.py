@@ -314,11 +314,12 @@ class AccountInvoice(models.Model):
 
     def _get_payment_exchange_rate(self):
         company_currency_id = self.company_id.currency_id
+        currency_id = self.currency_id
         rate = 1
         date = self._get_currency_rate_date() or fields.Date.context_today(self)
 
         if self.currency_id != company_currency_id:
-            currency_id = self.currency_id.with_context(date=date)
+            currency_id = currency_id.with_context(date=date)
             rate = currency_id.compute(rate, company_currency_id)
 
         return {
