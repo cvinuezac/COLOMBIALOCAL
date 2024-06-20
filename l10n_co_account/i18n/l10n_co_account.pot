@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_co_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-20 14:31+0000\n"
+"PO-Revision-Date: 2024-06-20 14:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_account_invoice_refund_reason
+msgid "Account Invoice refund Reasons"
+msgstr ""
+
+#. module: l10n_co_account
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_form
+msgid "Add Credit Note"
+msgstr ""
+
+#. module: l10n_co_account
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_form
+msgid "Add Debit Note"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__code
+msgid "Code"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice__reason_id
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_debitnote__reason_id
+msgid "Correction Concept"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:account.invoice.refund.reason,type:0
+msgid "Credit Note"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:account.invoice.refund.reason,type:0
+#: model:ir.model,name:l10n_co_account.model_account_invoice_debitnote
+msgid "Debit Note"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__name
+msgid "Name"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__type
+msgid "Type"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:res.groups,name:l10n_co_account.group_view_refund_invoice_buttons
+msgid "View Refund Invoice Buttons"
+msgstr ""
+

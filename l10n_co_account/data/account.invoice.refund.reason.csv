@@ -1,0 +1,10 @@
+id,name,code,type
+account_invoice_refund_reason.refund_reason_noref,Devolución parcial de los bienes y/o no aceptación parcial del servicio,1,credit
+account_invoice_refund_reason.refund_reason_cancellation,Anulación de factura electrónica,2,credit
+account_invoice_refund_reason_credit_3,Rebaja  o descuento parcial o total,3,credit
+account_invoice_refund_reason_credit_4,Ajuste de precio,4,credit
+account_invoice_refund_reason.refund_reason_error,Otros,5,credit
+account_invoice_refund_reason.refund_reason_agreement,Intereses,1,debit
+account_invoice_refund_reason.refund_reason_difference,Gastos por cobrar,2,debit
+account_invoice_refund_reason.refund_reason_correction,Cambio del valor,3,debit
+account_invoice_refund_reason.refund_reason_others,Otro,4,debit
