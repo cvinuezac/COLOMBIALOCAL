@@ -1186,11 +1186,6 @@ msgid "View E-Invoicing Setting of the Product"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: model:res.groups,name:l10n_co_account_e_invoicing.group_view_invoice_refund_buttons
-msgid "View Invoice Refund Buttons"
-msgstr ""
-
-#. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:75
 #, python-format
 msgid "WITHOUT VALIDATE"

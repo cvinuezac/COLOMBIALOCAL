@@ -85,12 +85,16 @@ class AccountInvoiceDianDocument(models.Model):
         if self.cufe_cude:
             if (
                 self.invoice_id.type == "out_invoice"
-                and not self.invoice_id.refund_type
+                and not self.invoice_id.debit_invoice_id
                 and self.invoice_id.invoice_type_code != "03"
             ):
                 qr_data += "\nCUFE: " + self.cufe_cude
-            elif self.invoice_id.type in ("out_invoice", "out_refund") and (
-                self.invoice_id.refund_type or self.invoice_id.invoice_type_code == "03"
+            elif self.invoice_id.type == "out_refund" or (
+                self.invoice_id.type == "out_invoice"
+                and (
+                    self.invoice_id.debit_invoice_id
+                    or self.invoice_id.invoice_type_code == "03"
+                )
             ):
                 qr_data += "\nCUDE: " + self.cufe_cude
             elif self.invoice_id.type in ("in_invoice", "in_refund"):
@@ -236,17 +240,17 @@ class AccountInvoiceDianDocument(models.Model):
         z_prefix = "z"
         ar_prefix = "ar"
         ad_prefix = "ad"
-        refund_type = self.invoice_id.refund_type
+        debit_invoice_id = self.invoice_id.debit_invoice_id
 
-        if self.invoice_id.type == "out_invoice" and not refund_type:
+        if self.invoice_id.type == "out_invoice" and not debit_invoice_id:
             xml_prefix = "fv"
             daterange.out_invoice_sent += 1
             dddddddd = str(daterange.out_invoice_sent)
-        elif self.invoice_id.type == "out_refund" and refund_type == "credit":
+        elif self.invoice_id.type == "out_refund":
             xml_prefix = "nc"
             daterange.out_refund_credit_sent += 1
             dddddddd = str(daterange.out_refund_credit_sent)
-        elif self.invoice_id.type == "out_refund" and refund_type == "debit":
+        elif self.invoice_id.type == "out_invoice" and debit_invoice_id:
             xml_prefix = "nd"
             daterange.out_refund_debit_sent += 1
             dddddddd = str(daterange.out_refund_debit_sent)
@@ -525,12 +529,8 @@ class AccountInvoiceDianDocument(models.Model):
         xml_values["CreditNoteTypeCode"] = "91"
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values["DiscrepancyResponseCode"] = (
-            self.invoice_id.discrepancy_response_code_id.code
-        )
-        xml_values["DiscrepancyDescription"] = (
-            self.invoice_id.discrepancy_response_code_id.name
-        )
+        xml_values["DiscrepancyResponseCode"] = self.invoice_id.reason_id.code
+        xml_values["DiscrepancyDescription"] = self.invoice_id.reason_id.name
         xml_values["Delivery"] = delivery._get_delivery_values()
         xml_values["CreditNoteLines"] = self.invoice_id._get_invoice_lines()
 
@@ -542,7 +542,7 @@ class AccountInvoiceDianDocument(models.Model):
             "Your journal: %s, has no a invoice sequence with type equal to E-Debit "
             "Note"
         )
-        sequence_id = self.invoice_id.journal_id.debit_note_sequence_id
+        sequence_id = self.invoice_id.journal_id.debitnote_sequence_id
         sequence_id = sequence_id or self.invoice_id.journal_id.sequence_id
 
         if not sequence_id:
@@ -578,12 +578,8 @@ class AccountInvoiceDianDocument(models.Model):
         # xml_values['DebitNoteTypeCode'] = '92'
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values["DiscrepancyResponseCode"] = (
-            self.invoice_id.discrepancy_response_code_id.code
-        )
-        xml_values["DiscrepancyDescription"] = (
-            self.invoice_id.discrepancy_response_code_id.name
-        )
+        xml_values["DiscrepancyResponseCode"] = self.invoice_id.reason_id.code
+        xml_values["DiscrepancyDescription"] = self.invoice_id.reason_id.name
         xml_values["Delivery"] = delivery._get_delivery_values()
         xml_values["DebitNoteLines"] = self.invoice_id._get_invoice_lines()
 
@@ -780,28 +776,24 @@ class AccountInvoiceDianDocument(models.Model):
         xml_values["CreditNoteTypeCode"] = "95"
         xml_values["BillingReference"] = billing_reference
         xml_values["DiscrepancyReferenceID"] = billing_reference["ID"]
-        xml_values["DiscrepancyResponseCode"] = (
-            self.invoice_id.discrepancy_response_code_id.code
-        )
-        xml_values["DiscrepancyDescription"] = (
-            self.invoice_id.discrepancy_response_code_id.name
-        )
+        xml_values["DiscrepancyResponseCode"] = self.invoice_id.reason_id.code
+        xml_values["DiscrepancyDescription"] = self.invoice_id.reason_id.name
         xml_values["CreditNoteLines"] = self.invoice_id._get_invoice_lines()
 
         return xml_values
 
     def _get_xml_file(self):
-        refund_type = self.invoice_id.refund_type
+        debit_invoice_id = self.invoice_id.debit_invoice_id
 
-        if self.invoice_id.type == "out_invoice" and not refund_type:
+        if self.invoice_id.type == "out_invoice" and not debit_invoice_id:
             xml_without_signature = global_functions.get_template_xml(
                 self._get_invoice_values(), "Invoice"
             )
-        elif self.invoice_id.type == "out_refund" and refund_type == "credit":
+        elif self.invoice_id.type == "out_refund":
             xml_without_signature = global_functions.get_template_xml(
                 self._get_credit_note_values(), "CreditNote"
             )
-        elif self.invoice_id.type == "out_refund" and refund_type == "debit":
+        elif self.invoice_id.type == "out_refund" and debit_invoice_id:
             xml_without_signature = global_functions.get_template_xml(
                 self._get_debit_note_values(), "DebitNote"
             )

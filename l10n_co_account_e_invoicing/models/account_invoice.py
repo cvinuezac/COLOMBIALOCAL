@@ -225,9 +225,9 @@ class AccountInvoice(models.Model):
         res = super(AccountInvoice, self).update(values)
 
         for invoice in self:
-            if invoice.type == "out_refund" and values.get("refund_type") == "credit":
+            if invoice.type == "out_refund":
                 invoice.operation_type = "20"
-            elif invoice.type == "out_refund" and values.get("refund_type") == "debit":
+            elif invoice.type == "out_refund" and values.get("debit_invoice_id"):
                 invoice.operation_type = "30"
 
         return res
@@ -271,27 +271,26 @@ class AccountInvoice(models.Model):
             "with state 'Draft', 'Sent' or 'Cancelled'."
         )
         billing_reference = {}
+        refund_invoice_id = self.refund_invoice_id or self.debit_invoice_id
 
-        if self.refund_invoice_id:
-            if self.refund_invoice_id.state not in ("open", "paid"):
+        if refund_invoice_id:
+            if refund_invoice_id.state not in ("open", "paid"):
                 raise UserError(msg1)
 
-            if self.refund_invoice_id.state in ("open", "paid"):
+            if refund_invoice_id.state in ("open", "paid"):
                 dian_document_state_done = False
                 dian_document_state_cancel = False
                 dian_document_state_sent = False
                 dian_document_state_draft = False
 
-                for dian_document in self.refund_invoice_id.dian_document_ids:
+                for dian_document in refund_invoice_id.dian_document_ids:
                     if dian_document.state == "done":
                         dian_document_state_done = True
-                        billing_reference["ID"] = self.refund_invoice_id.number
+                        billing_reference["ID"] = refund_invoice_id.number
                         billing_reference["UUID"] = dian_document.cufe_cude
-                        billing_reference["IssueDate"] = (
-                            self.refund_invoice_id.date_invoice
-                        )
+                        billing_reference["IssueDate"] = refund_invoice_id.date_invoice
                         billing_reference["CustomizationID"] = (
-                            self.refund_invoice_id.operation_type
+                            refund_invoice_id.operation_type
                         )
 
                     if dian_document.state == "cancel":

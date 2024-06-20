@@ -7,18 +7,19 @@
             <button name="%(account.action_account_invoice_refund)d" position="attributes">
                 <attribute name="string">Add Credit Note</attribute>
                 <attribute name="icon">fa-file</attribute>
-                <attribute name="attrs">
-                    {'invisible': ['|', ('type', '=', 'out_refund'), ('debit_invoice_id', '!=', False)]}
-                </attribute>
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                    '|',
+                    ('type', '=', 'out_refund'),
+                    ('debit_invoice_id', '!=', False),
+                    ('state', 'not in', ('open','in_payment','paid'))
+                ]}</attribute>
                 <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
             </button>
 
             <button name="%(account_debitnote.action_account_invoice_debitnote)d" position="attributes">
                 <attribute name="string">Add Debit Note</attribute>
                 <attribute name="icon">fa-file</attribute>
-                <attribute name="attrs">
-                    {'invisible': ['|', ('type', '=', 'out_refund'), ('debit_invoice_id', '!=', False)]}
-                </attribute>
                 <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
             </button>
         </field>

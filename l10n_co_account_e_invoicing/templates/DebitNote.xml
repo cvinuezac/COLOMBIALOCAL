@@ -675,7 +675,7 @@
 		</cac:Item>
 		<cac:Price>
 			<cbc:PriceAmount currencyID="COP">{{'{:.2f}'.format(DebitNoteLine.PriceAmount * PaymentExchangeRate.SourceCurrencyBaseRate)}}</cbc:PriceAmount>
-			<cbc:BaseQuantity unitCode="{{CreditNoteLine.unitCode}}">{{DebitNoteLine.Quantity}}</cbc:BaseQuantity>
+			<cbc:BaseQuantity unitCode="{{DebitNoteLine.unitCode}}">{{DebitNoteLine.Quantity}}</cbc:BaseQuantity>
 		</cac:Price>
 	</cac:DebitNoteLine>
 	{% endfor %}
