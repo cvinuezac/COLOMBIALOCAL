@@ -224,11 +224,18 @@ class AccountInvoice(models.Model):
     def update(self, values):
         res = super(AccountInvoice, self).update(values)
 
-        for invoice in self:
-            if invoice.type == "out_refund":
-                invoice.operation_type = "20"
-            elif invoice.type == "out_refund" and values.get("debit_invoice_id"):
-                invoice.operation_type = "30"
+        for invoice_id in self:
+            if invoice_id.type == "out_refund" and invoice_id.operation_type not in (
+                "20",
+                "22",
+            ):
+                invoice_id.operation_type = "20"
+            elif (
+                invoice_id.type == "out_invoice"
+                and invoice_id.debit_invoice_id
+                and invoice_id.operation_type not in ("30", "32")
+            ):
+                invoice_id.operation_type = "30"
 
         return res
 
@@ -270,44 +277,39 @@ class AccountInvoice(models.Model):
             "You can not make a refund invoice of an invoice with DIAN documents "
             "with state 'Draft', 'Sent' or 'Cancelled'."
         )
-        billing_reference = {}
+        billing_reference = {
+            "ID": False,
+            "UUID": False,
+            "IssueDate": False,
+            "CustomizationID": False,
+        }
         refund_invoice_id = self.refund_invoice_id or self.debit_invoice_id
 
         if refund_invoice_id:
             if refund_invoice_id.state not in ("open", "paid"):
                 raise UserError(msg1)
 
-            if refund_invoice_id.state in ("open", "paid"):
-                dian_document_state_done = False
-                dian_document_state_cancel = False
-                dian_document_state_sent = False
-                dian_document_state_draft = False
+            dian_document_states = refund_invoice_id.dian_document_ids.mapped("state")
 
-                for dian_document in refund_invoice_id.dian_document_ids:
-                    if dian_document.state == "done":
-                        dian_document_state_done = True
-                        billing_reference["ID"] = refund_invoice_id.number
-                        billing_reference["UUID"] = dian_document.cufe_cude
-                        billing_reference["IssueDate"] = refund_invoice_id.date_invoice
-                        billing_reference["CustomizationID"] = (
-                            refund_invoice_id.operation_type
-                        )
+            if (
+                "done" not in dian_document_states
+                or "draft" in dian_document_states
+                or "sent" in dian_document_states
+            ):
+                raise UserError(msg2)
 
-                    if dian_document.state == "cancel":
-                        dian_document_state_cancel = True
+            if self.operation_type not in ("20", "30"):
+                return billing_reference
 
-                    if dian_document.state == "draft":
-                        dian_document_state_draft = True
-
-                    if dian_document.state == "sent":
-                        dian_document_state_sent = True
-
-                if (
-                    (not dian_document_state_done and dian_document_state_cancel)
-                    or dian_document_state_draft
-                    or dian_document_state_sent
-                ):
-                    raise UserError(msg2)
+            for dian_document in refund_invoice_id.dian_document_ids:
+                if dian_document.state == "done":
+                    billing_reference["ID"] = refund_invoice_id.number
+                    billing_reference["UUID"] = dian_document.cufe_cude
+                    billing_reference["IssueDate"] = refund_invoice_id.date_invoice
+                    billing_reference["CustomizationID"] = (
+                        refund_invoice_id.operation_type
+                    )
+                    break
 
         return billing_reference
 

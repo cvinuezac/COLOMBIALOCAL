@@ -510,18 +510,7 @@ class AccountInvoiceDianDocument(models.Model):
         # Anexo tecnico version 1.8
         # 20 Nota Crédito que referencia una factura electrónica.
         # 22 Nota Crédito sin referencia a facturas.
-        if billing_reference:
-            xml_values["CustomizationID"] = "20"
-            self.invoice_id.operation_type = "20"
-        else:
-            xml_values["CustomizationID"] = "22"
-            self.invoice_id.operation_type = "22"
-            billing_reference = {
-                "ID": False,
-                "UUID": False,
-                "IssueDate": False,
-                "CustomizationID": False,
-            }
+        xml_values["CustomizationID"] = self.invoice_id.operation_type
         # TODO 2.0: Exclusivo en referencias a documentos (elementos DocumentReference)
         # Punto 13.1.3. Tipo de Documento: cbc:InvoiceTypeCode y cbc:CreditnoteTypeCode
         # Anexo tecnico version 1.8
@@ -558,18 +547,7 @@ class AccountInvoiceDianDocument(models.Model):
         # Anexo tecnico version 1.8
         # 30 Nota Débito que referencia una factura electrónica.
         # 32 Nota Débito sin referencia a facturas.
-        if billing_reference:
-            xml_values["CustomizationID"] = "30"
-            self.invoice_id.operation_type = "30"
-        else:
-            xml_values["CustomizationID"] = "32"
-            self.invoice_id.operation_type = "32"
-            billing_reference = {
-                "ID": False,
-                "UUID": False,
-                "IssueDate": False,
-                "CustomizationID": False,
-            }
+        xml_values["CustomizationID"] = self.invoice_id.operation_type
         # TODO 2.0: Exclusivo en referencias a documentos (elementos DocumentReference)
         # Punto 13.1.3. Tipo de Documento: cbc:InvoiceTypeCode y cbc:CreditnoteTypeCode
         # Anexo tecnico version 1.8
@@ -752,23 +730,13 @@ class AccountInvoiceDianDocument(models.Model):
         # Punto 16.1.4.1 Procedencia de Vendedor - Anexo tecnico DS version 1.1
         # 10 Residente
         # 11 No Residente
-        customization_id = "11"
-        dv = False
+        xml_values["CustomizationID"] = "11"
+        xml_values["DV"] = False
 
         if self.invoice_id.partner_id.document_type_id.code in ("11", "12", "13", "31"):
-            customization_id = "10"
-            dv = str(self.invoice_id.partner_id._compute_check_digit())
+            xml_values["CustomizationID"] = "10"
+            xml_values["DV"] = str(self.invoice_id.partner_id._compute_check_digit())
 
-        xml_values["DV"] = dv
-        xml_values["CustomizationID"] = customization_id
-
-        if not billing_reference:
-            billing_reference = {
-                "ID": False,
-                "UUID": False,
-                "IssueDate": False,
-                "CustomizationID": False,
-            }
         # TODO 2.0: Exclusivo en referencias a documentos (elementos DocumentReference)
         # Punto 16.1.3 Tipo de Documento - Anexo tecnico DS version 1.1
         # 95 Nota de ajuste al documento soporte en adquisiciones efectuadas a sujetos
@@ -793,7 +761,7 @@ class AccountInvoiceDianDocument(models.Model):
             xml_without_signature = global_functions.get_template_xml(
                 self._get_credit_note_values(), "CreditNote"
             )
-        elif self.invoice_id.type == "out_refund" and debit_invoice_id:
+        elif self.invoice_id.type == "out_invoice" and debit_invoice_id:
             xml_without_signature = global_functions.get_template_xml(
                 self._get_debit_note_values(), "DebitNote"
             )
