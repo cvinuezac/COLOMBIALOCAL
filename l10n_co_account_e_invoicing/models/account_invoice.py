@@ -298,7 +298,10 @@ class AccountInvoice(models.Model):
             ):
                 raise UserError(msg2)
 
-            if self.operation_type not in ("20", "30"):
+            if self.operation_type not in ("20", "30") and self.type not in (
+                "in_refund",
+                "in_invoice",
+            ):
                 return billing_reference
 
             for dian_document in refund_invoice_id.dian_document_ids:

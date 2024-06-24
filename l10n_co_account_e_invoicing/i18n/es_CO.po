@@ -915,7 +915,7 @@ msgstr "Estándar"
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_dian_document__state
 msgid "State"
-msgstr "Provincia"
+msgstr "Estado"
 
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_dian_document__get_status_zip_status_code
