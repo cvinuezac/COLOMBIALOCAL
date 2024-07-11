@@ -12,7 +12,7 @@ Installation
 License
 =======
 GNU AFFERO GENERAL PUBLIC LICENSE, Version 3 (AGPLv3)
-(http://www.gnu.org/licenses/agpl.html)
+(https://www.gnu.org/licenses/agpl-3.0)
 
 Bug Tracker
 ===========

@@ -2,3 +2,4 @@ pyopenssl==21.0.0 #Se puede hasta 23.0.0 pero hay conflicto server-auth que inst
 xmlsig
 pg-xades
 lxml==4.0.0 ; sys_platform != 'win32' and python_version < '3.7'
+sodapy
