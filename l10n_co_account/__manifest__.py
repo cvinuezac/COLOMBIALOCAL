@@ -8,6 +8,7 @@
     "author": "EXA Auto Parts Github@exaap, "
     "Joan Marín Github@JoanMarin, "
     "Odoo Community Association (OCA)",
+    "maintainers": ["joanmarin"],
     "website": "https://github.com/OCA/l10n-colombia",
     "depends": [
         "l10n_co",

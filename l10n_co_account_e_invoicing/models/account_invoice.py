@@ -316,18 +316,14 @@ class AccountInvoice(models.Model):
         return billing_reference
 
     def _get_payment_exchange_rate(self):
-        company_currency_id = self.company_id.currency_id
-        currency_id = self.currency_id
-        rate = 1
-        date = self._get_currency_rate_date() or fields.Date.context_today(self)
-
-        if self.currency_id != company_currency_id:
-            currency_id = currency_id.with_context(date=date)
-            rate = currency_id.compute(rate, company_currency_id)
+        date = self._get_currency_rate_date() or fields.Date.today()
+        rate = self.currency_id._convert(
+            1, self.company_id.currency_id, self.company_id, date
+        )
 
         return {
             "SourceCurrencyBaseRate": rate,
-            "TargetCurrencyCode": currency_id.name,
+            "TargetCurrencyCode": self.currency_id.name,
             "Date": date,
         }
 
