@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-20 14:31+0000\n"
-"PO-Revision-Date: 2024-06-20 14:31+0000\n"
+"POT-Creation-Date: 2024-08-22 07:19+0000\n"
+"PO-Revision-Date: 2024-08-22 07:19+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,28 +22,43 @@ msgstr ""
 
 #. module: l10n_co_account
 #: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_form
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_supplier_form
 msgid "Add Credit Note"
 msgstr ""
 
 #. module: l10n_co_account
 #: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_form
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.invoice_supplier_form
 msgid "Add Debit Note"
 msgstr ""
 
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__code
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__code
 msgid "Code"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_res_partner
+msgid "Contact"
 msgstr ""
 
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice__reason_id
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_debitnote__reason_id
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund__reason_id
 msgid "Correction Concept"
 msgstr ""
 
 #. module: l10n_co_account
 #: selection:account.invoice.refund.reason,type:0
+#: model:ir.model,name:l10n_co_account.model_account_invoice_refund
 msgid "Credit Note"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:res.partner.industry,type:0
+msgid "DIAN"
 msgstr ""
 
 #. module: l10n_co_account
@@ -53,18 +68,59 @@ msgid "Debit Note"
 msgstr ""
 
 #. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_res_partner_industry
+msgid "Industry"
+msgstr ""
+
+#. module: l10n_co_account
 #: model:ir.model,name:l10n_co_account.model_account_invoice
 msgid "Invoice"
 msgstr ""
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__industry_id
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__industry_id
+msgid "Main Industry"
+msgstr ""
+
+#. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__name
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__name
 msgid "Name"
 msgstr ""
 
 #. module: l10n_co_account
+#: selection:res.partner.industry,type:0
+msgid "Other"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__parent_id
+msgid "Parent"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__secondary_industry_ids
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__secondary_industry_ids
+msgid "Secondary Industries"
+msgstr ""
+
+#. module: l10n_co_account
+#: code:addons/l10n_co_account/models/res_partner_industry.py:20
+#: sql_constraint:res.partner.industry:0
+#, python-format
+msgid "The code must be unique!"
+msgstr ""
+
+#. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__type
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__type
 msgid "Type"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:res.partner.industry,type:0
+msgid "View"
 msgstr ""
 
 #. module: l10n_co_account

@@ -13,13 +13,39 @@
                     ('type', '=', 'out_refund'),
                     ('debit_invoice_id', '!=', False),
                     ('state', 'not in', ('open','in_payment','paid'))
-                ]}</attribute>
+                    ]}</attribute>
                 <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
             </button>
 
             <button name="%(account_debitnote.action_account_invoice_debitnote)d" position="attributes">
                 <attribute name="string">Add Debit Note</attribute>
                 <attribute name="icon">fa-file</attribute>
+                <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
+            </button>
+        </field>
+    </record>
+
+    <record id="invoice_supplier_form" model="ir.ui.view">
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_debitnote.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <button name="%(account.action_account_invoice_refund)d" position="attributes">
+                <attribute name="string">Add Credit Note</attribute>
+                <attribute name="icon">fa-file</attribute>
+                <attribute name="attrs">{'invisible': [
+                    '|',
+                    '|',
+                    ('type', '=', 'in_refund'),
+                    ('debit_invoice_id', '!=', False),
+                    ('state', 'not in', ('open','in_payment','paid'))
+                    ]}</attribute>
+                <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
+            </button>
+
+            <button name="%(account_debitnote.action_account_invoice_debitnote)d" position="attributes">
+                <attribute name="string">Add Debit Note</attribute>
+                <attribute name="icon">fa-file</attribute>
+                <attribute name="attrs">{'invisible': 1}</attribute>
                 <attribute name="groups">l10n_co_account.group_view_refund_invoice_buttons</attribute>
             </button>
         </field>

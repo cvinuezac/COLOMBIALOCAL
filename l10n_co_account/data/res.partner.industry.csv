@@ -1,0 +1,864 @@
+id,parent_id/id,code,name,type
+ciiu_0000,,0000,Desconocido,other
+base.res_partner_industry_A,,SECCIÓN A,"AGRICULTURA, GANADERÍA, CAZA, SILVICULTURA Y PESCA",view
+ciiu_01,base.res_partner_industry_A,01,"Agricultura, ganadería, caza y actividades de servicios conexas ",view
+ciiu_011,ciiu_01,011,Cultivos agrícolas transitorios ,view
+ciiu_0111,ciiu_011,0111,"Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas ",dian
+ciiu_0112,ciiu_011,0112,Cultivo de arroz ,dian
+ciiu_0113,ciiu_011,0113,"Cultivo de hortalizas, raíces y tubérculos ",dian
+ciiu_0114,ciiu_011,0114,Cultivo de tabaco ,dian
+ciiu_0115,ciiu_011,0115,Cultivo de plantas textiles ,dian
+ciiu_0119,ciiu_011,0119,Otros cultivos transitorios n.c.p.,dian
+ciiu_012,ciiu_01,012,Cultivos agrícolas permanentes ,view
+ciiu_0121,ciiu_012,0121,Cultivo de frutas tropicales y subtropicales,dian
+ciiu_0122,ciiu_012,0122,Cultivo de plátano y banano,dian
+ciiu_0123,ciiu_012,0123,Cultivo de café,dian
+ciiu_0124,ciiu_012,0124,Cultivo de caña de azúcar,dian
+ciiu_0125,ciiu_012,0125,Cultivo de flor de corte,dian
+ciiu_0126,ciiu_012,0126,Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos,dian
+ciiu_0127,ciiu_012,0127,Cultivo de plantas con las que se preparan bebidas,dian
+ciiu_0128,ciiu_012,0128,Cultivo de especias y de plantas aromáticas y medicinales ,dian
+ciiu_0129,ciiu_012,0129,Otros cultivos permanentes n.c.p.,dian
+ciiu_013,ciiu_01,013,"Propagación de plantas (actividades de los viveros, excepto viveros forestales) ",view
+ciiu_0130,ciiu_013,0130,"Propagación de plantas (actividades de los viveros, excepto viveros forestales) ",dian
+ciiu_014,ciiu_01,014,Ganadería ,view
+ciiu_0141,ciiu_014,0141,Cría de ganado bovino y bufalino,dian
+ciiu_0142,ciiu_014,0142,Cría de caballos y otros equinos ,dian
+ciiu_0143,ciiu_014,0143,Cría de ovejas y cabras ,dian
+ciiu_0144,ciiu_014,0144,Cría de ganado porcino,dian
+ciiu_0145,ciiu_014,0145,Cría de aves de corral,dian
+ciiu_0149,ciiu_014,0149,Cría de otros animales n.c.p.,dian
+ciiu_015,ciiu_01,015,Explotación mixta (agrícola y pecuaria) ,view
+ciiu_0150,ciiu_015,0150,Explotación mixta (agrícola y pecuaria) ,dian
+ciiu_016,ciiu_01,016,"Actividades de apoyo a la agricultura y la ganadería, y actividades posteriores a la cosecha ",view
+ciiu_0161,ciiu_016,0161,Actividades de apoyo a la agricultura ,dian
+ciiu_0162,ciiu_016,0162,Actividades de apoyo a la ganadería,dian
+ciiu_0163,ciiu_016,0163,Actividades posteriores a la cosecha ,dian
+ciiu_0164,ciiu_016,0164,Tratamiento de semillas para propagación ,dian
+ciiu_017,ciiu_01,017,Caza ordinaria y mediante trampas y actividades de servicios conexas ,view
+ciiu_0170,ciiu_017,0170,Caza ordinaria y mediante trampas y actividades de servicios conexas ,dian
+ciiu_02,base.res_partner_industry_A,02,Silvicultura y extracción de madera,view
+ciiu_021,ciiu_02,021,Silvicultura y otras actividades forestales,view
+ciiu_0210,ciiu_021,0210,Silvicultura y otras actividades forestales,dian
+ciiu_022,ciiu_02,022,Extracción de madera ,view
+ciiu_0220,ciiu_022,0220,Extracción de madera ,dian
+ciiu_023,ciiu_02,023,Recolección de productos forestales diferentes a la madera,view
+ciiu_0230,ciiu_023,0230,Recolección de productos forestales diferentes a la madera,dian
+ciiu_024,ciiu_02,024,Servicios de apoyo a la silvicultura ,view
+ciiu_0240,ciiu_024,0240,Servicios de apoyo a la silvicultura ,dian
+ciiu_03,base.res_partner_industry_A,03,Pesca y acuicultura,view
+ciiu_031,ciiu_03,031,Pesca ,view
+ciiu_0311,ciiu_031,0311,Pesca marítima ,dian
+ciiu_0312,ciiu_031,0312,Pesca de agua dulce ,dian
+ciiu_032,ciiu_03,032,Acuicultura ,view
+ciiu_0321,ciiu_032,0321,Acuicultura marítima ,dian
+ciiu_0322,ciiu_032,0322,Acuicultura de agua dulce,dian
+base.res_partner_industry_B,,SECCIÓN B,EXPLOTACIÓN DE MINAS Y CANTERAS,view
+ciiu_05,base.res_partner_industry_B,05,Extracción de carbón de piedra y lignito,view
+ciiu_051,ciiu_05,051,Extracción de hulla (carbón de piedra),view
+ciiu_0510,ciiu_051,0510,Extracción de hulla (carbón de piedra),dian
+ciiu_052,ciiu_05,052,Extracción de carbón lignito,view
+ciiu_0520,ciiu_052,0520,Extracción de carbón lignito,dian
+ciiu_06,base.res_partner_industry_B,06,Extracción de petróleo crudo y gas natural,view
+ciiu_061,ciiu_06,061,Extracción de petróleo crudo,view
+ciiu_0610,ciiu_061,0610,Extracción de petróleo crudo,dian
+ciiu_062,ciiu_06,062,Extracción de gas natural,view
+ciiu_0620,ciiu_062,0620,Extracción de gas natural,dian
+ciiu_07,base.res_partner_industry_B,07,Extracción de minerales metalíferos,view
+ciiu_071,ciiu_07,071,Extracción de minerales de hierro,view
+ciiu_0710,ciiu_071,0710,Extracción de minerales de hierro,dian
+ciiu_072,ciiu_07,072,Extracción de minerales metalíferos no ferrosos,view
+ciiu_0721,ciiu_072,0721,Extracción de minerales de uranio y de torio,dian
+ciiu_0722,ciiu_072,0722,Extracción de oro y otros metales preciosos,dian
+ciiu_0723,ciiu_072,0723,Extracción de minerales de níquel,dian
+ciiu_0729,ciiu_072,0729,Extracción de otros minerales metalíferos no ferrosos n.c.p.,dian
+ciiu_08,base.res_partner_industry_B,08,Extracción de otras minas y canteras,view
+ciiu_081,ciiu_08,081,"Extracción de piedra, arena, arcillas, cal, yeso, caolín, bentonitas y similares",view
+ciiu_0811,ciiu_081,0811,"Extracción de piedra, arena, arcillas comunes, yeso y anhidrita",dian
+ciiu_0812,ciiu_081,0812,"Extracción de arcillas de uso industrial, caliza, caolín y bentonitas",dian
+ciiu_082,ciiu_08,082,"Extracción de esmeraldas, piedras preciosas y semipreciosas",view
+ciiu_0820,ciiu_082,0820,"Extracción de esmeraldas, piedras preciosas y semipreciosas",dian
+ciiu_089,ciiu_08,089,Extracción de otros minerales no metálicos n.c.p.,view
+ciiu_0891,ciiu_089,0891,Extracción de minerales para la fabricación de abonos y productos químicos,dian
+ciiu_0892,ciiu_089,0892,Extracción de halita (sal),dian
+ciiu_0899,ciiu_089,0899,Extracción de otros minerales no metálicos n.c.p.,dian
+ciiu_09,base.res_partner_industry_B,09,Actividades de servicios de apoyo para la explotación de minas ,view
+ciiu_091,ciiu_09,091,Actividades de apoyo para la extracción de petróleo y de gas natural,view
+ciiu_0910,ciiu_091,0910,Actividades de apoyo para la extracción de petróleo y de gas natural,dian
+ciiu_099,ciiu_09,099,Actividades de apoyo para otras actividades de explotación de minas y canteras,view
+ciiu_0990,ciiu_099,0990,Actividades de apoyo para otras actividades de explotación de minas y canteras,dian
+base.res_partner_industry_C,,SECCIÓN C,INDUSTRIAS MANUFACTURERAS,view
+ciiu_10,base.res_partner_industry_C,10,Elaboración de productos alimenticios,view
+ciiu_101,ciiu_10,101,"Procesamiento y conservación de carne, pescado, crustáceos y moluscos ",view
+ciiu_1011,ciiu_101,1011,Procesamiento y conservación de carne y productos cárnicos,dian
+ciiu_1012,ciiu_101,1012,"Procesamiento y conservación de pescados, crustáceos y moluscos",dian
+ciiu_102,ciiu_10,102,"Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos",view
+ciiu_1020,ciiu_102,1020,"Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos",dian
+ciiu_103,ciiu_10,103,Elaboración de aceites y grasas de origen vegetal y animal,view
+ciiu_1031,ciiu_103,1031,Extracción de aceites de origen vegetal crudos,dian
+ciiu_1032,ciiu_103,1032,Elaboración de aceites y grasas de origen vegetal refinados,dian
+ciiu_1033,ciiu_103,1033,Elaboración de aceites y grasas de origen animal,dian
+ciiu_104,ciiu_10,104,Elaboración de productos lácteos,view
+ciiu_1040,ciiu_104,1040,Elaboración de productos lácteos,dian
+ciiu_105,ciiu_10,105,"Elaboración de productos de molinería, almidones y productos derivados del almidón",view
+ciiu_1051,ciiu_105,1051,Elaboración de productos de molinería,dian
+ciiu_1052,ciiu_105,1052,Elaboración de almidones y productos derivados del almidón,dian
+ciiu_106,ciiu_10,106,Elaboración de productos de café,view
+ciiu_1061,ciiu_106,1061,Trilla de café,dian
+ciiu_1062,ciiu_106,1062,"Descafeinado, tostión y molienda del café",dian
+ciiu_1063,ciiu_106,1063,Otros derivados del café,dian
+ciiu_107,ciiu_10,107,Elaboración de azúcar y panela,view
+ciiu_1071,ciiu_107,1071,Elaboración y refinación de azúcar,dian
+ciiu_1072,ciiu_107,1072,Elaboración de panela,dian
+ciiu_108,ciiu_10,108,Elaboración de otros productos alimenticios,view
+ciiu_1081,ciiu_108,1081,Elaboración de productos de panadería,dian
+ciiu_1082,ciiu_108,1082,"Elaboración de cacao, chocolate y productos de confitería",dian
+ciiu_1083,ciiu_108,1083,"Elaboración de macarrones, fideos, alcuzcuz y productos farináceos similares",dian
+ciiu_1084,ciiu_108,1084,Elaboración de comidas y platos preparados,dian
+ciiu_1089,ciiu_108,1089,Elaboración de otros productos alimenticios n.c.p.,dian
+ciiu_109,ciiu_10,109,Elaboración de alimentos preparados para animales,view
+ciiu_1090,ciiu_109,1090,Elaboración de alimentos preparados para animales,dian
+ciiu_11,base.res_partner_industry_C,11,Elaboración de bebidas,view
+ciiu_110,ciiu_11,110,Elaboración de bebidas,view
+ciiu_1101,ciiu_110,1101,"Destilación, rectificación y mezcla de bebidas alcohólicas",dian
+ciiu_1102,ciiu_110,1102,Elaboración de bebidas fermentadas no destiladas,dian
+ciiu_1103,ciiu_110,1103,"Producción de malta, elaboración de cervezas y otras bebidas malteadas",dian
+ciiu_1104,ciiu_110,1104,"Elaboración de bebidas no alcohólicas, producción de aguas minerales y de otras aguas embotelladas",dian
+ciiu_12,base.res_partner_industry_C,12,Elaboración de productos de tabaco,view
+ciiu_120,ciiu_12,120,Elaboración de productos de tabaco,view
+ciiu_1200,ciiu_120,1200,Elaboración de productos de tabaco,dian
+ciiu_13,base.res_partner_industry_C,13,Fabricación de productos textiles,view
+ciiu_131,ciiu_13,131,"Preparación, hilatura, tejeduría y acabado de productos textiles",view
+ciiu_1311,ciiu_131,1311,Preparación e hilatura de fibras textiles,dian
+ciiu_1312,ciiu_131,1312,Tejeduría de productos textiles,dian
+ciiu_1313,ciiu_131,1313,Acabado de productos textiles,dian
+ciiu_139,ciiu_13,139,Fabricación de otros productos textiles,view
+ciiu_1391,ciiu_139,1391,Fabricación de tejidos de punto y ganchillo,dian
+ciiu_1392,ciiu_139,1392,"Confección de artículos con materiales textiles, excepto prendas de vestir",dian
+ciiu_1393,ciiu_139,1393,Fabricación de tapetes y alfombras para pisos,dian
+ciiu_1394,ciiu_139,1394,"Fabricación de cuerdas, cordeles, cables, bramantes y redes",dian
+ciiu_1399,ciiu_139,1399,Fabricación de otros artículos textiles n.c.p.,dian
+ciiu_14,base.res_partner_industry_C,14,Confección de prendas de vestir,view
+ciiu_141,ciiu_14,141,"Confección de prendas de vestir, excepto prendas de piel",view
+ciiu_1410,ciiu_141,1410,"Confección de prendas de vestir, excepto prendas de piel",dian
+ciiu_142,ciiu_14,142,Fabricación de artículos de piel,view
+ciiu_1420,ciiu_142,1420,Fabricación de artículos de piel,dian
+ciiu_143,ciiu_14,143,Fabricación de artículos de punto y ganchillo,view
+ciiu_1430,ciiu_143,1430,Fabricación de artículos de punto y ganchillo,dian
+ciiu_15,base.res_partner_industry_C,15,"Curtido y recurtido de cueros; fabricación de calzado; fabricación de artículos de viaje, maletas, bolsos de mano y artículos similares, y fabricación de artículos de talabartería y guarnicionería; adobo y teñido de pieles",view
+ciiu_151,ciiu_15,151,"Curtido y recurtido de cueros; fabricación de artículos de viaje, bolsos de mano y artículos similares, y fabricación de artículos de talabartería y guarnicionería, adobo y teñido de pieles",view
+ciiu_1511,ciiu_151,1511,Curtido y recurtido de cueros; recurtido y teñido de pieles,dian
+ciiu_1512,ciiu_151,1512,"Fabricación de artículos de viaje, bolsos de mano y artículos similares elaborados en cuero, y fabricación de artículos de talabartería y guarnicionería",dian
+ciiu_1513,ciiu_151,1513,"Fabricación de artículos de viaje, bolsos de mano y artículos similares; artículos de talabartería y guarnicionería elaborados en otros materiales",dian
+ciiu_152,ciiu_15,152,Fabricación de calzado,view
+ciiu_1521,ciiu_152,1521,"Fabricación de calzado de cuero y piel, con cualquier tipo de suela",dian
+ciiu_1522,ciiu_152,1522,"Fabricación de otros tipos de calzado, excepto calzado de cuero y piel",dian
+ciiu_1523,ciiu_152,1523,Fabricación de partes del calzado,dian
+ciiu_16,base.res_partner_industry_C,16,"Transformación de la madera y fabricación de productos de madera y de corcho, excepto muebles; fabricación de artículos de cestería y espartería",view
+ciiu_161,ciiu_16,161,"Aserrado, acepillado e impregnación de la madera",view
+ciiu_1610,ciiu_161,1610,"Aserrado, acepillado e impregnación de la madera",dian
+ciiu_162,ciiu_16,162,"Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y otros tableros y paneles",view
+ciiu_1620,ciiu_162,1620,"Fabricación de hojas de madera para enchapado; fabricación de tableros contrachapados, tableros laminados, tableros de partículas y otros tableros y paneles",dian
+ciiu_163,ciiu_16,163,"Fabricación de partes y piezas de madera, de carpintería y ebanistería para la construcción",view
+ciiu_1630,ciiu_163,1630,"Fabricación de partes y piezas de madera, de carpintería y ebanistería para la construcción",dian
+ciiu_164,ciiu_16,164,Fabricación de recipientes de madera,view
+ciiu_1640,ciiu_164,1640,Fabricación de recipientes de madera,dian
+ciiu_169,ciiu_16,169,"Fabricación de otros productos de madera; fabricación de artículos de corcho, cestería y espartería",view
+ciiu_1690,ciiu_169,1690,"Fabricación de otros productos de madera; fabricación de artículos de corcho, cestería y espartería",dian
+ciiu_17,base.res_partner_industry_C,17,"Fabricación de papel, cartón y productos de papel y cartón",view
+ciiu_170,ciiu_17,170,"Fabricación de papel, cartón y productos de papel y cartón",view
+ciiu_1701,ciiu_170,1701,Fabricación de pulpas (pastas) celulósicas; papel y cartón,dian
+ciiu_1702,ciiu_170,1702,"Fabricación de papel y cartón ondulado (corrugado); fabricación de envases, empaques y de embalajes de papel y cartón.",dian
+ciiu_1709,ciiu_170,1709,Fabricación de otros artículos de papel y cartón,dian
+ciiu_18,base.res_partner_industry_C,18,Actividades de impresión y de producción de copias a partir de grabaciones originales ,view
+ciiu_181,ciiu_18,181,Actividades de impresión y actividades de servicios relacionados con la impresión,view
+ciiu_1811,ciiu_181,1811,Actividades de impresión,dian
+ciiu_1812,ciiu_181,1812,Actividades de servicios relacionados con la impresión,dian
+ciiu_182,ciiu_18,182,Producción de copias a partir de grabaciones originales ,view
+ciiu_1820,ciiu_182,1820,Producción de copias a partir de grabaciones originales ,dian
+ciiu_19,base.res_partner_industry_C,19,"Coquización, fabricación de productos de la refinación del petróleo y actividad de mezcla de combustibles ",view
+ciiu_191,ciiu_19,191,Fabricación de productos de hornos de coque,view
+ciiu_1910,ciiu_191,1910,Fabricación de productos de hornos de coque,dian
+ciiu_192,ciiu_19,192,Fabricación de productos de la refinación del petróleo,view
+ciiu_1921,ciiu_192,1921,Fabricación de productos de la refinación del petróleo,dian
+ciiu_1922,ciiu_192,1922,Actividad de mezcla de combustibles,dian
+ciiu_20,base.res_partner_industry_C,20,Fabricación de sustancias y productos químicos,view
+ciiu_201,ciiu_20,201,"Fabricación de sustancias químicas básicas, abonos y compuestos inorgánicos nitrogenados, plásticos y caucho sintético en formas primarias",view
+ciiu_2011,ciiu_201,2011,Fabricación de sustancias y productos químicos básicos,dian
+ciiu_2012,ciiu_201,2012,Fabricación de abonos y compuestos inorgánicos nitrogenados,dian
+ciiu_2013,ciiu_201,2013,Fabricación de plásticos en formas primarias,dian
+ciiu_2014,ciiu_201,2014,Fabricación de caucho sintético en formas primarias,dian
+ciiu_202,ciiu_20,202,Fabricación de otros productos químicos,view
+ciiu_2021,ciiu_202,2021,Fabricación de plaguicidas y otros productos químicos de uso agropecuario,dian
+ciiu_2022,ciiu_202,2022,"Fabricación de pinturas, barnices y revestimientos similares, tintas para impresión y masillas",dian
+ciiu_2023,ciiu_202,2023,"Fabricación de jabones y detergentes, preparados para limpiar y pulir; perfumes y preparados de tocador",dian
+ciiu_2029,ciiu_202,2029,Fabricación de otros productos químicos n.c.p.,dian
+ciiu_203,ciiu_20,203,Fabricación de fibras sintéticas y artificiales,view
+ciiu_2030,ciiu_203,2030,Fabricación de fibras sintéticas y artificiales,dian
+ciiu_21,base.res_partner_industry_C,21,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico",view
+ciiu_210,ciiu_21,210,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico",view
+ciiu_2100,ciiu_210,2100,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico",dian
+ciiu_22,base.res_partner_industry_C,22,Fabricación de productos de caucho y de plástico,view
+ciiu_221,ciiu_22,221,Fabricación de productos de caucho,view
+ciiu_2211,ciiu_221,2211,Fabricación de llantas y neumáticos de caucho,dian
+ciiu_2212,ciiu_221,2212,Reencauche de llantas usadas,dian
+ciiu_2219,ciiu_221,2219,Fabricación de formas básicas de caucho y otros productos de caucho n.c.p.,dian
+ciiu_222,ciiu_22,222,Fabricación de productos de plástico,view
+ciiu_2221,ciiu_222,2221,Fabricación de formas básicas de plástico,dian
+ciiu_2229,ciiu_222,2229,Fabricación de artículos de plástico n.c.p.,dian
+ciiu_23,base.res_partner_industry_C,23,Fabricación de otros productos minerales no metálicos,view
+ciiu_231,ciiu_23,231,Fabricación de vidrio y productos de vidrio,view
+ciiu_2310,ciiu_231,2310,Fabricación de vidrio y productos de vidrio,dian
+ciiu_239,ciiu_23,239,Fabricación de productos minerales no metálicos n.c.p.,view
+ciiu_2391,ciiu_239,2391,Fabricación de productos refractarios,dian
+ciiu_2392,ciiu_239,2392,Fabricación de materiales de arcilla para la construcción,dian
+ciiu_2393,ciiu_239,2393,Fabricación de otros productos de cerámica y porcelana,dian
+ciiu_2394,ciiu_239,2394,"Fabricación de cemento, cal y yeso",dian
+ciiu_2395,ciiu_239,2395,"Fabricación de artículos de hormigón, cemento y yeso",dian
+ciiu_2396,ciiu_239,2396,"Corte, tallado y acabado de la piedra",dian
+ciiu_2399,ciiu_239,2399,Fabricación de otros productos minerales no metálicos n.c.p.,dian
+ciiu_24,base.res_partner_industry_C,24,Fabricación de productos metalúrgicos básicos,view
+ciiu_241,ciiu_24,241,Industrias básicas de hierro y de acero,view
+ciiu_2410,ciiu_241,2410,Industrias básicas de hierro y de acero,dian
+ciiu_242,ciiu_24,242,Industrias básicas de metales preciosos y de metales no ferrosos,view
+ciiu_2421,ciiu_242,2421,Industrias básicas de metales preciosos,dian
+ciiu_2429,ciiu_242,2429,Industrias básicas de otros metales no ferrosos,dian
+ciiu_243,ciiu_24,243,Fundición de metales,view
+ciiu_2431,ciiu_243,2431,Fundición de hierro y de acero,dian
+ciiu_2432,ciiu_243,2432,Fundición de metales no ferrosos ,dian
+ciiu_25,base.res_partner_industry_C,25,"Fabricación de productos elaborados de metal, excepto maquinaria y equipo",view
+ciiu_251,ciiu_25,251,"Fabricación de productos metálicos para uso estructural, tanques, depósitos y generadores de vapor",view
+ciiu_2511,ciiu_251,2511,Fabricación de productos metálicos para uso estructural,dian
+ciiu_2512,ciiu_251,2512,"Fabricación de tanques, depósitos y recipientes de metal, excepto los utilizados para el envase o transporte de mercancías",dian
+ciiu_2513,ciiu_251,2513,"Fabricación de generadores de vapor, excepto calderas de agua caliente para calefacción central",dian
+ciiu_252,ciiu_25,252,Fabricación de armas y municiones,view
+ciiu_2520,ciiu_252,2520,Fabricación de armas y municiones,dian
+ciiu_259,ciiu_25,259,Fabricación de otros productos elaborados de metal y actividades de servicios relacionadas con el trabajo de metales,view
+ciiu_2591,ciiu_259,2591,"Forja, prensado, estampado y laminado de metal; pulvimetalurgia",dian
+ciiu_2592,ciiu_259,2592,Tratamiento y revestimiento de metales; mecanizado,dian
+ciiu_2593,ciiu_259,2593,"Fabricación de artículos de cuchillería, herramientas de mano y artículos de ferretería",dian
+ciiu_2599,ciiu_259,2599,Fabricación de otros productos elaborados de metal n.c.p.,dian
+ciiu_26,base.res_partner_industry_C,26,"Fabricación de productos informáticos, electrónicos y ópticos",view
+ciiu_261,ciiu_26,261,Fabricación de componentes y tableros electrónicos,view
+ciiu_2610,ciiu_261,2610,Fabricación de componentes y tableros electrónicos,dian
+ciiu_262,ciiu_26,262,Fabricación de computadoras y de equipo periférico,view
+ciiu_2620,ciiu_262,2620,Fabricación de computadoras y de equipo periférico,dian
+ciiu_263,ciiu_26,263,Fabricación de equipos de comunicación,view
+ciiu_2630,ciiu_263,2630,Fabricación de equipos de comunicación,dian
+ciiu_264,ciiu_26,264,Fabricación de aparatos electrónicos de consumo,view
+ciiu_2640,ciiu_264,2640,Fabricación de aparatos electrónicos de consumo,dian
+ciiu_265,ciiu_26,265,"Fabricación de equipo de medición, prueba, navegación y control; fabricación de relojes",view
+ciiu_2651,ciiu_265,2651,"Fabricación de equipo de medición, prueba, navegación y control",dian
+ciiu_2652,ciiu_265,2652,Fabricación de relojes,dian
+ciiu_266,ciiu_26,266,Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico,view
+ciiu_2660,ciiu_266,2660,Fabricación de equipo de irradiación y equipo electrónico de uso médico y terapéutico,dian
+ciiu_267,ciiu_26,267,Fabricación de instrumentos ópticos y equipo fotográfico,view
+ciiu_2670,ciiu_267,2670,Fabricación de instrumentos ópticos y equipo fotográfico,dian
+ciiu_268,ciiu_26,268,Fabricación de medios magnéticos y ópticos para almacenamiento de datos,view
+ciiu_2680,ciiu_268,2680,Fabricación de medios magnéticos y ópticos para almacenamiento de datos,dian
+ciiu_27,base.res_partner_industry_C,27,Fabricación de aparatos y equipo eléctrico,view
+ciiu_271,ciiu_27,271,"Fabricación de motores, generadores y transformadores eléctricos y de aparatos de distribución y control de la energía eléctrica",view
+ciiu_2711,ciiu_271,2711,"Fabricación de motores, generadores y transformadores eléctricos",dian
+ciiu_2712,ciiu_271,2712,Fabricación de aparatos de distribución y control de la energía eléctrica,dian
+ciiu_272,ciiu_27,272,"Fabricación de pilas, baterías y acumuladores eléctricos",view
+ciiu_2720,ciiu_272,2720,"Fabricación de pilas, baterías y acumuladores eléctricos",dian
+ciiu_273,ciiu_27,273,Fabricación de hilos y cables aislados y sus dispositivos,view
+ciiu_2731,ciiu_273,2731,Fabricación de hilos y cables eléctricos y de fibra óptica,dian
+ciiu_2732,ciiu_273,2732,Fabricación de dispositivos de cableado,dian
+ciiu_274,ciiu_27,274,Fabricación de equipos eléctricos de iluminación,view
+ciiu_2740,ciiu_274,2740,Fabricación de equipos eléctricos de iluminación,dian
+ciiu_275,ciiu_27,275,Fabricación de aparatos de uso doméstico,view
+ciiu_2750,ciiu_275,2750,Fabricación de aparatos de uso doméstico,dian
+ciiu_279,ciiu_27,279,Fabricación de otros tipos de equipo eléctrico n.c.p.,view
+ciiu_2790,ciiu_279,2790,Fabricación de otros tipos de equipo eléctrico n.c.p.,dian
+ciiu_28,base.res_partner_industry_C,28,Fabricación de maquinaria y equipo n.c.p.,view
+ciiu_281,ciiu_28,281,Fabricación de maquinaria y equipo de uso general,view
+ciiu_2811,ciiu_281,2811,"Fabricación de motores, turbinas, y partes para motores de combustión interna",dian
+ciiu_2812,ciiu_281,2812,Fabricación de equipos de potencia hidráulica y neumática,dian
+ciiu_2813,ciiu_281,2813,"Fabricación de otras bombas, compresores, grifos y válvulas",dian
+ciiu_2814,ciiu_281,2814,"Fabricación de cojinetes, engranajes, trenes de engranajes y piezas de transmisión",dian
+ciiu_2815,ciiu_281,2815,"Fabricación de hornos, hogares y quemadores industriales",dian
+ciiu_2816,ciiu_281,2816,Fabricación de equipo de elevación y manipulación,dian
+ciiu_2817,ciiu_281,2817,Fabricación de maquinaria y equipo de oficina (excepto computadoras y equipo periférico),dian
+ciiu_2818,ciiu_281,2818,Fabricación de herramientas manuales con motor,dian
+ciiu_2819,ciiu_281,2819,Fabricación de otros tipos de maquinaria y equipo de uso general n.c.p.,dian
+ciiu_282,ciiu_28,282,Fabricación de maquinaria y equipo de uso especial,view
+ciiu_2821,ciiu_282,2821,Fabricación de maquinaria agropecuaria y forestal,dian
+ciiu_2822,ciiu_282,2822,Fabricación de máquinas formadoras de metal y de máquinas herramienta,dian
+ciiu_2823,ciiu_282,2823,Fabricación de maquinaria para la metalurgia,dian
+ciiu_2824,ciiu_282,2824,Fabricación de maquinaria para explotación de minas y canteras y para obras de construcción,dian
+ciiu_2825,ciiu_282,2825,"Fabricación de maquinaria para la elaboración de alimentos, bebidas y tabaco",dian
+ciiu_2826,ciiu_282,2826,"Fabricación de maquinaria para la elaboración de productos textiles, prendas de vestir y cueros",dian
+ciiu_2829,ciiu_282,2829,Fabricación de otros tipos de maquinaria y equipo de uso especial n.c.p.,dian
+ciiu_29,base.res_partner_industry_C,29,"Fabricación de vehículos automotores, remolques y semirremolques",view
+ciiu_291,ciiu_29,291,Fabricación de vehículos automotores y sus motores,view
+ciiu_2910,ciiu_291,2910,Fabricación de vehículos automotores y sus motores,dian
+ciiu_292,ciiu_29,292,Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques ,view
+ciiu_2920,ciiu_292,2920,Fabricación de carrocerías para vehículos automotores; fabricación de remolques y semirremolques ,dian
+ciiu_293,ciiu_29,293,"Fabricación de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",view
+ciiu_2930,ciiu_293,2930,"Fabricación de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",dian
+ciiu_30,base.res_partner_industry_C,30,Fabricación de otros tipos de equipo de transporte,view
+ciiu_301,ciiu_30,301,Construcción de barcos y otras embarcaciones,view
+ciiu_3011,ciiu_301,3011,Construcción de barcos y de estructuras flotantes,dian
+ciiu_3012,ciiu_301,3012,Construcción de embarcaciones de recreo y deporte,dian
+ciiu_302,ciiu_30,302,Fabricación de locomotoras y de material rodante para ferrocarriles,view
+ciiu_3020,ciiu_302,3020,Fabricación de locomotoras y de material rodante para ferrocarriles,dian
+ciiu_303,ciiu_30,303,"Fabricación de aeronaves, naves espaciales y de maquinaria conexa",view
+ciiu_3030,ciiu_303,3030,"Fabricación de aeronaves, naves espaciales y de maquinaria conexa",dian
+ciiu_304,ciiu_30,304,Fabricación de vehículos militares de combate,view
+ciiu_3040,ciiu_304,3040,Fabricación de vehículos militares de combate,dian
+ciiu_309,ciiu_30,309,Fabricación de otros tipos de equipo de transporte n.c.p.,view
+ciiu_3091,ciiu_309,3091,Fabricación de motocicletas,dian
+ciiu_3092,ciiu_309,3092,Fabricación de bicicletas y de sillas de ruedas para personas con discapacidad,dian
+ciiu_3099,ciiu_309,3099,Fabricación de otros tipos de equipo de transporte n.c.p.,dian
+ciiu_31,base.res_partner_industry_C,31,"Fabricación de muebles, colchones y somieres",view
+ciiu_311,ciiu_31,311,Fabricación de muebles ,view
+ciiu_3110,ciiu_311,3110,Fabricación de muebles ,dian
+ciiu_312,ciiu_31,312,Fabricación de colchones y somieres,view
+ciiu_3120,ciiu_312,3120,Fabricación de colchones y somieres,dian
+ciiu_32,base.res_partner_industry_C,32,Otras industrias manufactureras,view
+ciiu_321,ciiu_32,321,"Fabricación de joyas, bisutería y artículos conexos",view
+ciiu_3210,ciiu_321,3210,"Fabricación de joyas, bisutería y artículos conexos",dian
+ciiu_322,ciiu_32,322,Fabricación de instrumentos musicales,view
+ciiu_3220,ciiu_322,3220,Fabricación de instrumentos musicales,dian
+ciiu_323,ciiu_32,323,Fabricación de artículos y equipo para la práctica del deporte,view
+ciiu_3230,ciiu_323,3230,Fabricación de artículos y equipo para la práctica del deporte,dian
+ciiu_324,ciiu_32,324,"Fabricación de juegos, juguetes y rompecabezas",view
+ciiu_3240,ciiu_324,3240,"Fabricación de juegos, juguetes y rompecabezas",dian
+ciiu_325,ciiu_32,325,"Fabricación de instrumentos, aparatos y materiales médicos y odontológicos (incluido mobiliario)",view
+ciiu_3250,ciiu_325,3250,"Fabricación de instrumentos, aparatos y materiales médicos y odontológicos (incluido mobiliario)",dian
+ciiu_329,ciiu_32,329,Otras industrias manufactureras n.c.p.,view
+ciiu_3290,ciiu_329,3290,Otras industrias manufactureras n.c.p.,dian
+ciiu_33,base.res_partner_industry_C,33,"Instalación, mantenimiento y reparación especializado de maquinaria y equipo",view
+ciiu_331,ciiu_33,331,Mantenimiento y reparación especializado de productos elaborados en metal y de maquinaria y equipo,view
+ciiu_3311,ciiu_331,3311,Mantenimiento y reparación especializado de productos elaborados en metal,dian
+ciiu_3312,ciiu_331,3312,Mantenimiento y reparación especializado de maquinaria y equipo,dian
+ciiu_3313,ciiu_331,3313,Mantenimiento y reparación especializado de equipo electrónico y óptico,dian
+ciiu_3314,ciiu_331,3314,Mantenimiento y reparación especializado de equipo eléctrico,dian
+ciiu_3315,ciiu_331,3315,"Mantenimiento y reparación especializado de equipo de transporte, excepto los vehículos automotores, motocicletas y bicicletas",dian
+ciiu_3319,ciiu_331,3319,Mantenimiento y reparación de otros tipos de equipos y sus componentes n.c.p.,dian
+ciiu_332,ciiu_33,332,Instalación especializada de maquinaria y equipo industrial ,view
+ciiu_3320,ciiu_332,3320,Instalación especializada de maquinaria y equipo industrial ,dian
+base.res_partner_industry_D,,SECCIÓN D,"SUMINISTRO DE ELECTRICIDAD, GAS, VAPOR Y AIRE ACONDICIONADO",view
+ciiu_35,base.res_partner_industry_D,35,"Suministro de electricidad, gas, vapor y aire acondicionado ",view
+ciiu_351,ciiu_35,351,"Generación, transmisión, distribución y comercialización de energía eléctrica",view
+ciiu_3511,ciiu_351,3511,Generación de energía eléctrica,dian
+ciiu_3512,ciiu_351,3512,Transmisión de energía eléctrica,dian
+ciiu_3513,ciiu_351,3513,Distribución de energía eléctrica,dian
+ciiu_3514,ciiu_351,3514,Comercialización de energía eléctrica,dian
+ciiu_352,ciiu_35,352,Producción de gas; distribución de combustibles gaseosos por tuberías,view
+ciiu_3520,ciiu_352,3520,Producción de gas; distribución de combustibles gaseosos por tuberías,dian
+ciiu_353,ciiu_35,353,Suministro de vapor y aire acondicionado,view
+ciiu_3530,ciiu_353,3530,Suministro de vapor y aire acondicionado,dian
+base.res_partner_industry_E,,SECCIÓN E,"DISTRIBUCIÓN DE AGUA; EVACUACIÓN Y TRATAMIENTO DE AGUAS RESIDUALES, GESTIÓN DE DESECHOS Y ACTIVIDADES DE SANEAMIENTO AMBIENTAL",view
+ciiu_36,base.res_partner_industry_E,36,"Captación, tratamiento y distribución de agua",view
+ciiu_360,ciiu_36,360,"Captación, tratamiento y distribución de agua",view
+ciiu_3600,ciiu_360,3600,"Captación, tratamiento y distribución de agua",dian
+ciiu_37,base.res_partner_industry_E,37,Evacuación y tratamiento de aguas residuales,view
+ciiu_370,ciiu_37,370,Evacuación y tratamiento de aguas residuales,view
+ciiu_3700,ciiu_370,3700,Evacuación y tratamiento de aguas residuales,dian
+ciiu_38,base.res_partner_industry_E,38,"Recolección, tratamiento y disposición de desechos, recuperación de materiales",view
+ciiu_381,ciiu_38,381,Recolección de desechos,view
+ciiu_3811,ciiu_381,3811,Recolección de desechos no peligrosos,dian
+ciiu_3812,ciiu_381,3812,Recolección de desechos peligrosos,dian
+ciiu_382,ciiu_38,382,Tratamiento y disposición de desechos,view
+ciiu_3821,ciiu_382,3821,Tratamiento y disposición de desechos no peligrosos,dian
+ciiu_3822,ciiu_382,3822,Tratamiento y disposición de desechos peligrosos,dian
+ciiu_383,ciiu_38,383,Recuperación de materiales,view
+ciiu_3830,ciiu_383,3830,Recuperación de materiales,dian
+ciiu_39,base.res_partner_industry_E,39,Actividades de saneamiento ambiental y otros servicios de gestión de desechos,view
+ciiu_390,ciiu_39,390,Actividades de saneamiento ambiental y otros servicios de gestión de desechos,view
+ciiu_3900,ciiu_390,3900,Actividades de saneamiento ambiental y otros servicios de gestión de desechos,dian
+base.res_partner_industry_F,,SECCIÓN F,CONSTRUCCIÓN,view
+ciiu_41,base.res_partner_industry_F,41,Construcción de edificios,view
+ciiu_411,ciiu_41,411,Construcción de edificios,view
+ciiu_4111,ciiu_411,4111,Construcción de edificios residenciales,dian
+ciiu_4112,ciiu_411,4112,Construcción de edificios no residenciales,dian
+ciiu_42,base.res_partner_industry_F,42,Obras de ingeniería civil,view
+ciiu_421,ciiu_42,421,Construcción de carreteras y vías de ferrocarril,view
+ciiu_4210,ciiu_421,4210,Construcción de carreteras y vías de ferrocarril,dian
+ciiu_422,ciiu_42,422,Construcción de proyectos de servicio público,view
+ciiu_4220,ciiu_422,4220,Construcción de proyectos de servicio público,dian
+ciiu_429,ciiu_42,429,Construcción de otras obras de ingeniería civil,view
+ciiu_4290,ciiu_429,4290,Construcción de otras obras de ingeniería civil,dian
+ciiu_43,base.res_partner_industry_F,43,Actividades especializadas para la construcción de edificios y obras de ingeniería civil,view
+ciiu_431,ciiu_43,431,Demolición y preparación del terreno,view
+ciiu_4311,ciiu_431,4311,Demolición,dian
+ciiu_4312,ciiu_431,4312,Preparación del terreno,dian
+ciiu_432,ciiu_43,432,"Instalaciones eléctricas, de fontanería y otras instalaciones especializadas",view
+ciiu_4321,ciiu_432,4321,Instalaciones eléctricas,dian
+ciiu_4322,ciiu_432,4322,"Instalaciones de fontanería, calefacción y aire acondicionado",dian
+ciiu_4329,ciiu_432,4329,Otras instalaciones especializadas,dian
+ciiu_433,ciiu_43,433,Terminación y acabado de edificios y obras de ingeniería civil,view
+ciiu_4330,ciiu_433,4330,Terminación y acabado de edificios y obras de ingeniería civil,dian
+ciiu_439,ciiu_43,439,Otras actividades especializadas para la construcción de edificios y obras de ingeniería civil,view
+ciiu_4390,ciiu_439,4390,Otras actividades especializadas para la construcción de edificios y obras de ingeniería civil,dian
+base.res_partner_industry_G,,SECCIÓN G,COMERCIO AL POR MAYOR Y AL POR MENOR; REPARACIÓN DE VEHÍCULOS AUTOMOTORES Y MOTOCICLETAS,view
+ciiu_45,base.res_partner_industry_G,45,"Comercio, mantenimiento y reparación de vehículos automotores y motocicletas, sus partes, piezas y accesorios",view
+ciiu_451,ciiu_45,451,Comercio de vehículos automotores,view
+ciiu_4511,ciiu_451,4511,Comercio de vehículos automotores nuevos,dian
+ciiu_4512,ciiu_451,4512,Comercio de vehículos automotores usados,dian
+ciiu_452,ciiu_45,452,Mantenimiento y reparación de vehículos automotores,view
+ciiu_4520,ciiu_452,4520,Mantenimiento y reparación de vehículos automotores,dian
+ciiu_453,ciiu_45,453,"Comercio de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",view
+ciiu_4530,ciiu_453,4530,"Comercio de partes, piezas (autopartes) y accesorios (lujos) para vehículos automotores",dian
+ciiu_454,ciiu_45,454,"Comercio, mantenimiento y reparación de motocicletas y de sus partes, piezas y accesorios",view
+ciiu_4541,ciiu_454,4541,"Comercio de motocicletas y de sus partes, piezas y accesorios",dian
+ciiu_4542,ciiu_454,4542,Mantenimiento y reparación de motocicletas y de sus partes y piezas,dian
+ciiu_46,base.res_partner_industry_G,46,"Comercio al por mayor y en comisión o por contrata, excepto el comercio de vehículos automotores y motocicletas",view
+ciiu_461,ciiu_46,461,Comercio al por mayor a cambio de una retribución o por contrata,view
+ciiu_4610,ciiu_461,4610,Comercio al por mayor a cambio de una retribución o por contrata,dian
+ciiu_462,ciiu_46,462,Comercio al por mayor de materias primas agropecuarias; animales vivos,view
+ciiu_4620,ciiu_462,4620,Comercio al por mayor de materias primas agropecuarias; animales vivos,dian
+ciiu_463,ciiu_46,463,"Comercio al por mayor de alimentos, bebidas y tabaco",view
+ciiu_4631,ciiu_463,4631,Comercio al por mayor de productos alimenticios,dian
+ciiu_4632,ciiu_463,4632,Comercio al por mayor de bebidas y tabaco,dian
+ciiu_464,ciiu_46,464,Comercio al por mayor de artículos y enseres domésticos (incluidas prendas de vestir),view
+ciiu_4641,ciiu_464,4641,"Comercio al por mayor de productos textiles, productos confeccionados para uso doméstico",dian
+ciiu_4642,ciiu_464,4642,Comercio al por mayor de prendas de vestir,dian
+ciiu_4643,ciiu_464,4643,Comercio al por mayor de calzado,dian
+ciiu_4644,ciiu_464,4644,Comercio al por mayor de aparatos y equipo de uso doméstico,dian
+ciiu_4645,ciiu_464,4645,"Comercio al por mayor de productos farmacéuticos, medicinales, cosméticos y de tocador",dian
+ciiu_4649,ciiu_464,4649,Comercio al por mayor de otros utensilios domésticos n.c.p.,dian
+ciiu_465,ciiu_46,465,Comercio al por mayor de maquinaria y equipo ,view
+ciiu_4651,ciiu_465,4651,"Comercio al por mayor de computadores, equipo periférico y programas de informática",dian
+ciiu_4652,ciiu_465,4652,"Comercio al por mayor de equipo, partes y piezas electrónicos y de telecomunicaciones",dian
+ciiu_4653,ciiu_465,4653,Comercio al por mayor de maquinaria y equipo agropecuarios,dian
+ciiu_4659,ciiu_465,4659,Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.,dian
+ciiu_466,ciiu_46,466,Comercio al por mayor especializado de otros productos,view
+ciiu_4661,ciiu_466,4661,"Comercio al por mayor de combustibles sólidos, líquidos, gaseosos y productos conexos",dian
+ciiu_4662,ciiu_466,4662,Comercio al por mayor de metales y productos metalíferos,dian
+ciiu_4663,ciiu_466,4663,"Comercio al por mayor de materiales de construcción, artículos de ferretería, pinturas, productos de vidrio, equipo y materiales de fontanería y calefacción",dian
+ciiu_4664,ciiu_466,4664,"Comercio al por mayor de productos químicos básicos, cauchos y plásticos en formas primarias y productos químicos de uso agropecuario",dian
+ciiu_4665,ciiu_466,4665,"Comercio al por mayor de desperdicios, desechos y chatarra",dian
+ciiu_4669,ciiu_466,4669,Comercio al por mayor de otros productos n.c.p.,dian
+ciiu_469,ciiu_46,469,Comercio al por mayor no especializado,view
+ciiu_4690,ciiu_469,4690,Comercio al por mayor no especializado,dian
+ciiu_47,base.res_partner_industry_G,47,"Comercio al por menor (incluso el comercio al por menor de combustibles), excepto el de vehículos automotores y motocicletas",view
+ciiu_471,ciiu_47,471,Comercio al por menor en establecimientos no especializados,view
+ciiu_4711,ciiu_471,4711,"Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco",dian
+ciiu_4719,ciiu_471,4719,"Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (víveres en general), bebidas y tabaco",dian
+ciiu_472,ciiu_47,472,"Comercio al por menor de alimentos (víveres en general), bebidas y tabaco, en establecimientos especializados",view
+ciiu_4721,ciiu_472,4721,Comercio al por menor de productos agrícolas para el consumo en establecimientos especializados,dian
+ciiu_4722,ciiu_472,4722,"Comercio al por menor de leche, productos lácteos y huevos, en establecimientos especializados",dian
+ciiu_4723,ciiu_472,4723,"Comercio al por menor de carnes (incluye aves de corral), productos cárnicos, pescados y productos de mar, en establecimientos especializados",dian
+ciiu_4724,ciiu_472,4724,"Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados",dian
+ciiu_4729,ciiu_472,4729,"Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados",dian
+ciiu_473,ciiu_47,473,"Comercio al por menor de combustible, lubricantes, aditivos y productos de limpieza para automotores, en establecimientos especializados",view
+ciiu_4731,ciiu_473,4731,Comercio al por menor de combustible para automotores,dian
+ciiu_4732,ciiu_473,4732,"Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para vehículos automotores",dian
+ciiu_474,ciiu_47,474,"Comercio al por menor de equipos de informática y de comunicaciones, en establecimientos especializados",view
+ciiu_4741,ciiu_474,4741,"Comercio al por menor de computadores, equipos periféricos, programas de informática y equipos de telecomunicaciones en establecimientos especializados",dian
+ciiu_4742,ciiu_474,4742,"Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados",dian
+ciiu_475,ciiu_47,475,Comercio al por menor de otros enseres domésticos en establecimientos especializados,view
+ciiu_4751,ciiu_475,4751,Comercio al por menor de productos textiles en establecimientos especializados,dian
+ciiu_4752,ciiu_475,4752,"Comercio al por menor de artículos de ferretería, pinturas y productos de vidrio en establecimientos especializados",dian
+ciiu_4753,ciiu_475,4753,"Comercio al por menor de tapices, alfombras y cubrimientos para paredes y pisos en establecimientos especializados",dian
+ciiu_4754,ciiu_475,4754,"Comercio al por menor de electrodomésticos y gasodomésticos de uso doméstico, muebles y equipos de iluminación",dian
+ciiu_4755,ciiu_475,4755,Comercio al por menor de artículos y utensilios de uso doméstico,dian
+ciiu_4759,ciiu_475,4759,Comercio al por menor de otros artículos domésticos en establecimientos especializados,dian
+ciiu_476,ciiu_47,476,"Comercio al por menor de artículos culturales y de entretenimiento, en establecimientos especializados",view
+ciiu_4761,ciiu_476,4761,"Comercio al por menor de libros, periódicos, materiales y artículos de papelería y escritorio, en establecimientos especializados",dian
+ciiu_4762,ciiu_476,4762,"Comercio al por menor de artículos deportivos, en establecimientos especializados ",dian
+ciiu_4769,ciiu_476,4769,Comercio al por menor de otros artículos culturales y de entretenimiento n.c.p. en establecimientos especializados,dian
+ciiu_477,ciiu_47,477,Comercio al por menor de otros productos en establecimientos especializados,view
+ciiu_4771,ciiu_477,4771,Comercio al por menor de prendas de vestir y sus accesorios (incluye artículos de piel) en establecimientos especializados,dian
+ciiu_4772,ciiu_477,4772,Comercio al por menor de todo tipo de calzado y artículos de cuero y sucedáneos del cuero en establecimientos especializados.,dian
+ciiu_4773,ciiu_477,4773,"Comercio al por menor de productos farmacéuticos y medicinales, cosméticos y artículos de tocador en establecimientos especializados",dian
+ciiu_4774,ciiu_477,4774,Comercio al por menor de otros productos nuevos en establecimientos especializados,dian
+ciiu_4775,ciiu_477,4775,Comercio al por menor de artículos de segunda mano,dian
+ciiu_478,ciiu_47,478,Comercio al por menor en puestos de venta móviles,view
+ciiu_4781,ciiu_478,4781,"Comercio al por menor de alimentos, bebidas y tabaco, en puestos de venta móviles",dian
+ciiu_4782,ciiu_478,4782,"Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta móviles",dian
+ciiu_4789,ciiu_478,4789,Comercio al por menor de otros productos en puestos de venta móviles,dian
+ciiu_479,ciiu_47,479,"Comercio al por menor no realizado en establecimientos, puestos de venta o mercados",view
+ciiu_4791,ciiu_479,4791,Comercio al por menor realizado a través de Internet,dian
+ciiu_4792,ciiu_479,4792,Comercio al por menor realizado a través de casas de venta o por correo,dian
+ciiu_4799,ciiu_479,4799,"Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados.",dian
+base.res_partner_industry_H,,SECCIÓN H,TRANSPORTE Y ALMACENAMIENTO,view
+ciiu_49,base.res_partner_industry_H,49,Transporte terrestre; transporte por tuberías,view
+ciiu_491,ciiu_49,491,Transporte férreo,view
+ciiu_4911,ciiu_491,4911,Transporte férreo de pasajeros,dian
+ciiu_4912,ciiu_491,4912,Transporte férreo de carga ,dian
+ciiu_492,ciiu_49,492,Transporte terrestre público automotor,view
+ciiu_4921,ciiu_492,4921,Transporte de pasajeros,dian
+ciiu_4922,ciiu_492,4922,Transporte mixto,dian
+ciiu_4923,ciiu_492,4923,Transporte de carga por carretera,dian
+ciiu_493,ciiu_49,493,Transporte por tuberías,view
+ciiu_4930,ciiu_493,4930,Transporte por tuberías,dian
+ciiu_50,base.res_partner_industry_H,50,Transporte acuático,view
+ciiu_501,ciiu_50,501,Transporte marítimo y de cabotaje,view
+ciiu_5011,ciiu_501,5011,Transporte de pasajeros marítimo y de cabotaje ,dian
+ciiu_5012,ciiu_501,5012,Transporte de carga marítimo y de cabotaje ,dian
+ciiu_502,ciiu_50,502,Transporte fluvial,view
+ciiu_5021,ciiu_502,5021,Transporte fluvial de pasajeros,dian
+ciiu_5022,ciiu_502,5022,Transporte fluvial de carga,dian
+ciiu_51,base.res_partner_industry_H,51,Transporte aéreo,view
+ciiu_511,ciiu_51,511,Transporte aéreo de pasajeros ,view
+ciiu_5111,ciiu_511,5111,Transporte aéreo nacional de pasajeros ,dian
+ciiu_5112,ciiu_511,5112,Transporte aéreo internacional de pasajeros ,dian
+ciiu_512,ciiu_51,512,Transporte aéreo de carga ,view
+ciiu_5121,ciiu_512,5121,Transporte aéreo nacional de carga ,dian
+ciiu_5122,ciiu_512,5122,Transporte aéreo internacional de carga ,dian
+ciiu_52,base.res_partner_industry_H,52,Almacenamiento y actividades complementarias al transporte,view
+ciiu_521,ciiu_52,521,Almacenamiento y depósito,view
+ciiu_5210,ciiu_521,5210,Almacenamiento y depósito,dian
+ciiu_522,ciiu_52,522,"Actividades de las estaciones, vías y servicios complementarios para el transporte",view
+ciiu_5221,ciiu_522,5221,"Actividades de estaciones, vías y servicios complementarios para el transporte terrestre",dian
+ciiu_5222,ciiu_522,5222,Actividades de puertos y servicios complementarios para el transporte acuático,dian
+ciiu_5223,ciiu_522,5223,"Actividades de aeropuertos, servicios de navegación aérea y demás actividades conexas al transporte aéreo",dian
+ciiu_5224,ciiu_522,5224,Manipulación de carga,dian
+ciiu_5229,ciiu_522,5229,Otras actividades complementarias al transporte,dian
+ciiu_53,base.res_partner_industry_H,53,Correo y servicios de mensajería,view
+ciiu_531,ciiu_53,531,Actividades postales nacionales,view
+ciiu_5310,ciiu_531,5310,Actividades postales nacionales,dian
+ciiu_532,ciiu_53,532,Actividades de mensajería,view
+ciiu_5320,ciiu_532,5320,Actividades de mensajería,dian
+base.res_partner_industry_I,,SECCIÓN I,ALOJAMIENTO Y SERVICIOS DE COMIDA,view
+ciiu_55,base.res_partner_industry_I,55,Alojamiento,view
+ciiu_551,ciiu_55,551,Actividades de alojamiento de estancias cortas,view
+ciiu_5511,ciiu_551,5511,Alojamiento en hoteles ,dian
+ciiu_5512,ciiu_551,5512,Alojamiento en apartahoteles,dian
+ciiu_5513,ciiu_551,5513,Alojamiento en centros vacacionales ,dian
+ciiu_5514,ciiu_551,5514,Alojamiento rural,dian
+ciiu_5519,ciiu_551,5519,Otros tipos de alojamientos para visitantes,dian
+ciiu_552,ciiu_55,552,Actividades de zonas de camping y parques para vehículos recreacionales,view
+ciiu_5520,ciiu_552,5520,Actividades de zonas de camping y parques para vehículos recreacionales,dian
+ciiu_553,ciiu_55,553,Servicio por horas ,view
+ciiu_5530,ciiu_553,5530,Servicio por horas ,dian
+ciiu_559,ciiu_55,559,Otros tipos de alojamiento n.c.p.,view
+ciiu_5590,ciiu_559,5590,Otros tipos de alojamiento n.c.p.,dian
+ciiu_56,base.res_partner_industry_I,56,Actividades de servicios de comidas y bebidas,view
+ciiu_561,ciiu_56,561,"Actividades de restaurantes, cafeterías y servicio móvil de comidas",view
+ciiu_5611,ciiu_561,5611,Expendio a la mesa de comidas preparadas,dian
+ciiu_5612,ciiu_561,5612,Expendio por autoservicio de comidas preparadas,dian
+ciiu_5613,ciiu_561,5613,Expendio de comidas preparadas en cafeterías,dian
+ciiu_5619,ciiu_561,5619,Otros tipos de expendio de comidas preparadas n.c.p.,dian
+ciiu_562,ciiu_56,562,Actividades de catering para eventos y otros servicios de comidas,view
+ciiu_5621,ciiu_562,5621,Catering para eventos,dian
+ciiu_5629,ciiu_562,5629,Actividades de otros servicios de comidas,dian
+ciiu_563,ciiu_56,563,Expendio de bebidas alcohólicas para el consumo dentro del establecimiento,view
+ciiu_5630,ciiu_563,5630,Expendio de bebidas alcohólicas para el consumo dentro del establecimiento,dian
+base.res_partner_industry_J,,SECCIÓN J,INFORMACIÓN Y COMUNICACIONES,view
+ciiu_58,base.res_partner_industry_J,58,Actividades de edición,view
+ciiu_581,ciiu_58,581,"Edición de libros, publicaciones periódicas y otras actividades de edición",view
+ciiu_5811,ciiu_581,5811,Edición de libros,dian
+ciiu_5812,ciiu_581,5812,Edición de directorios y listas de correo,dian
+ciiu_5813,ciiu_581,5813,"Edición de periódicos, revistas y otras publicaciones periódicas",dian
+ciiu_5819,ciiu_581,5819,Otros trabajos de edición,dian
+ciiu_582,ciiu_58,582,Edición de programas de informática (software),view
+ciiu_5820,ciiu_582,5820,Edición de programas de informática (software),dian
+ciiu_59,base.res_partner_industry_J,59,"Actividades cinematográficas, de video y producción de programas de televisión, grabación de sonido y edición de música",view
+ciiu_591,ciiu_59,591,"Actividades de producción de películas cinematográficas, video y producción de programas, anuncios y comerciales de televisión",view
+ciiu_5911,ciiu_591,5911,"Actividades de producción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",dian
+ciiu_5912,ciiu_591,5912,"Actividades de posproducción de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",dian
+ciiu_5913,ciiu_591,5913,"Actividades de distribución de películas cinematográficas, videos, programas, anuncios y comerciales de televisión",dian
+ciiu_5914,ciiu_591,5914,Actividades de exhibición de películas cinematográficas y videos,dian
+ciiu_592,ciiu_59,592,Actividades de grabación de sonido y edición de música,view
+ciiu_5920,ciiu_592,5920,Actividades de grabación de sonido y edición de música,dian
+ciiu_60,base.res_partner_industry_J,60,"Actividades de programación, transmisión y/o difusión",view
+ciiu_601,ciiu_60,601,Actividades de programación y transmisión en el servicio de radiodifusión sonora,view
+ciiu_6010,ciiu_601,6010,Actividades de programación y transmisión en el servicio de radiodifusión sonora,dian
+ciiu_602,ciiu_60,602,Actividades de programación y transmisión de televisión,view
+ciiu_6020,ciiu_602,6020,Actividades de programación y transmisión de televisión,dian
+ciiu_61,base.res_partner_industry_J,61,Telecomunicaciones,view
+ciiu_611,ciiu_61,611,Actividades de telecomunicaciones alámbricas,view
+ciiu_6110,ciiu_611,6110,Actividades de telecomunicaciones alámbricas,dian
+ciiu_612,ciiu_61,612,Actividades de telecomunicaciones inalámbricas,view
+ciiu_6120,ciiu_612,6120,Actividades de telecomunicaciones inalámbricas,dian
+ciiu_613,ciiu_61,613,Actividades de telecomunicación satelital,view
+ciiu_6130,ciiu_613,6130,Actividades de telecomunicación satelital,dian
+ciiu_619,ciiu_61,619,Otras actividades de telecomunicaciones,view
+ciiu_6190,ciiu_619,6190,Otras actividades de telecomunicaciones,dian
+ciiu_62,base.res_partner_industry_J,62,"Desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas), consultoría informática y actividades relacionadas",view
+ciiu_620,ciiu_62,620,"Desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas), consultoría informática y actividades relacionadas",view
+ciiu_6201,ciiu_620,6201,"Actividades de desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas)",dian
+ciiu_6202,ciiu_620,6202,Actividades de consultoría informática y actividades de administración de instalaciones informáticas,dian
+ciiu_6209,ciiu_620,6209,Otras actividades de tecnologías de información y actividades de servicios informáticos,dian
+ciiu_63,base.res_partner_industry_J,63,Actividades de servicios de información,view
+ciiu_631,ciiu_63,631,"Procesamiento de datos, alojamiento (hosting) y actividades relacionadas; portales web",view
+ciiu_6311,ciiu_631,6311,"Procesamiento de datos, alojamiento (hosting) y actividades relacionadas",dian
+ciiu_6312,ciiu_631,6312,Portales web,dian
+ciiu_639,ciiu_63,639,Otras actividades de servicio de información,view
+ciiu_6391,ciiu_639,6391,Actividades de agencias de noticias,dian
+ciiu_6399,ciiu_639,6399,Otras actividades de servicio de información n.c.p.,dian
+base.res_partner_industry_K,,SECCIÓN K,ACTIVIDADES FINANCIERAS Y DE SEGUROS,view
+ciiu_64,base.res_partner_industry_K,64,"Actividades de servicios financieros, excepto las de seguros y de pensiones",view
+ciiu_641,ciiu_64,641,Intermediación monetaria,view
+ciiu_6411,ciiu_641,6411,Banco Central,dian
+ciiu_6412,ciiu_641,6412,Bancos comerciales,dian
+ciiu_642,ciiu_64,642,Otros tipos de intermediación monetaria,view
+ciiu_6421,ciiu_642,6421,Actividades de las corporaciones financieras,dian
+ciiu_6422,ciiu_642,6422,Actividades de las compañías de financiamiento,dian
+ciiu_6423,ciiu_642,6423,Banca de segundo piso,dian
+ciiu_6424,ciiu_642,6424,Actividades de las cooperativas financieras,dian
+ciiu_643,ciiu_64,643,"Fideicomisos, fondos (incluye fondos de cesantías) y entidades financieras similares",view
+ciiu_6431,ciiu_643,6431,"Fideicomisos, fondos y entidades financieras similares",dian
+ciiu_6432,ciiu_643,6432,Fondos de cesantías,dian
+ciiu_649,ciiu_64,649,"Otras actividades de servicio financiero, excepto las de seguros y pensiones",view
+ciiu_6491,ciiu_649,6491,Leasing financiero (arrendamiento financiero),dian
+ciiu_6492,ciiu_649,6492,Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario,dian
+ciiu_6493,ciiu_649,6493,Actividades de compra de cartera o factoring,dian
+ciiu_6494,ciiu_649,6494,Otras actividades de distribución de fondos,dian
+ciiu_6495,ciiu_649,6495,Instituciones especiales oficiales,dian
+ciiu_6496,ciiu_649,6496,Capitalización,dian
+ciiu_6499,ciiu_649,6499,"Otras actividades de servicio financiero, excepto las de seguros y pensiones n.c.p.",dian
+ciiu_65,base.res_partner_industry_K,65,"Seguros (incluso el reaseguro), seguros sociales y fondos de pensiones, excepto la seguridad social",view
+ciiu_651,ciiu_65,651,Seguros y capitalización,view
+ciiu_6511,ciiu_651,6511,Seguros generales ,dian
+ciiu_6512,ciiu_651,6512,Seguros de vida,dian
+ciiu_6513,ciiu_651,6513,Reaseguros,dian
+ciiu_6515,ciiu_651,6515,Seguros de salud,dian
+ciiu_652,ciiu_65,652,Servicios de seguros sociales de salud y riesgos profesionales,view
+ciiu_6521,ciiu_652,6521,Servicios de seguros sociales de salud,dian
+ciiu_6522,ciiu_652,6522,Servicios de seguros sociales de riesgos laborales,dian
+ciiu_6523,ciiu_652,6523,Servicios de seguros sociales en riesgos de familia,dian
+ciiu_653,ciiu_65,653,Servicios de seguros sociales de pensiones,view
+ciiu_6531,ciiu_653,6531,Régimen de prima media con prestación definida (RPM),dian
+ciiu_6532,ciiu_653,6532,Régimen de ahorro con solidaridad (RAIS).,dian
+ciiu_66,base.res_partner_industry_K,66,Actividades auxiliares de las actividades de servicios financieros,view
+ciiu_661,ciiu_66,661,"Actividades auxiliares de las actividades de servicios financieros, excepto las de seguros y pensiones",view
+ciiu_6611,ciiu_661,6611,Administración de mercados financieros,dian
+ciiu_6612,ciiu_661,6612,Corretaje de valores y de contratos de productos básicos,dian
+ciiu_6613,ciiu_661,6613,Otras actividades relacionadas con el mercado de valores,dian
+ciiu_6614,ciiu_661,6614,Actividades de las sociedades de intermediación cambiaria y de servicios financieros especiales,dian
+ciiu_6615,ciiu_661,6615,Actividades de los profesionales de compra y venta de divisas,dian
+ciiu_6619,ciiu_661,6619,Otras actividades auxiliares de las actividades de servicios financieros n.c.p.,dian
+ciiu_662,ciiu_66,662,Actividades de servicios auxiliares de los servicios de seguros y pensiones,view
+ciiu_6621,ciiu_662,6621,Actividades de agentes y corredores de seguros,dian
+ciiu_6629,ciiu_662,6629,"Evaluación de riesgos y daños, y otras actividades de servicios auxiliares",dian
+ciiu_663,ciiu_66,663,Actividades de administración de fondos,view
+ciiu_6630,ciiu_663,6630,Actividades de administración de fondos,dian
+base.res_partner_industry_L,,SECCIÓN L,ACTIVIDADES INMOBILIARIAS,view
+ciiu_68,base.res_partner_industry_L,68,Actividades inmobiliarias,view
+ciiu_681,ciiu_68,681,Actividades inmobiliarias realizadas con bienes propios o arrendados,view
+ciiu_6810,ciiu_681,6810,Actividades inmobiliarias realizadas con bienes propios o arrendados,dian
+ciiu_682,ciiu_68,682,Actividades inmobiliarias realizadas a cambio de una retribución o por contrata,view
+ciiu_6820,ciiu_682,6820,Actividades inmobiliarias realizadas a cambio de una retribución o por contrata,dian
+base.res_partner_industry_M,,SECCIÓN M,"ACTIVIDADES PROFESIONALES, CIENTÍFICAS Y TÉCNICAS",view
+ciiu_69,base.res_partner_industry_M,69,Actividades jurídicas y de contabilidad,view
+ciiu_691,ciiu_69,691,Actividades jurídicas,view
+ciiu_6910,ciiu_691,6910,Actividades jurídicas,dian
+ciiu_692,ciiu_69,692,"Actividades de contabilidad, teneduría de libros, auditoría financiera y asesoría tributaria",view
+ciiu_6920,ciiu_692,6920,"Actividades de contabilidad, teneduría de libros, auditoría financiera y asesoría tributaria",dian
+ciiu_70,base.res_partner_industry_M,70,Actividades de administración empresarial; actividades de consultoría de gestión,view
+ciiu_701,ciiu_70,701,Actividades de administración empresarial,view
+ciiu_7010,ciiu_701,7010,Actividades de administración empresarial,dian
+ciiu_702,ciiu_70,702,Actividades de consultoría de gestión,view
+ciiu_7020,ciiu_702,7020,Actividades de consultoría de gestión,dian
+ciiu_71,base.res_partner_industry_M,71,Actividades de arquitectura e ingeniería; ensayos y análisis técnicos,view
+ciiu_711,ciiu_71,711,Actividades de arquitectura e ingeniería y otras actividades conexas de consultoría técnica,view
+ciiu_7111,ciiu_711,7111,Actividades de arquitectura,dian
+ciiu_7112,ciiu_711,7112,Actividades de ingeniería y otras actividades conexas de consultoría técnica,dian
+ciiu_712,ciiu_71,712,Ensayos y análisis técnicos,view
+ciiu_7120,ciiu_712,7120,Ensayos y análisis técnicos,dian
+ciiu_72,base.res_partner_industry_M,72,Investigación científica y desarrollo,view
+ciiu_721,ciiu_72,721,Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería ,view
+ciiu_7210,ciiu_721,7210,Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingeniería ,dian
+ciiu_722,ciiu_72,722,Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades,view
+ciiu_7220,ciiu_722,7220,Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades,dian
+ciiu_73,base.res_partner_industry_M,73,Publicidad y estudios de mercado,view
+ciiu_731,ciiu_73,731,Publicidad,view
+ciiu_7310,ciiu_731,7310,Publicidad,dian
+ciiu_732,ciiu_73,732,Estudios de mercado y realización de encuestas de opinión pública,view
+ciiu_7320,ciiu_732,7320,Estudios de mercado y realización de encuestas de opinión pública,dian
+ciiu_74,base.res_partner_industry_M,74,"Otras actividades profesionales, científicas y técnicas",view
+ciiu_741,ciiu_74,741,Actividades especializadas de diseño ,view
+ciiu_7410,ciiu_741,7410,Actividades especializadas de diseño ,dian
+ciiu_742,ciiu_74,742,Actividades de fotografía,view
+ciiu_7420,ciiu_742,7420,Actividades de fotografía,dian
+ciiu_749,ciiu_74,749,"Otras actividades profesionales, científicas y técnicas n.c.p.",view
+ciiu_7490,ciiu_749,7490,"Otras actividades profesionales, científicas y técnicas n.c.p.",dian
+ciiu_75,base.res_partner_industry_M,75,Actividades veterinarias,view
+ciiu_750,ciiu_75,750,Actividades veterinarias,view
+ciiu_7500,ciiu_750,7500,Actividades veterinarias,dian
+base.res_partner_industry_N,,SECCIÓN N,ACTIVIDADES DE SERVICIOS ADMINISTRATIVOS Y DE APOYO,view
+ciiu_77,base.res_partner_industry_N,77,Actividades de alquiler y arrendamiento,view
+ciiu_771,ciiu_77,771,Alquiler y arrendamiento de vehículos automotores,view
+ciiu_7710,ciiu_771,7710,Alquiler y arrendamiento de vehículos automotores,dian
+ciiu_772,ciiu_77,772,Alquiler y arrendamiento de efectos personales y enseres domésticos,view
+ciiu_7721,ciiu_772,7721,Alquiler y arrendamiento de equipo recreativo y deportivo,dian
+ciiu_7722,ciiu_772,7722,Alquiler de videos y discos ,dian
+ciiu_7729,ciiu_772,7729,Alquiler y arrendamiento de otros efectos personales y enseres domésticos n.c.p.,dian
+ciiu_773,ciiu_77,773,"Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p.",view
+ciiu_7730,ciiu_773,7730,"Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p.",dian
+ciiu_774,ciiu_77,774,"Arrendamiento de propiedad intelectual y productos similares, excepto obras protegidas por derechos de autor",view
+ciiu_7740,ciiu_774,7740,"Arrendamiento de propiedad intelectual y productos similares, excepto obras protegidas por derechos de autor",dian
+ciiu_78,base.res_partner_industry_N,78,Actividades de empleo,view
+ciiu_781,ciiu_78,781,Actividades de agencias de gestión y colocación de empleo,view
+ciiu_7810,ciiu_781,7810,Actividades de agencias de gestión y colocación de empleo,dian
+ciiu_782,ciiu_78,782,Actividades de empresas de servicios temporales,view
+ciiu_7820,ciiu_782,7820,Actividades de empresas de servicios temporales,dian
+ciiu_783,ciiu_78,783,Otras actividades de provisión de talento humano,view
+ciiu_7830,ciiu_783,7830,Otras actividades de provisión de talento humano,dian
+ciiu_79,base.res_partner_industry_N,79,"Actividades de las agencias de viajes, operadores turísticos, servicios de reserva y actividades relacionadas",view
+ciiu_791,ciiu_79,791,Actividades de las agencias de viajes y operadores turísticos,view
+ciiu_7911,ciiu_791,7911,Actividades de las agencias de viaje,dian
+ciiu_7912,ciiu_791,7912,Actividades de operadores turísticos,dian
+ciiu_799,ciiu_79,799,Otros servicios de reserva y actividades relacionadas,view
+ciiu_7990,ciiu_799,7990,Otros servicios de reserva y actividades relacionadas,dian
+ciiu_80,base.res_partner_industry_N,80,Actividades de seguridad e investigación privada,view
+ciiu_801,ciiu_80,801,Actividades de seguridad privada,view
+ciiu_8010,ciiu_801,8010,Actividades de seguridad privada,dian
+ciiu_802,ciiu_80,802,Actividades de servicios de sistemas de seguridad,view
+ciiu_8020,ciiu_802,8020,Actividades de servicios de sistemas de seguridad,dian
+ciiu_803,ciiu_80,803,Actividades de detectives e investigadores privados,view
+ciiu_8030,ciiu_803,8030,Actividades de detectives e investigadores privados,dian
+ciiu_81,base.res_partner_industry_N,81,"Actividades de servicios a edificios y paisajismo (jardines, zonas verdes)",view
+ciiu_811,ciiu_81,811,Actividades combinadas de apoyo a instalaciones,view
+ciiu_8110,ciiu_811,8110,Actividades combinadas de apoyo a instalaciones,dian
+ciiu_812,ciiu_81,812,Actividades de limpieza,view
+ciiu_8121,ciiu_812,8121,Limpieza general interior de edificios,dian
+ciiu_8129,ciiu_812,8129,Otras actividades de limpieza de edificios e instalaciones industriales,dian
+ciiu_813,ciiu_81,813,Actividades de paisajismo y servicios de mantenimiento conexos,view
+ciiu_8130,ciiu_813,8130,Actividades de paisajismo y servicios de mantenimiento conexos,dian
+ciiu_82,base.res_partner_industry_N,82,Actividades administrativas y de apoyo de oficina y otras actividades de apoyo a las empresas,view
+ciiu_821,ciiu_82,821,Actividades administrativas y de apoyo de oficina,view
+ciiu_8211,ciiu_821,8211,Actividades combinadas de servicios administrativos de oficina,dian
+ciiu_8219,ciiu_821,8219,"Fotocopiado, preparación de documentos y otras actividades especializadas de apoyo a oficina",dian
+ciiu_822,ciiu_82,822,Actividades de centros de llamadas (Call center),view
+ciiu_8220,ciiu_822,8220,Actividades de centros de llamadas (Call center),dian
+ciiu_823,ciiu_82,823,Organización de convenciones y eventos comerciales,view
+ciiu_8230,ciiu_823,8230,Organización de convenciones y eventos comerciales,dian
+ciiu_829,ciiu_82,829,Actividades de servicios de apoyo a las empresas n.c.p.,view
+ciiu_8291,ciiu_829,8291,Actividades de agencias de cobranza y oficinas de calificación crediticia,dian
+ciiu_8292,ciiu_829,8292,Actividades de envase y empaque,dian
+ciiu_8299,ciiu_829,8299,Otras actividades de servicio de apoyo a las empresas n.c.p.,dian
+base.res_partner_industry_O,,SECCIÓN O,ADMINISTRACIÓN PÚBLICA Y DEFENSA; PLANES DE SEGURIDAD SOCIAL DE AFILIACIÓN OBLIGATORIA,view
+ciiu_84,base.res_partner_industry_O,84,Administración pública y defensa; planes de seguridad social de afiliación obligatoria,view
+ciiu_841,ciiu_84,841,Administración del Estado y aplicación de la política económica y social de la comunidad,view
+ciiu_8411,ciiu_841,8411,Actividades legislativas de la administración pública,dian
+ciiu_8412,ciiu_841,8412,Actividades ejecutivas de la administración pública,dian
+ciiu_8413,ciiu_841,8413,"Regulación de las actividades de organismos que prestan servicios de salud, educativos, culturales y otros servicios sociales, excepto servicios de seguridad social ",dian
+ciiu_8414,ciiu_841,8414,Actividades reguladoras y facilitadoras de la actividad económica,dian
+ciiu_8415,ciiu_841,8415,Actividades de los otros órganos de control y otras instituciones,dian
+ciiu_842,ciiu_84,842,Prestación de servicios a la comunidad en general,view
+ciiu_8421,ciiu_842,8421,Relaciones exteriores ,dian
+ciiu_8422,ciiu_842,8422,Actividades de defensa,dian
+ciiu_8423,ciiu_842,8423,Orden público y actividades de seguridad,dian
+ciiu_8424,ciiu_842,8424,Administración de justicia,dian
+ciiu_843,ciiu_84,843,Actividades de planes de seguridad social de afiliación obligatoria,view
+ciiu_8430,ciiu_843,8430,Actividades de planes de seguridad social de afiliación obligatoria,dian
+base.res_partner_industry_P,,SECCIÓN P,EDUCACIÓN,view
+ciiu_85,base.res_partner_industry_P,85,Educación,view
+ciiu_851,ciiu_85,851,"Educación de la primera infancia, preescolar y básica primaria",view
+ciiu_8511,ciiu_851,8511,Educación de la primera infancia,dian
+ciiu_8512,ciiu_851,8512,Educación preescolar,dian
+ciiu_8513,ciiu_851,8513,Educación básica primaria,dian
+ciiu_852,ciiu_85,852,Educación secundaria y de formación laboral,view
+ciiu_8521,ciiu_852,8521,Educación básica secundaria ,dian
+ciiu_8522,ciiu_852,8522,Educación media académica,dian
+ciiu_8523,ciiu_852,8523,Educación media técnica ,dian
+ciiu_853,ciiu_85,853,Establecimientos que combinan diferentes niveles de educación ,view
+ciiu_8530,ciiu_853,8530,Establecimientos que combinan diferentes niveles de educación ,dian
+ciiu_854,ciiu_85,854,Educación superior,view
+ciiu_8541,ciiu_854,8541,Educación técnica profesional,dian
+ciiu_8542,ciiu_854,8542,Educación tecnológica,dian
+ciiu_8543,ciiu_854,8543,Educación de instituciones universitarias o de escuelas tecnológicas,dian
+ciiu_8544,ciiu_854,8544,Educación de universidades,dian
+ciiu_855,ciiu_85,855,Otros tipos de educación,view
+ciiu_8551,ciiu_855,8551,Formación para el trabajo,dian
+ciiu_8552,ciiu_855,8552,Enseñanza deportiva y recreativa,dian
+ciiu_8553,ciiu_855,8553,Enseñanza cultural,dian
+ciiu_8559,ciiu_855,8559,Otros tipos de educación n.c.p.,dian
+ciiu_856,ciiu_85,856,Actividades de apoyo a la educación,view
+ciiu_8560,ciiu_856,8560,Actividades de apoyo a la educación,dian
+base.res_partner_industry_Q,,SECCIÓN Q,ACTIVIDADES DE ATENCIÓN DE LA SALUD HUMANA Y DE ASISTENCIA SOCIAL,view
+ciiu_86,base.res_partner_industry_Q,86,Actividades de atención de la salud humana,view
+ciiu_861,ciiu_86,861,"Actividades de hospitales y clínicas, con internación",view
+ciiu_8610,ciiu_861,8610,"Actividades de hospitales y clínicas, con internación",dian
+ciiu_862,ciiu_86,862,"Actividades de práctica médica y odontológica, sin internación ",view
+ciiu_8621,ciiu_862,8621,"Actividades de la práctica médica, sin internación",dian
+ciiu_8622,ciiu_862,8622,Actividades de la práctica odontológica,dian
+ciiu_869,ciiu_86,869,Otras actividades de atención relacionadas con la salud humana,view
+ciiu_8691,ciiu_869,8691,Actividades de apoyo diagnóstico,dian
+ciiu_8692,ciiu_869,8692,Actividades de apoyo terapéutico,dian
+ciiu_8699,ciiu_869,8699,Otras actividades de atención de la salud humana,dian
+ciiu_87,base.res_partner_industry_Q,87,Actividades de atención residencial medicalizada,view
+ciiu_871,ciiu_87,871,Actividades de atención residencial medicalizada de tipo general,view
+ciiu_8710,ciiu_871,8710,Actividades de atención residencial medicalizada de tipo general,dian
+ciiu_872,ciiu_87,872,"Actividades de atención residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas",view
+ciiu_8720,ciiu_872,8720,"Actividades de atención residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas",dian
+ciiu_873,ciiu_87,873,Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas,view
+ciiu_8730,ciiu_873,8730,Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas,dian
+ciiu_879,ciiu_87,879,Otras actividades de atención en instituciones con alojamiento,view
+ciiu_8790,ciiu_879,8790,Otras actividades de atención en instituciones con alojamiento,dian
+ciiu_88,base.res_partner_industry_Q,88,Actividades de asistencia social sin alojamiento,view
+ciiu_881,ciiu_88,881,Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas,view
+ciiu_8810,ciiu_881,8810,Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas,dian
+ciiu_889,ciiu_88,889,Otras actividades de asistencia social sin alojamiento,view
+ciiu_8891,ciiu_889,8891,Actividades de guarderías para niños y niñas,dian
+ciiu_8899,ciiu_889,8899,Otras actividades de asistencia social n.c.p.,dian
+base.res_partner_industry_R,,SECCIÓN R ,"ACTIVIDADES ARTÍSTICAS, DE ENTRETENIMIENTO Y RECREACIÓN",view
+ciiu_90,base.res_partner_industry_R,90,"Actividades creativas, artísticas y de entretenimiento",view
+ciiu_900,ciiu_90,900,"Actividades creativas, artísticas y de entretenimiento ",view
+ciiu_9001,ciiu_900,9001,Creación literaria,dian
+ciiu_9002,ciiu_900,9002,Creación musical,dian
+ciiu_9003,ciiu_900,9003,Creación teatral,dian
+ciiu_9004,ciiu_900,9004,Creación audiovisual,dian
+ciiu_9005,ciiu_900,9005,Artes plásticas y visuales,dian
+ciiu_9006,ciiu_900,9006,Actividades teatrales,dian
+ciiu_9007,ciiu_900,9007,Actividades de espectáculos musicales en vivo,dian
+ciiu_9008,ciiu_900,9008,Otras actividades de espectáculos en vivo n.c.p.,dian
+ciiu_91,base.res_partner_industry_R,91,"Actividades de bibliotecas, archivos, museos y otras actividades culturales",view
+ciiu_910,ciiu_91,910,"Actividades de bibliotecas, archivos, museos y otras actividades culturales",view
+ciiu_9101,ciiu_910,9101,Actividades de bibliotecas y archivos,dian
+ciiu_9102,ciiu_910,9102,"Actividades y funcionamiento de museos, conservación de edificios y sitios históricos",dian
+ciiu_9103,ciiu_910,9103,"Actividades de jardines botánicos, zoológicos y reservas naturales",dian
+ciiu_92,base.res_partner_industry_R,92,Actividades de juegos de azar y apuestas,view
+ciiu_920,ciiu_92,920,Actividades de juegos de azar y apuestas,view
+ciiu_9200,ciiu_920,9200,Actividades de juegos de azar y apuestas,dian
+ciiu_93,base.res_partner_industry_R,93,Actividades deportivas y actividades recreativas y de esparcimiento,view
+ciiu_931,ciiu_93,931,Actividades deportivas,view
+ciiu_9311,ciiu_931,9311,Gestión de instalaciones deportivas,dian
+ciiu_9312,ciiu_931,9312,Actividades de clubes deportivos,dian
+ciiu_9319,ciiu_931,9319,Otras actividades deportivas,dian
+ciiu_932,ciiu_93,932,Otras actividades recreativas y de esparcimiento,view
+ciiu_9321,ciiu_932,9321,Actividades de parques de atracciones y parques temáticos,dian
+ciiu_9329,ciiu_932,9329,Otras actividades recreativas y de esparcimiento n.c.p.,dian
+base.res_partner_industry_S,,SECCIÓN S,OTRAS ACTIVIDADES DE SERVICIOS,view
+ciiu_94,base.res_partner_industry_S,94,Actividades de asociaciones,view
+ciiu_941,ciiu_94,941,"Actividades de asociaciones empresariales y de empleadores, y asociaciones profesionales",view
+ciiu_9411,ciiu_941,9411,Actividades de asociaciones empresariales y de empleadores,dian
+ciiu_9412,ciiu_941,9412,Actividades de asociaciones profesionales,dian
+ciiu_942,ciiu_94,942,Actividades de sindicatos de empleados,view
+ciiu_9420,ciiu_942,9420,Actividades de sindicatos de empleados,dian
+ciiu_949,ciiu_94,949,Actividades de otras asociaciones,view
+ciiu_9491,ciiu_949,9491,Actividades de asociaciones religiosas,dian
+ciiu_9492,ciiu_949,9492,Actividades de asociaciones políticas,dian
+ciiu_9499,ciiu_949,9499,Actividades de otras asociaciones n.c.p.,dian
+ciiu_95,base.res_partner_industry_S,95,"Mantenimiento y reparación de computadores, efectos personales y enseres domésticos",view
+ciiu_951,ciiu_95,951,Mantenimiento y reparación de computadores y equipo de comunicaciones,view
+ciiu_9511,ciiu_951,9511,Mantenimiento y reparación de computadores y de equipo periférico,dian
+ciiu_9512,ciiu_951,9512,Mantenimiento y reparación de equipos de comunicación,dian
+ciiu_952,ciiu_95,952,Mantenimiento y reparación de efectos personales y enseres domésticos,view
+ciiu_9521,ciiu_952,9521,Mantenimiento y reparación de aparatos electrónicos de consumo,dian
+ciiu_9522,ciiu_952,9522,Mantenimiento y reparación de aparatos y equipos domésticos y de jardinería ,dian
+ciiu_9523,ciiu_952,9523,Reparación de calzado y artículos de cuero,dian
+ciiu_9524,ciiu_952,9524,Reparación de muebles y accesorios para el hogar,dian
+ciiu_9529,ciiu_952,9529,Mantenimiento y reparación de otros efectos personales y enseres domésticos,dian
+ciiu_96,base.res_partner_industry_S,96,Otras actividades de servicios personales,view
+ciiu_960,ciiu_96,960,Otras actividades de servicios personales,view
+ciiu_9601,ciiu_960,9601,"Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel",dian
+ciiu_9602,ciiu_960,9602,Peluquería y otros tratamientos de belleza,dian
+ciiu_9603,ciiu_960,9603,Pompas fúnebres y actividades relacionadas,dian
+ciiu_9609,ciiu_960,9609,Otras actividades de servicios personales n.c.p.,dian
+base.res_partner_industry_T,,SECCIÓN T ,ACTIVIDADES DE LOS HOGARES INDIVIDUALES EN CALIDAD DE EMPLEADORES; ACTIVIDADES NO DIFERENCIADAS DE LOS HOGARES INDIVIDUALES COMO PRODUCTORES DE BIENES Y SERVICIOS PARA USO PROPIO,view
+ciiu_97,base.res_partner_industry_T,97,Actividades de los hogares individuales como empleadores de personal doméstico,view
+ciiu_970,ciiu_97,970,Actividades de los hogares individuales como empleadores de personal doméstico,view
+ciiu_9700,ciiu_970,9700,Actividades de los hogares individuales como empleadores de personal doméstico,dian
+ciiu_98,base.res_partner_industry_T,98,Actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio,view
+ciiu_981,ciiu_98,981,Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio,view
+ciiu_9810,ciiu_981,9810,Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio,dian
+ciiu_982,ciiu_98,982,Actividades no diferenciadas de los hogares individuales como productores de servicios para uso propio,view
+ciiu_9820,ciiu_982,9820,Actividades no diferenciadas de los hogares individuales como productores de servicios para uso propio,dian
+base.res_partner_industry_U,,SECCIÓN U,ACTIVIDADES DE ORGANIZACIONES Y ENTIDADES EXTRATERRITORIALES ,view
+ciiu_99,base.res_partner_industry_U,99,Actividades de organizaciones y entidades extraterritoriales,view
+ciiu_990,ciiu_99,990,Actividades de organizaciones y entidades extraterritoriales,view
+ciiu_9900,ciiu_990,9900,Actividades de organizaciones y entidades extraterritoriales,dian
+ciiu_dian,,SECCIÓN Dian,OTRAS CLASIFICACIONES ,view
+ciiu_0010,ciiu_dian,0010,Asalariados,dian
+ciiu_0020,ciiu_dian,0020,Pensionados,dian
+ciiu_0081,ciiu_dian,0081,Personas naturales y sucesiones ilíquidas sin actividad económica,dian
+ciiu_0082,ciiu_dian,0082,Personas naturales subsidiadas por terceros,dian
+ciiu_0090,ciiu_dian,0090,"Rentistas de capital, solo para personas naturales y sucesiones ilíquidas",dian

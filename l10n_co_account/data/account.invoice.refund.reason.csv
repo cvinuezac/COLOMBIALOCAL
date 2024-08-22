@@ -3,7 +3,8 @@ account_invoice_refund_reason.refund_reason_noref,Devolución parcial de los bie
 account_invoice_refund_reason.refund_reason_cancellation,Anulación de factura electrónica,2,credit
 account_invoice_refund_reason_credit_3,Rebaja  o descuento parcial o total,3,credit
 account_invoice_refund_reason_credit_4,Ajuste de precio,4,credit
-account_invoice_refund_reason.refund_reason_error,Otros,5,credit
+account_invoice_refund_reason.refund_reason_error,Descuento comercial por pronto pago,5,credit
+account_invoice_refund_reason_credit_6,Descuento comercial por volumen de ventas,6,credit
 account_invoice_refund_reason.refund_reason_agreement,Intereses,1,debit
 account_invoice_refund_reason.refund_reason_difference,Gastos por cobrar,2,debit
 account_invoice_refund_reason.refund_reason_correction,Cambio del valor,3,debit

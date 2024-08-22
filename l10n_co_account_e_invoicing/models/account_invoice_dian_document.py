@@ -295,26 +295,22 @@ class AccountInvoiceDianDocument(models.Model):
         return True
 
     def _get_xml_values(self, ClTec):
-        msg1 = _("'%s' does not have a valid isic code")
-        msg2 = _("'%s' does not have a isic code established.")
         provider = self.company_id.partner_id
         supplier = self.company_id.partner_id
         customer = self.invoice_id.partner_id
         CodImp2 = "04"
         CodImp3 = "03"
+        industry_ids = self.env["res.partner.industry"]
+        industry_ids |= supplier.industry_id
+        industry_ids |= supplier.secondary_industry_ids
+        industry_ids = industry_ids.filtered(lambda x: x.type == "dian")
+        industry_codes = industry_ids.mapped("code")
+        IndustryClassificationCode = ";".join(industry_codes)
 
         if not self.invoice_id.payment_mean_code_id:
             self.invoice_id.payment_mean_code_id = (
                 self.env["account.payment.mean.code"].search([("code", "=", "1")]).id
             )
-
-        if supplier.isic_id:
-            if supplier.isic_id.code == "0000":
-                raise UserError(msg1 % supplier.name)
-
-            IndustryClassificationCode = supplier.isic_id.code
-        else:
-            raise UserError(msg2 % supplier.name)
 
         if self.company_id.have_technological_provider:
             provider = self.company_id.technological_provider_id

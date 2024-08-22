@@ -3,3 +3,5 @@
 
 from . import account_invoice_refund_reason
 from . import account_invoice
+from . import res_partner_industry
+from . import res_partner
