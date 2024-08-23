@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-23 16:35+0000\n"
-"PO-Revision-Date: 2024-08-23 16:35+0000\n"
+"POT-Creation-Date: 2024-08-23 16:36+0000\n"
+"PO-Revision-Date: 2024-08-23 16:36+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,82 +18,82 @@ msgstr ""
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__code_alpha3
 msgid "Alpha Code 3"
-msgstr "Código alfa 3"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_city__phone_code
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_city_zip__phone_code
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country_state__phone_code
 msgid "Calling Code"
-msgstr "Código de llamada"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: code:addons/l10n_co_base_location/models/res_partner.py:31
 #: model:ir.model,name:l10n_co_base_location.model_res_city
 #, python-format
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_city_zip__city_code
 msgid "City Code"
-msgstr "Código de la ciudad"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model,name:l10n_co_base_location.model_res_city_zip
 msgid "City/locations completion object"
-msgstr "Autocompletado de objetos a partir de ciudades/ubicaciones"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_city__code
 msgid "Code"
-msgstr "Código"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model,name:l10n_co_base_location.model_res_partner
 msgid "Contact"
-msgstr "Contacto"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model,name:l10n_co_base_location.model_res_country
 msgid "Country"
-msgstr "País"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_partner__country_code
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_users__country_code
 msgid "Country Code"
-msgstr "Código de país"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model,name:l10n_co_base_location.model_res_country_state
 msgid "Country state"
-msgstr "Provincia"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__code_dian
 msgid "DIAN Code"
-msgstr "Código DIAN"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__name_dian
 msgid "DIAN Name"
-msgstr "Nombre DIAN"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__description
 msgid "Description"
-msgstr "Descripción"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__name_iso
 msgid "ISO Name"
-msgstr "Nombre ISO"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_country__code_numeric
 msgid "Numeric Code"
-msgstr "Código numérico"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: selection:res.city.zip,type:0
@@ -103,23 +103,22 @@ msgstr ""
 #. module: l10n_co_base_location
 #: model_terms:ir.ui.view,arch_db:l10n_co_base_location.res_country_state_search
 msgid "States"
-msgstr "Estados"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,help:l10n_co_base_location.field_res_partner__country_code
 #: model:ir.model.fields,help:l10n_co_base_location.field_res_users__country_code
 msgid "The ISO country code in two chars. \n"
 "You can use this field for quick search."
-msgstr "EL código ISO del país en dos caracteres.\n"
-"Puede utilizar este campo para la búsqueda rápida."
+msgstr ""
 
 #. module: l10n_co_base_location
 #: model:ir.model.fields,field_description:l10n_co_base_location.field_res_city_zip__type
 msgid "Type"
-msgstr "Tipo"
+msgstr ""
 
 #. module: l10n_co_base_location
 #: selection:res.city.zip,type:0
 msgid "Urban"
-msgstr "Urbano"
+msgstr ""
 

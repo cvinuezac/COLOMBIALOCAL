@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
 	<record id="view_country_tree" model="ir.ui.view">
 		<field name="model">res.country</field>
 		<field name="inherit_id" ref="base.view_country_tree"/>
 		<field name="arch" type="xml">
-			<field name='code' position="after">
+			<field name="code" position="after">
 				<field name="code_dian"/>
 			</field>
 		</field>
@@ -15,10 +14,20 @@
 		<field name="model">res.country</field>
 		<field name="inherit_id" ref="base.view_country_form"/>
 		<field name="arch" type="xml">
-			<field name='code' position="before">
+			<field name="name" position="after">
+				<field name="name_dian"/>
+				<field name="name_iso"/>
+			</field>
+			<field name="phone_code" position="after">
+				<field name="code_alpha3"/>
+				<field name="code_numeric"/>
 				<field name="code_dian"/>
 			</field>
+			<label for="state_ids" position="before">
+				<group>
+					<field name="description"/>
+				</group>
+			</label>
 		</field>
 	</record>
-
 </odoo>

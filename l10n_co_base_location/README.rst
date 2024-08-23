@@ -1,25 +1,20 @@
-.. image:: https://img.shields.io/badge/license-AGPL--3-blue.png
-   ::target: https://www.gnu.org/licenses/agpl-3.0-standalone.html
+===============================================
+Colombian Data ZIP/Cities, States and Countries
+===============================================
+
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+   :target: https://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
-
-===================================
-Colombian Geographical Localization
-===================================
-
-Punto 6.4. Códigos Geográficos del anexo tecnico version 1.7
-- Phone Prefix in States
-- Dian Code of Countries
-- Data Colombian States
-- Data Colombian ZIP/cities
 
 Credits
 =======
 
+Authors
+~~~~~~~
+
+* EXA Auto Parts <https://github.com/exaap>
+
 Contributors
-------------
+~~~~~~~~~~~~
 
-* Alejandro Olano <https://github.com/alejo-code>
 * Joan Marín <https://github.com/JoanMarin>
-* Guillermo Montoya <https://github.com/guillermm>
-
-

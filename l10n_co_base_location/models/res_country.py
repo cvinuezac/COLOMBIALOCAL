@@ -1,36 +1,44 @@
-# Copyright 2018 Joan Marín <Github@JoanMarin>
-# Copyright 2018 Guillermo Montoya <Github@guillermm>
-# Copyright 2021 Alejandro Olano <Github@alejo-code>
+# Copyright 2024 Joan Marín <Github@JoanMarin>
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0).
 
 from odoo import models, fields, api
 
 
 class ResCountry(models.Model):
-    _inherit = 'res.country'
+    _inherit = "res.country"
 
-    code_dian = fields.Char(string='Code DIAN')
+    name_dian = fields.Char(string="DIAN Name")
+    name_iso = fields.Char(string="ISO Name")
+    description = fields.Char(string="Description")
+    code_alpha3 = fields.Char(string="Alpha Code 3", size=3)
+    code_numeric = fields.Char(string="Numeric Code", size=3)
+    code_dian = fields.Char(string="DIAN Code", size=3)
 
+    @api.model
+    def name_search(self, name, args=None, operator="ilike", limit=100):
+        args = args or []
+
+        if name:
+            args = [
+                "|",
+                "|",
+                "|",
+                "|",
+                ("name", operator, name),
+                ("name_dian", operator, name),
+                ("name_iso", operator, name),
+                ("code", operator, name),
+                ("code_dian", operator, name),
+            ] + args
+
+        return self.search(args, limit=limit).name_get()
+
+    @api.multi
     def name_get(self):
         res = []
+
         for record in self:
-            name = u'%s [%s]' % (record.name or '', record.code or '')
+            name = "%s [%s]" % (record.name or "", record.code or "")
             res.append((record.id, name))
 
         return res
-
-    @api.model
-    def name_search(self, name, args=None, operator='ilike', limit=100):
-        if not args:
-            args = []
-
-        if name:
-            state = self.search([
-                '|', '|', ('code_dian', operator, name),
-                ('name', operator, name), ('code', operator, name)
-            ] + args,
-                                limit=limit)
-        else:
-            state = self.search([], limit=100)
-
-        return state.name_get()

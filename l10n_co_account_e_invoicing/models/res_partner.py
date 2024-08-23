@@ -194,7 +194,7 @@ class ResPartner(models.Model):
             "PartyName": self.commercial_name,
             "RegistrationName": name,
             "AddressID": self.zip_id.city_id.code or "",
-            "AddressCityName": (self.zip_id.city_id.name or "").title(),
+            "AddressCityName": (self.zip_id.city_id.name or (self.city or "")).title(),
             "AddressPostalZone": zip_code,
             "AddressCountrySubentity": self.state_id.name or "",
             "AddressCountrySubentityCode": self.state_id.code or "",
@@ -208,7 +208,7 @@ class ResPartner(models.Model):
             "TaxSchemeName": tax_scheme_name,
             "CorporateRegistrationSchemeName": self.coc_registration_number,
             "CountryIdentificationCode": self.country_id.code,
-            "CountryName": self.country_id.name,
+            "CountryName": self.country_id.name_dian,
             "Telephone": telephone,
             "Telefax": self.fax,
             "ElectronicMail": self.einvoicing_email,
@@ -235,13 +235,13 @@ class ResPartner(models.Model):
 
         return {
             "AddressID": self.zip_id.city_id.code or "",
-            "AddressCityName": (self.zip_id.city_id.name or "").upper(),
+            "AddressCityName": self.zip_id.city_id.name or (self.city or ""),
             "AddressPostalZone": zip_code,
             "AddressCountrySubentity": self.state_id.name or "",
             "AddressCountrySubentityCode": self.state_id.code or "",
             "AddressLine": self.street or "",
             "CountryIdentificationCode": self.country_id.code,
-            "CountryName": self.country_id.name,
+            "CountryName": self.country_id.name_dian,
         }
 
     def _get_tax_representative_party_values(self):

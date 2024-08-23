@@ -1,0 +1,250 @@
+id,name_dian,name_iso,code_alpha3,code_numeric,code_dian,description
+base.af,Afganistán,Afganistán,AFG,4,013,
+base.ax,Åland,"Åland, Islas",ALA,248,,Es una provincia autónoma de Finlandia.
+base.al,Albania,Albania,ALB,8,017,
+base.de,Alemania,Alemania,DEU,276,023,Códigos obtenidos del idioma nativo (alemán): Deutschland - Códigos alfa usados por Alemania Occidental antes de la reunificación alemana en 1990.
+base.ad,Andorra,Andorra,AND,20,037,
+base.ao,Angola,Angola,AGO,24,040,
+base.ai,Anguila,Anguila,AIA,660,041,
+base.aq,Antártida,Antártida,ATA,10,,Cubre el territorio al sur del paralelo 60º sur. - Códigos obtenidos del nombre en francés: Antarctique
+base.ag,Antigua y Barbuda,Antigua y Barbuda,ATG,28,043,
+base.sa,Arabia Saudita,Arabia Saudita,SAU,682,053,
+base.dz,Argelia,Argelia,DZA,12,059,Códigos obtenidos del idioma nativo (cabilio): Dzayer
+base.ar,Argentina,Argentina,ARG,32,063,
+base.am,Armenia,Armenia,ARM,51,026,
+base.aw,Aruba,Aruba,ABW,533,027,Forma parte del Reino de los Países Bajos.
+base.au,Australia,Australia,AUS,36,069,Incluye las Islas Ashmore y Cartier y las Islas del Mar del Coral.
+base.at,Austria,Austria,AUT,40,072,
+base.az,Azerbaiyán,Azerbaiyán,AZE,31,074,
+base.bs,Bahamas,Bahamas (las),BHS,44,077,
+base.bd,Bangladés,Bangladesh,BGD,50,081,
+base.bb,Barbados,Barbados,BRB,52,083,
+base.bh,Baréin,Bahrein,BHR,48,080,
+base.be,Bélgica,Bélgica,BEL,56,087,
+base.bz,Belice,Belice,BLZ,84,088,
+base.bj,Benín,Benin,BEN,204,229,
+base.bm,Bermudas,Bermudas,BMU,60,090,
+base.by,Bielorrusia,Belarús,BLR,112,091,"El nombre oficial del país es Belarús, aunque tradicionalmente se le sigue denominando Bielorrusia."
+base.bo,Bolivia,Bolivia (Estado Plurinacional de),BOL,68,097,
+base.bq,"Bonaire, San Eustaquio y Saba","Bonaire, San Eustaquio y Saba",BES,535,,Son tres municipios especiales que forman parte de los Países Bajos.
+base.ba,Bosnia y Herzegovina,Bosnia y Herzegovina,BIH,70,029,
+base.bw,Botsuana,Botswana,BWA,72,101,
+base.br,Brasil,Brasil,BRA,76,105,
+base.bn,Brunéi,Brunei Darussalam,BRN,96,108,
+base.bg,Bulgaria,Bulgaria,BGR,100,111,
+base.bf,Burkina Faso,Burkina Faso,BFA,854,031,
+base.bi,Burundi,Burundi,BDI,108,115,
+base.bt,Bután,Bhután,BTN,64,119,
+base.cv,Cabo Verde,Cabo Verde,CPV,132,127,
+base.kh,Camboya,Camboya,KHM,116,141,Códigos obtenidos del anterior nombre: Khmer Republic (República Jemer)
+base.cm,Camerún,Camerún,CMR,120,145,
+base.ca,Canadá,Canadá,CAN,124,149,
+base.qa,Catar,Qatar,QAT,634,618,
+base.td,Chad,Chad,TCD,148,203,Códigos obtenidos del nombre en francés: Tchad
+base.cl,Chile,Chile,CHL,152,211,
+base.cn,China,China,CHN,156,215,
+base.cy,Chipre,Chipre,CYP,196,221,
+base.co,Colombia,Colombia,COL,170,169,
+base.km,Comoras,Comoras (las),CON,174,173,Códigos obtenidos del idioma nativo (comorense): Komori
+base.kp,Corea del Norte,Corea (la República Popular Democrática de),PRK,408,187,
+base.kr,Corea del Sur,Corea (la República de),KOR,410,190,
+base.ci,Costa de Marfil,Côte d’Ivoire,CIV,384,193,Nombre oficial en la ISO en francés.
+base.cr,Costa Rica,Costa Rica,CRI,188,196,Nombre oficial en la ISO en español.
+base.hr,Croacia,Croacia,HRV,191,198,Códigos obtenidos del idioma nativo (croata): Hrvatska
+base.cu,Cuba,Cuba,CUB,192,199,
+base.cw,Curazao,Curaçao,CUW,531,,Forma parte del Reino de los Países Bajos.
+base.dk,Dinamarca,Dinamarca,DNK,208,232,
+base.dm,Dominica,Dominica,DMA,212,235,
+base.ec,Ecuador,Ecuador,ECU,218,239,
+base.eg,Egipto,Egipto,EGY,818,240,
+base.sv,El Salvador,El Salvador,SLV,222,242,Nombre oficial en la ISO en español.
+base.ae,Emiratos Árabes Unidos,Emiratos Árabes Unidos (los),ARE,784,244,
+base.er,Eritrea,Eritrea,ERI,232,243,
+base.sk,Eslovaquia,Eslovaquia,SVK,703,246,
+base.si,Eslovenia,Eslovenia,SVN,705,247,
+base.es,España,España,ESP,724,245,Códigos obtenidos del idioma nativo (español): España
+base.us,Estados Unidos,Estados Unidos de América (los),USA,840,249,
+base.ee,Estonia,Estonia,EST,233,251,Códigos obtenidos del idioma nativo (estonio): Eesti
+base.et,Etiopía,Etiopía,ETH,231,253,
+base.ph,Filipinas,Filipinas (las),PHL,608,267,
+base.fi,Finlandia,Finlandia,FIN,246,271,
+base.fj,Fiyi,Fiji,FJI,242,870,
+base.fr,Francia,Francia,FRA,250,275,Incluye la Isla Clipperton.
+base.ga,Gabón,Gabón,GAB,266,281,
+base.gm,Gambia,Gambia (la),GMB,270,285,
+base.ge,Georgia,Georgia,GEO,268,287,
+base.gh,Ghana,Ghana,GHA,288,289,
+base.gi,Gibraltar,Gibraltar,GIB,292,293,Pertenece al Reino Unido.
+base.gd,Granada,Granada,GRD,308,297,
+base.gr,Grecia,Grecia,GRC,300,301,
+base.gl,Groenlandia,Groenlandia,GRL,304,305,Pertenece al Reino de Dinamarca.
+base.gp,Guadalupe,Guadeloupe,GLP,312,309,Departamento de ultramar francés. Nombre oficial en la ISO en francés.
+base.gu,Guam,Guam,GUM,316,313,Territorio no incorporado de los Estados Unidos.
+base.gt,Guatemala,Guatemala,GTM,320,317,
+base.gf,Guayana Francesa,Guayana Francesa,GUF,254,325,Departamento de ultramar francés. · Códigos obtenidos del nombre en francés: Guyane française
+base.gg,Guernsey,Guernsey,GGY,831,,Una dependencia de la Corona británica.
+base.gn,Guinea,Guinea,GIN,324,329,
+base.gw,Guinea-Bisáu,Guinea Bissau,GNB,624,334,
+base.gq,Guinea Ecuatorial,Guinea Ecuatorial,GNQ,226,331,Códigos obtenidos del nombre en francés: Guinée équatoriale
+base.gy,Guyana,Guyana,GUY,328,337,
+base.ht,Haití,Haití,HTI,332,341,
+base.hn,Honduras,Honduras,HND,340,345,
+base.hk,Hong Kong,Hong Kong,HKG,344,351,Región administrativa especial de China.
+base.hu,Hungría,Hungría,HUN,348,355,
+base.in,India,India,IND,356,361,
+base.id,Indonesia,Indonesia,IDN,360,365,
+base.iq,Irak,Iraq,IRQ,368,369,
+base.ir,Irán,Irán (República Islámica de),IRN,364,372,
+base.ie,Irlanda,Irlanda,IRL,372,375,
+base.bv,Isla Bouvet,"Bouvet, Isla",BVT,74,,Pertenece a Noruega.
+base.im,Isla de Man,Isla de Man,IMN,833,,Una dependencia de la Corona británica.
+base.cx,Isla de Navidad,"Navidad, Isla de",CXR,162,511,Pertenece a Australia.
+base.is,Islandia,Islandia,ISL,352,379,Códigos obtenidos del idioma nativo (islandés): Ísland
+base.ky,Islas Caimán,"Caimán, (las) Islas",CYM,136,137,
+base.cc,Islas Cocos,"Cocos / Keeling, (las) Islas",CCK,166,165,Pertenecen a Australia.
+base.ck,Islas Cook,"Cook, (las) Islas",COK,184,183,
+base.fo,Islas Feroe,"Feroe, (las) Islas",FRO,234,259,Pertenecen al Reino de Dinamarca.
+base.gs,Islas Georgias del Sur y Sandwich del Sur,Georgia del Sur (la) y las Islas Sandwich del Sur,SGS,239,,
+base.hm,Islas Heard y McDonald,Heard (Isla) e Islas McDonald,HMD,334,,Pertenecen a Australia.
+base.fk,Islas Malvinas,"Malvinas [Falkland], (las) Islas",FLK,238,,Códigos obtenidos del nombre en (inglés): Falkland
+base.mp,Islas Marianas del Norte,"Marianas del Norte, (las) Islas",MNP,580,469,Territorio no incorporado de los Estados Unidos.
+base.mh,Islas Marshall,"Marshall, (las) Islas",MHL,584,472,
+base.pn,Islas Pitcairn,Pitcairn,PCN,612,593,
+base.sb,Islas Salomón,"Salomón, Islas",SLB,90,677,Códigos obtenidos de su anterior nombre: British Solomon Islands
+base.tc,Islas Turcas y Caicos,"Turcas y Caicos, (las) Islas",TCA,796,823,
+base.um,Islas ultramarinas de Estados Unidos,Islas Ultramarinas Menores de los Estados Unidos (las),UMI,581,566,"Comprende nueve áreas insulares menores de los Estados Unidos: Arrecife Kingman, Atolón Johnston, Atolón Palmyra, Isla Baker, Isla Howland, Isla Jarvis, Islas Midway, Isla de Navaza e Isla Wake."
+base.vg,Islas Vírgenes Británicas,"Vírgenes británicas, Islas",VGB,92,863,
+base.vi,Islas Vírgenes de los Estados Unidos,"Vírgenes de los Estados Unidos, Islas",VIR,850,866,Territorio no incorporado de los Estados Unidos.
+base.il,Israel,Israel,ISR,376,383,
+base.it,Italia,Italia,ITA,380,386,
+base.jm,Jamaica,Jamaica,JAM,388,391,
+base.jp,Japón,Japón,JPN,392,399,
+base.je,Jersey,Jersey,JEY,832,,Una dependencia de la Corona británica.
+base.jo,Jordania,Jordania,JOR,400,403,
+base.kz,Kazajistán,Kazajstán,KAZ,398,406,
+base.ke,Kenia,Kenya,KEN,404,410,
+base.kg,Kirguistán,Kirguistán,KGZ,417,412,
+base.ki,Kiribati,Kiribati,KIR,296,411,
+base.kw,Kuwait,Kuwait,KWT,414,413,
+base.la,Laos,"Lao, (la) República Democrática Popular",LAO,418,420,
+base.ls,Lesoto,Lesotho,LSO,426,426,
+base.lv,Letonia,Letonia,LVA,428,429,
+base.lb,Líbano,Líbano,LBN,422,431,
+base.lr,Liberia,Liberia,LBR,430,434,
+base.ly,Libia,Libia,LBY,434,438,
+base.li,Liechtenstein,Liechtenstein,LIE,438,440,
+base.lt,Lituania,Lituania,LTU,440,443,
+base.lu,Luxemburgo,Luxemburgo,LUX,442,445,
+base.mo,Macao,Macao,MAC,446,447,Región administrativa especial de China.
+base.mk,Macedonia,Macedonia (la ex República Yugoslava de),MKD,807,448,Códigos obtenidos del idioma nativo (macedonio): Makedonija
+base.mg,Madagascar,Madagascar,MDG,450,450,
+base.my,Malasia,Malasia,MYS,458,455,
+base.mw,Malaui,Malawi,MWI,454,458,
+base.mv,Maldivas,Maldivas,MDV,462,461,
+base.ml,Malí,Malí,MLI,466,464,
+base.mt,Malta,Malta,MLT,470,467,
+base.ma,Marruecos,Marruecos,MAR,504,474,Códigos obtenidos del nombre en francés: Maroc
+base.mq,Martinica,Martinique,MTQ,474,477,Departamento de ultramar francés. Nombre oficial en la ISO en francés.
+base.mu,Mauricio,Mauricio,MUS,480,485,
+base.mr,Mauritania,Mauritania,MRT,478,488,
+base.yt,Mayotte,Mayotte,MYT,175,,Departamento de ultramar francés.
+base.mx,México,México,MEX,484,493,
+base.fm,Micronesia,Micronesia (Estados Federados de),FSM,583,494,
+base.md,Moldavia,Moldova (la República de),MDA,498,496,
+base.mc,Mónaco,Mónaco,MCO,492,498,
+base.mn,Mongolia,Mongolia,MNG,496,497,
+base.me,Montenegro,Montenegro,MNE,499,,
+base.ms,Montserrat,Montserrat,MSR,500,501,
+base.mz,Mozambique,Mozambique,MOZ,508,505,
+base.mm,Myanmar,Myanmar,MMR,104,093,Anteriormente conocida como Birmania.
+base.na,Namibia,Namibia,NAM,516,507,
+base.nr,Nauru,Nauru,NRU,520,508,
+base.np,Nepal,Nepal,NPL,524,517,
+base.ni,Nicaragua,Nicaragua,NIC,558,521,
+base.ne,Níger,Níger (el),NER,562,525,
+base.ng,Nigeria,Nigeria,NGA,566,528,
+base.nu,Niue,Niue,NIU,570,531,Asociado a Nueva Zelanda.
+base.nf,Norfolk,"Norfolk, Isla",NFK,574,535,Pertenece a Australia.
+base.no,Noruega,Noruega,NOR,578,538,
+base.nc,Nueva Caledonia,Nueva Caledonia,NCL,540,542,
+base.nz,Nueva Zelanda,Nueva Zelandia,NZL,554,548,
+base.om,Omán,Omán,OMN,512,556,
+base.nl,Países Bajos,Países Bajos (los),NLD,528,573,Forma parte del Reino de los Países Bajos.
+base.pk,Pakistán,Pakistán,PAK,586,576,
+base.pw,Palaos,Palau,PLW,585,578,
+base.ps,Palestina,"Palestina, Estado de",PSE,275,897,Comprende los territorios de Cisjordania y Franja de Gaza.
+base.pa,Panamá,Panamá,PAN,591,580,
+base.pg,Papúa Nueva Guinea,Papua Nueva Guinea,PNG,598,545,
+base.py,Paraguay,Paraguay,PRY,600,586,
+base.pe,Perú,Perú,PER,604,589,
+base.pf,Polinesia Francesa,Polinesia Francesa,PYF,258,599,Códigos obtenidos del nombre en francés: Polynésie française
+base.pl,Polonia,Polonia,POL,616,603,
+base.pt,Portugal,Portugal,PRT,620,607,
+base.pr,Puerto Rico,Puerto Rico,PRI,630,611,Territorio no incorporado de los Estados Unidos. Nombre oficial en la ISO en español.
+base.uk,Reino Unido,Reino Unido de Gran Bretaña e Irlanda del Norte (el),GBR,826,628,"Debido a que para obtener los códigos ISO no se utilizan las palabras comunes de Reino y Unido, los códigos se han obtenido a partir del resto del nombre oficial."
+base.eh,República Árabe Saharaui Democrática,Sahara Occidental,ESH,732,685,Nombre provisional. Anterior nombre en la ISO: Sahara español - Códigos obtenidos del anterior nombre en español
+base.cf,República Centroafricana,República Centroafricana (la),CAF,140,640,
+base.cz,República Checa,Chequia,CZE,203,644,
+base.cg,República del Congo,Congo (el),COG,178,177,
+base.cd,República Democrática del Congo,Congo (la República Democrática del),COD,180,,
+base.do,República Dominicana,"Dominicana, (la) República",DOM,214,647,
+base.re,Reunión,Reunión,REU,638,660,Departamento de ultramar francés.
+base.rw,Ruanda,Rwanda,RWA,646,675,
+base.ro,Rumania,Rumania,ROU,642,670,
+base.ru,Rusia,"Rusia, (la) Federación de",RUS,643,676,
+base.ws,Samoa,Samoa,WSM,882,687,Códigos obtenidos del anterior nombre: Western Samoa (Samoa Occidental)
+base.as,Samoa Americana,Samoa Americana,ASM,16,690,Territorio no incorporado de los Estados Unidos.
+base.bl,San Bartolomé,Saint Barthélemy,BLM,652,,Colectividad de ultramar francesa. Nombre oficial en la ISO en francés.
+base.kn,San Cristóbal y Nieves,Saint Kitts y Nevis,KNA,659,695,
+base.sm,San Marino,San Marino,SMR,674,697,
+base.mf,San Martín,Saint Martin (parte francesa),MAF,663,,Colectividad de ultramar francesa. Nombre oficial en la ISO en francés.
+base.pm,San Pedro y Miquelón,San Pedro y Miquelón,SPM,666,700,Colectividad de ultramar francesa.
+base.vc,San Vicente y las Granadinas,San Vicente y las Granadinas,VCT,670,705,
+base.sh,"Santa Elena, Ascensión y Tristán de Acuña","Santa Helena, Ascensión y Tristán de Acuña",SHN,654,710,
+base.lc,Santa Lucía,Santa Lucía,LCA,662,715,
+base.st,Santo Tomé y Príncipe,Santo Tomé y Príncipe,STP,678,720,
+base.sn,Senegal,Senegal,SEN,686,728,
+base.rs,Serbia,Serbia,SRB,688,,"Códigos obtenidos de su nombre oficial: República de Serbia, en inglés."
+base.sc,Seychelles,Seychelles,SYC,690,731,
+base.sl,Sierra Leona,Sierra leona,SLE,694,735,
+base.sg,Singapur,Singapur,SGP,702,741,
+base.sx,Sint Maarten,Sint Maarten (parte neerlandesa),SXM,534,,Forma parte del Reino de los Países Bajos. - Nombre oficial en neerlandés.
+base.sy,Siria,República Árabe Siria,SYR,760,744,
+base.so,Somalia,Somalia,SOM,706,748,
+base.lk,Sri Lanka,Sri Lanka,LKA,144,750,
+base.sz,Suazilandia,Swazilandia,SWZ,748,773,
+base.za,Sudáfrica,Sudáfrica,ZAF,710,756,Códigos obtenidos del nombre en neerlandés: Zuid-Afrika
+base.sd,Sudán,Sudán (el),SDN,729,759,
+base.ss,Sudán del Sur,Sudán del Sur,SSD,728,,
+base.se,Suecia,Suecia,SWE,752,764,
+base.ch,Suiza,Suiza,CHE,756,767,Códigos obtenidos del nombre en latín: Confoederatio Helvetica
+base.sr,Surinam,Suriname,SUR,740,770,
+base.sj,Svalbard y Jan Mayen,Svalbard y Jan Mayen,SJM,744,,Comprende dos territorios árticos de Noruega: Svalbard y Jan Mayen.
+base.th,Tailandia,Tailandia,THA,764,776,
+base.tw,Taiwán (República de China),Taiwán (Provincia de China),TWN,158,218,"Cubre la jurisdicción actual de la República de China (Taiwán), excepto Kinmen e Islas Matsu. - La ONU considera a Taiwán como una provincia de China, debido a su estatus político"
+base.tz,Tanzania,"Tanzania, República Unida de",TZA,834,780,
+base.tj,Tayikistán,Tayikistán,TJK,762,774,
+base.io,Territorio Británico del Océano Índico,Territorio Británico del Océano Índico (el),IOT,86,787,
+base.tf,Tierras Australes y Antárticas Francesas,Tierras Australes Francesas (las),ATF,260,,Comprende las tierras australes y antárticas francesas excepto la parte incluida en la Antártida conocida como Tierra Adelia. - Códigos obtenidos del nombre en francés: Terres australes françaises.
+base.tl,Timor Oriental,Timor-Leste,TLS,626,788,Nombre oficial en la ISO en portugués.
+base.tg,Togo,Togo,TGO,768,800,
+base.tk,Tokelau,Tokelau,TKL,772,805,
+base.to,Tonga,Tonga,TON,776,810,
+base.tt,Trinidad y Tobago,Trinidad y Tobago,TTO,780,815,
+base.tn,Túnez,Túnez,TUN,788,820,
+base.tm,Turkmenistán,Turkmenistán,TKM,795,825,
+base.tr,Turquía,Turquía,TUR,792,827,
+base.tv,Tuvalu,Tuvalu,TUV,798,828,
+base.ua,Ucrania,Ucrania,UKR,804,830,
+base.ug,Uganda,Uganda,UGA,800,833,
+base.uy,Uruguay,Uruguay,URY,858,845,
+base.uz,Uzbekistán,Uzbekistán,UZB,860,847,
+base.vu,Vanuatu,Vanuatu,VUT,548,551,
+base.va,"Vaticano, Ciudad del",Santa Sede (la),VAT,336,159,"La Santa Sede es la representante diplomática del Estado de la Ciudad del Vaticanoante la ONU y otros países y organismos internacionales, aunque jurídicamente se trata de entes distintos. Los códigos ISO se asignan a la Santa Sede como representante de este Estado, pero se refieren al territorio del Estado de la Ciudad del Vaticano."
+base.ve,Venezuela,Venezuela (República Bolivariana de),VEN,862,850,
+base.vn,Vietnam,Viet Nam,VNM,704,855,
+base.wf,Wallis y Futuna,Wallis y Futuna,WLF,876,875,Colectividad de ultramar francesa.
+base.ye,Yemen,Yemen,YEM,887,880,
+base.dj,Yibuti,Djibouti,DJI,262,783,
+base.zm,Zambia,Zambia,ZMB,894,890,
+base.zw,Zimbabue,Zimbabwe,ZWE,716,665,
