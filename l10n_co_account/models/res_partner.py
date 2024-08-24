@@ -7,11 +7,10 @@ from odoo import fields, models
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    industry_id = fields.Many2one(
-        string="Main Industry", domain="[('type', '!=', 'view')]"
+    company_type = fields.Selection(
+        selection=[("person", "Natural Person"), ("company", "Juridical Person")]
     )
+    industry_id = fields.Many2one(domain="[('type', '!=', 'view')]")
     secondary_industry_ids = fields.Many2many(
-        comodel_name="res.partner.industry",
-        string="Secondary Industries",
-        domain="[('id', '!=', industry_id), ('type', '!=', 'view')]",
+        domain="[('id', '!=', industry_id), ('type', '!=', 'view')]"
     )

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-22 07:24+0000\n"
-"PO-Revision-Date: 2024-08-22 07:24+0000\n"
+"POT-Creation-Date: 2024-08-24 00:46+0000\n"
+"PO-Revision-Date: 2024-08-24 00:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,68 +21,62 @@ msgid "${object.dian_document_mail_subject}"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:95
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:94
 #, python-format
 msgid "'%s' does not have a DIAN document type established."
 msgstr "'%s' no tiene establecido un tipo de documento DIAN."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:91
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:218
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:90
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:214
 #, python-format
 msgid "'%s' does not have a city established."
 msgstr "%s' no tiene una ciudad/municipio establecido."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:93
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:220
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:92
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:216
 #, python-format
 msgid "'%s' does not have a country established."
 msgstr "'%s' no tiene un país establecido."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:180
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:249
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:245
 #, python-format
 msgid "'%s' does not have a document type established."
 msgstr "'%s' no tiene establecido un tipo de documento."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:101
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:100
 #, python-format
 msgid "'%s' does not have a fiscal position correctly configured."
 msgstr "'%s' no tiene una posición fiscal configurada correctamente."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:102
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:101
 #, python-format
 msgid "'%s' does not have a fiscal position established."
 msgstr "'%s' no tiene una posición fiscal establecida."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:181
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:100
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:250
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:99
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:246
 #, python-format
 msgid "'%s' does not have a identification document established."
 msgstr "'%s' no tiene un documento de identificación establecido."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:90
-#, python-format
-msgid "'%s' does not have a person type established."
-msgstr "'%s' no tiene establecido un tipo de persona."
-
-#. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:92
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:219
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:91
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:215
 #, python-format
 msgid "'%s' does not have a state established."
 msgstr "'%s' no tiene un estado/departamento establecido."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:94
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:248
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:93
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:244
 #, python-format
 msgid "'%s' does not have a verification digit established."
 msgstr "'%s' no tiene establecido un dígito de verificación."
@@ -141,6 +135,21 @@ msgstr ""
 #, python-format
 msgid "ALERT! Invoice %s was not sent to DIAN."
 msgstr "¡ALERTA! La factura %s no fue enviada a la DIAN."
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
+msgid "Aceptación Tácita"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
+msgid "Aceptación expresa"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
+msgid "Acuse de recibo de Factura Electrónica de Venta"
+msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_res_company__additional_hours_delivery_datetime
@@ -253,6 +262,11 @@ msgstr "Compañías"
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_einvoice_notification_group__company_id
 msgid "Company"
 msgstr "Compañía"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:ir.sequence,dian_type:0
+msgid "Computer Generated Invoice"
+msgstr "Factura Generada por Computadora"
 
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model,name:l10n_co_account_e_invoicing.model_res_partner
@@ -427,6 +441,11 @@ msgid "Do you have a technological provider?"
 msgstr "¿Tienes un proveedor tecnológico?"
 
 #. module: l10n_co_account_e_invoicing
+#: selection:account.invoice,dian_claim:0
+msgid "Documento con inconsistencias"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_tax_group__is_einvoicing
 msgid "Does it Apply for E-Invoicing?"
 msgstr "¿Aplica para la Facturación Electrónica?"
@@ -463,15 +482,15 @@ msgstr "Correo Electrónico de Factura Electrónica, De:"
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/ir_sequence.py:7
 #: model:ir.module.category,name:l10n_co_account_e_invoicing.category_einvoicing
+#: selection:ir.sequence,dian_type:0
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.product_template_form_view
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.view_company_form
-#: selection:ir.sequence,dian_type:0
 #, python-format
 msgid "E-Invoicing"
 msgstr "Facturación Electrónica"
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:103
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:102
 #, python-format
 msgid "E-Invoicing Agent: '%s' does not have a E-Invoicing Email."
 msgstr "Agente de Facturación Electrónica: '%s' no tiene un Correo Electrónico de Facturación Electrónica."
@@ -710,6 +729,16 @@ msgid "Margin Percentage"
 msgstr "Porcentaje de Margen"
 
 #. module: l10n_co_account_e_invoicing
+#: selection:account.invoice,dian_claim:0
+msgid "Mercancía no entregada parcialmente"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice,dian_claim:0
+msgid "Mercancía no entregada totalmente"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice__receipt_document_reference
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_sale_order__receipt_document_reference
 msgid "Merchandise / Service Receipt Document"
@@ -724,6 +753,11 @@ msgstr "NSU no encontrado"
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_einvoice_notification_group__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:res.partner,is_einvoicing_agent:0
+msgid "No"
+msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: selection:res.partner,is_einvoicing_agent:0
@@ -745,6 +779,16 @@ msgstr "Tipo de Operación"
 #: selection:account.invoice.dian.document,get_status_zip_status_code:0
 msgid "Other"
 msgstr "Otro"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:ir.sequence,dian_type:0
+msgid "POS Invoice"
+msgstr "Factura POS"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:ir.sequence,dian_type:0
+msgid "Paper Invoice"
+msgstr "Factura en Papel"
 
 #. module: l10n_co_account_e_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.account_invoice_dian_document_view_form
@@ -795,6 +839,16 @@ msgstr "Imagen QR"
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_dian_document_line__send_async_reason
 msgid "Reason"
 msgstr "Motivo"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
+msgid "Recibo del bien y/o prestación del servicio"
+msgstr ""
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice.dian.document,application_response_type:0
+msgid "Reclamo de la Factura Electrónica de Venta"
+msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice_line__reference_price
@@ -860,6 +914,11 @@ msgstr "Rango de fechas de la secuencia"
 #: model:ir.model.fields,field_description:l10n_co_account_e_invoicing.field_account_invoice__sequence_resolution_id
 msgid "Sequence Resolution"
 msgstr "Resolución de la Secuencia"
+
+#. module: l10n_co_account_e_invoicing
+#: selection:account.invoice,dian_claim:0
+msgid "Servicio no prestado"
+msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: model_terms:ir.ui.view,arch_db:l10n_co_account_e_invoicing.account_invoice_dian_document_view_form
@@ -983,14 +1042,14 @@ msgstr "El certificado de esta empresa está por vencer.<br/>\n"
 "                    <span style=\"font-weight:bold;\">Por favor, debe informar a la administración.</span>"
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:625
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:618
 #, python-format
 msgid "The 'delivery date' must be equal or greater per maximum 10 days to the 'invoice date'."
 msgstr "La 'fecha de entrega' debe ser igual o mayor por un máximo de 10 días a la 'fecha de la factura'."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:218
 #: sql_constraint:account.invoice:0
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:218
 #, python-format
 msgid "The Supplier CUFE must be unique"
 msgstr "El CUFE del Proveedor debe ser único."
@@ -1012,7 +1071,7 @@ msgid "The cost price + this percentage will be the reference price"
 msgstr "El precio de costo + este porcentaje será el precio de referencia"
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:96
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:95
 #, python-format
 msgid "The document type of '%s' does not seem to correspond with the person type."
 msgstr "El tipo de documento de '%s' no parece corresponder con el tipo de persona."
@@ -1034,7 +1093,7 @@ msgstr "El campo 'Correo Electrónico de Facturación Electrónica' no se comple
 "Por favor agregue @ y punto (.)"
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:448
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:444
 #, python-format
 msgid "The invoice line %s has no reference"
 msgstr "La línea de factura %s no tiene referencia"
@@ -1252,7 +1311,7 @@ msgid "You can not make a refund invoice of an invoice with state different to '
 msgstr "No puede hacer una factura de reembolso de una factura con un estado diferente a 'Abierto' o 'Pagado'."
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:728
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:721
 #, python-format
 msgid "You cannot cancel a invoice sent to the DIAN and that was approved."
 msgstr "No puede cancelar una factura enviada a la DIAN y que fue aprobada."
@@ -1262,12 +1321,6 @@ msgstr "No puede cancelar una factura enviada a la DIAN y que fue aprobada."
 #, python-format
 msgid "You do not have an active dian resolution, contact with your administrator."
 msgstr "No tiene una resolución activa de dian, póngase en contacto con su administrador."
-
-#. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:444
-#, python-format
-msgid "Your Unit of Measure: '%s', has no Unit of Measure Code, contact with your administrator."
-msgstr "Su Unidad de Medida: '%s', no tiene Código de Unidad de Medida, contacte con su administrador."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:427
@@ -1338,28 +1391,28 @@ msgid "Your journal: %s, has no a invoice sequence with type equal to E-Support 
 msgstr "Su diario: %s, no tiene una secuencia de factura con un tipo igual a Nota crédito de Documento Soporte Electrónico"
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:449
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:445
 #, python-format
 msgid "Your product: '%s', has no reference price, contact with your administrator."
 msgstr "Su producto: '%s', no tiene precio de referencia, contacte con su administrador."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:340
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:462
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:458
 #, python-format
 msgid "Your tax: '%s', has negative amount or an amount equal to zero (0), the taxes must have an amount greater than zero (0), contact with your administrator."
 msgstr "Su impuesto: '%s', tiene una cantidad negativa o una cantidad igual a cero (0), los impuestos deben tener una cantidad mayor que cero (0), póngase en contacto con su administrador."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:331
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:453
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:449
 #, python-format
 msgid "Your tax: '%s', has no e-invoicing tax group type, contact with your administrator."
 msgstr "Su impuesto: '%s', no tiene ningún tipo de grupo de impuestos de facturación electrónica, póngase en contacto con su administrador."
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:335
-#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:457
+#: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:453
 #, python-format
 msgid "Your withholding tax: '%s', has amount equal to zero (0), the withholding taxes must have amount different to zero (0), contact with your administrator."
 msgstr "Su retención de impuestos: '%s', tiene un monto igual a cero (0), los impuestos de retención deben tener un monto diferente a cero (0), póngase en contacto con su administrador."

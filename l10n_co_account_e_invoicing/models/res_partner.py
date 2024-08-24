@@ -34,11 +34,11 @@ class ResPartner(models.Model):
         store=False,
     )
 
-    @api.onchange("person_type")
-    def onchange_person_type(self):
-        super(ResPartner, self).onchange_person_type()
+    @api.onchange("company_type")
+    def onchange_company_type(self):
+        super(ResPartner, self).onchange_company_type()
 
-        if self.person_type == "1":
+        if self.company_type == "company":
             self.is_einvoicing_agent = "yes"
 
         self.property_account_position_id = False
@@ -87,62 +87,58 @@ class ResPartner(models.Model):
                 )
 
     def _get_accounting_partner_party_values(self):
-        msg1 = _("'%s' does not have a person type established.")
-        msg2 = _("'%s' does not have a city established.")
-        msg3 = _("'%s' does not have a state established.")
-        msg4 = _("'%s' does not have a country established.")
-        msg5 = _("'%s' does not have a verification digit established.")
-        msg6 = _("'%s' does not have a DIAN document type established.")
-        msg7 = _(
+        msg1 = _("'%s' does not have a city established.")
+        msg2 = _("'%s' does not have a state established.")
+        msg3 = _("'%s' does not have a country established.")
+        msg4 = _("'%s' does not have a verification digit established.")
+        msg5 = _("'%s' does not have a DIAN document type established.")
+        msg6 = _(
             "The document type of '%s' does not seem to correspond with the "
             "person type."
         )
-        msg8 = _("'%s' does not have a identification document established.")
-        msg9 = _("'%s' does not have a fiscal position correctly configured.")
-        msg10 = _("'%s' does not have a fiscal position established.")
-        msg11 = _("E-Invoicing Agent: '%s' does not have a E-Invoicing Email.")
+        msg7 = _("'%s' does not have a identification document established.")
+        msg8 = _("'%s' does not have a fiscal position correctly configured.")
+        msg9 = _("'%s' does not have a fiscal position established.")
+        msg10 = _("E-Invoicing Agent: '%s' does not have a E-Invoicing Email.")
         name = self.name
         zip_code = False
         identification_document = self.identification_document
         telephone = False
 
-        if not self.person_type:
-            raise UserError(msg1 % self.name)
-
         if self.country_id:
             if self.country_id.code == "CO":
                 if not self.zip_id:
-                    raise UserError(msg2 % self.name)
+                    raise UserError(msg1 % self.name)
                 elif not self.state_id:
-                    raise UserError(msg3 % self.name)
+                    raise UserError(msg2 % self.name)
         else:
-            raise UserError(msg4 % self.name)
+            raise UserError(msg3 % self.name)
 
         if self.document_type_id:
             document_type_code = self.document_type_id.code
 
             if document_type_code == "31" and not self.check_digit:
-                raise UserError(msg5 % self.name)
+                raise UserError(msg4 % self.name)
 
             # Punto 6.2.1. Documento de identificación (Tipo de Identificador Fiscal):
             # cbc:CompanyID.@schemeName; sts:ProviderID.@schemeName del anexo técnico version 1.7
             if document_type_code not in DOCUMENT_TYPE_CODES:
-                if self.person_type == "1":
-                    raise UserError(msg6 % self.name)
+                if self.company_type == "company":
+                    raise UserError(msg5 % self.name)
                 else:
                     name = "consumidor final"
                     document_type_code = "13"
                     identification_document = "222222222222"
         else:
+            raise UserError(msg5 % self.name)
+
+        if (
+            self.company_type == "company" and document_type_code not in ("31", "50")
+        ) or (self.company_type == "person" and document_type_code in ("31", "50")):
             raise UserError(msg6 % self.name)
 
-        if (self.person_type == "1" and document_type_code not in ("31", "50")) or (
-            self.person_type == "2" and document_type_code in ("31", "50")
-        ):
-            raise UserError(msg7 % self.name)
-
         if not identification_document:
-            raise UserError(msg8 % self.name)
+            raise UserError(msg7 % self.name)
 
         if self.property_account_position_id:
             if (
@@ -150,19 +146,19 @@ class ResPartner(models.Model):
                 or not self.property_account_position_id.party_tax_scheme_id
                 or not self.property_account_position_id.listname
             ):
-                raise UserError(msg9 % self.name)
+                raise UserError(msg8 % self.name)
 
             tax_level_codes = ""
             tax_scheme_code = self.property_account_position_id.party_tax_scheme_id.code
             tax_scheme_name = self.property_account_position_id.party_tax_scheme_id.name
         else:
-            raise UserError(msg10 % self.name)
+            raise UserError(msg9 % self.name)
 
         if (
             self.is_einvoicing_agent in ("yes", "not_but")
             or not self.is_einvoicing_agent
         ) and not self.einvoicing_email:
-            raise UserError(msg11 % self.name)
+            raise UserError(msg10 % self.name)
 
         if self.send_zip_code:
             if self.zip_id:
@@ -187,10 +183,10 @@ class ResPartner(models.Model):
             tax_scheme_name = "No causa"
 
             if self.property_account_position_id.listname != "49":
-                raise UserError(msg8 % self.name)
+                raise UserError(msg7 % self.name)
 
         return {
-            "AdditionalAccountID": self.person_type,
+            "AdditionalAccountID": "1" if self.company_type == "company" else "2",
             "PartyName": self.commercial_name,
             "RegistrationName": name,
             "AddressID": self.zip_id.city_id.code or "",

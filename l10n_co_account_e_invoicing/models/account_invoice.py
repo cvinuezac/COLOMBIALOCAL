@@ -441,10 +441,6 @@ class AccountInvoice(models.Model):
         }
 
     def _get_invoice_lines(self):
-        msg1 = _(
-            "Your Unit of Measure: '%s', has no Unit of Measure Code, contact "
-            "with your administrator."
-        )
         msg2 = _("The invoice line %s has no reference")
         msg3 = _(
             "Your product: '%s', has no reference price, contact with your "
@@ -468,9 +464,6 @@ class AccountInvoice(models.Model):
         count = 1
 
         for invoice_line in self.invoice_line_ids:
-            if not invoice_line.uom_id.uom_code_id:
-                raise UserError(msg1 % invoice_line.uom_id.name)
-
             disc_amount = 0
             total_wo_disc = 0
             brand_name = False
@@ -483,10 +476,10 @@ class AccountInvoice(models.Model):
                 disc_amount = (total_wo_disc * invoice_line.discount) / 100
 
             if not invoice_line.product_id:
-                raise UserError(msg2 % invoice_line.name)
+                raise UserError(msg1 % invoice_line.name)
 
             if invoice_line.price_subtotal <= 0 and invoice_line.reference_price <= 0:
-                raise UserError(msg3 % invoice_line.product_id.display_name)
+                raise UserError(msg2 % invoice_line.product_id.display_name)
 
             if self.invoice_type_code == "02":
                 if invoice_line.product_id.product_brand_id:
@@ -495,7 +488,7 @@ class AccountInvoice(models.Model):
                 model_name = str(invoice_line.product_id.id)
 
             invoice_lines[count] = {}
-            invoice_lines[count]["unitCode"] = invoice_line.uom_id.uom_code_id.code
+            invoice_lines[count]["unitCode"] = invoice_line.uom_id.code
             invoice_lines[count]["Quantity"] = "{:.2f}".format(invoice_line.quantity)
             invoice_lines[count][
                 "PricingReferencePriceAmount"
@@ -521,15 +514,15 @@ class AccountInvoice(models.Model):
                 for tax_id in tax_ids:
                     if tax_id.tax_group_id.is_einvoicing:
                         if not tax_id.tax_group_id.tax_group_type_id:
-                            raise UserError(msg4 % tax.name)
+                            raise UserError(msg3 % tax.name)
 
                         tax_type = tax_id.tax_group_id.tax_group_type_id.type
 
                         if tax_type == "withholding_tax" and tax_id.amount == 0:
-                            raise UserError(msg5 % tax_id.name)
+                            raise UserError(msg4 % tax_id.name)
 
                         if tax_type == "tax" and tax_id.amount <= 0:
-                            raise UserError(msg6 % tax_id.name)
+                            raise UserError(msg5 % tax_id.name)
 
                         if tax_type == "withholding_tax" and tax_id.amount > 0:
                             invoice_lines[count]["WithholdingTaxesTotal"] = (

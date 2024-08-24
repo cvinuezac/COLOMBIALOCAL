@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-22 07:19+0000\n"
-"PO-Revision-Date: 2024-08-22 07:19+0000\n"
+"POT-Creation-Date: 2024-08-24 00:41+0000\n"
+"PO-Revision-Date: 2024-08-24 00:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,8 +35,16 @@ msgstr "Agregar nota de débito"
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__code
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__code
+#: model:ir.model.fields,field_description:l10n_co_account.field_uom_uom__code
 msgid "Code"
 msgstr "Código"
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_position__company_type
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__company_type
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__company_type
+msgid "Company Type"
+msgstr "Tipo de compañía"
 
 #. module: l10n_co_account
 #: model:ir.model,name:l10n_co_account.model_res_partner
@@ -68,6 +76,11 @@ msgid "Debit Note"
 msgstr "Nota de débito"
 
 #. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_account_fiscal_position
+msgid "Fiscal Position"
+msgstr "Posición fiscal"
+
+#. module: l10n_co_account
 #: model:ir.model,name:l10n_co_account.model_res_partner_industry
 msgid "Industry"
 msgstr "Sector"
@@ -78,16 +91,28 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: l10n_co_account
+#: selection:account.fiscal.position,company_type:0
+#: selection:res.partner,company_type:0
+msgid "Juridical Person"
+msgstr "Persona jurídica"
+
+#. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__industry_id
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_users__industry_id
 msgid "Main Industry"
-msgstr "Sector Principal"
+msgstr "Sector principal"
 
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__name
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__name
 msgid "Name"
 msgstr "Nombre"
+
+#. module: l10n_co_account
+#: selection:account.fiscal.position,company_type:0
+#: selection:res.partner,company_type:0
+msgid "Natural Person"
+msgstr "Persona natural"
 
 #. module: l10n_co_account
 #: selection:res.partner.industry,type:0
@@ -98,6 +123,11 @@ msgstr "Otro"
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__parent_id
 msgid "Parent"
 msgstr "Padre"
+
+#. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_uom_uom
+msgid "Product Unit of Measure"
+msgstr "Unidad de medida del producto"
 
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__secondary_industry_ids
