@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-24 00:40+0000\n"
-"PO-Revision-Date: 2024-08-24 00:40+0000\n"
+"POT-Creation-Date: 2024-08-24 08:33+0000\n"
+"PO-Revision-Date: 2024-08-24 08:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,13 @@ msgid "DIAN"
 msgstr ""
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_l10n_latam_identification_type__code_dian
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__l10n_co_identification_type_code
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__l10n_co_identification_type_code
+msgid "DIAN Code"
+msgstr ""
+
+#. module: l10n_co_account
 #: selection:account.invoice.refund.reason,type:0
 #: model:ir.model,name:l10n_co_account.model_account_invoice_debitnote
 msgid "Debit Note"
@@ -78,6 +85,23 @@ msgstr ""
 #. module: l10n_co_account
 #: model:ir.model,name:l10n_co_account.model_account_fiscal_position
 msgid "Fiscal Position"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__l10n_co_identification_document
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__l10n_co_identification_document
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.view_res_partner_filter
+msgid "Identification Document"
+msgstr ""
+
+#. module: l10n_co_account
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.view_res_partner_filter
+msgid "Identification Type"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model,name:l10n_co_account.model_l10n_latam_identification_type
+msgid "Identification Types"
 msgstr ""
 
 #. module: l10n_co_account
@@ -136,6 +160,11 @@ msgid "Secondary Industries"
 msgstr ""
 
 #. module: l10n_co_account
+#: model:l10n_latam.identification.type,name:l10n_co_account.43
+msgid "Sin identificación del exterior o para uso definido por la DIAN"
+msgstr ""
+
+#. module: l10n_co_account
 #: code:addons/l10n_co_account/models/res_partner_industry.py:20
 #: sql_constraint:res.partner.industry:0
 #, python-format
@@ -146,6 +175,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__type
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__type
 msgid "Type"
+msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__l10n_co_verification_digit
+#: model:ir.model.fields,field_description:l10n_co_account.field_res_users__l10n_co_verification_digit
+msgid "Verification Digit"
 msgstr ""
 
 #. module: l10n_co_account

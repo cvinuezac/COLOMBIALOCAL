@@ -18,6 +18,7 @@
     ],
     "data": [
         "data/account.invoice.refund.reason.csv",
+        "data/l10n_latam.identification.type.csv",
         "data/res.partner.industry.csv",
         "data/uom.uom.csv",
         "security/res_groups.xml",

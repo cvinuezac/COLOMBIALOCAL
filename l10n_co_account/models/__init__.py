@@ -4,6 +4,7 @@
 from . import account_fiscal_position
 from . import account_invoice_refund_reason
 from . import account_invoice
+from . import l10n_latam_identification_type
 from . import res_partner_industry
 from . import res_partner
 from . import uom_uom

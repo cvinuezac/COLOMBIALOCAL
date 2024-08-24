@@ -102,7 +102,7 @@ class ResPartner(models.Model):
         msg10 = _("E-Invoicing Agent: '%s' does not have a E-Invoicing Email.")
         name = self.name
         zip_code = False
-        identification_document = self.identification_document
+        identification_document = self.l10n_co_identification_document
         telephone = False
 
         if self.country_id:
@@ -114,27 +114,30 @@ class ResPartner(models.Model):
         else:
             raise UserError(msg3 % self.name)
 
-        if self.document_type_id:
-            document_type_code = self.document_type_id.code
+        identification_type_code = self.l10n_co_identification_type_code
 
-            if document_type_code == "31" and not self.check_digit:
-                raise UserError(msg4 % self.name)
-
-            # Punto 6.2.1. Documento de identificación (Tipo de Identificador Fiscal):
-            # cbc:CompanyID.@schemeName; sts:ProviderID.@schemeName del anexo técnico version 1.7
-            if document_type_code not in DOCUMENT_TYPE_CODES:
-                if self.company_type == "company":
-                    raise UserError(msg5 % self.name)
-                else:
-                    name = "consumidor final"
-                    document_type_code = "13"
-                    identification_document = "222222222222"
-        else:
+        if not identification_type_code:
             raise UserError(msg5 % self.name)
 
+        if identification_type_code == "31" and not self.l10n_co_verification_digit:
+            raise UserError(msg4 % self.name)
+
+        # Punto 6.2.1. Documento de identificación (Tipo de Identificador Fiscal):
+        # cbc:CompanyID.@schemeName; sts:ProviderID.@schemeName del anexo técnico version 1.7
+        if identification_type_code not in DOCUMENT_TYPE_CODES:
+            if self.company_type == "company":
+                raise UserError(msg5 % self.name)
+            else:
+                name = "consumidor final"
+                identification_type_code = "13"
+                identification_document = "222222222222"
+
         if (
-            self.company_type == "company" and document_type_code not in ("31", "50")
-        ) or (self.company_type == "person" and document_type_code in ("31", "50")):
+            self.company_type == "company"
+            and identification_type_code not in ("31", "50")
+        ) or (
+            self.company_type == "person" and identification_type_code in ("31", "50")
+        ):
             raise UserError(msg6 % self.name)
 
         if not identification_document:
@@ -195,8 +198,8 @@ class ResPartner(models.Model):
             "AddressCountrySubentity": self.state_id.name or "",
             "AddressCountrySubentityCode": self.state_id.code or "",
             "AddressLine": self.street or "",
-            "CompanyIDschemeID": self.check_digit,
-            "CompanyIDschemeName": document_type_code,
+            "CompanyIDschemeID": self.l10n_co_verification_digit,
+            "CompanyIDschemeName": identification_type_code,
             "CompanyID": identification_document,
             "listName": self.property_account_position_id.listname,
             "TaxLevelCode": tax_level_codes,
@@ -245,17 +248,20 @@ class ResPartner(models.Model):
         msg2 = _("'%s' does not have a document type established.")
         msg3 = _("'%s' does not have a identification document established.")
 
-        if self.document_type_id:
-            if self.document_type_id.code == "31" and not self.check_digit:
+        if self.l10n_co_identification_type_code:
+            if (
+                self.l10n_co_identification_type_code == "31"
+                and not self.l10n_co_verification_digit
+            ):
                 raise UserError(msg1 % self.name)
         else:
             raise UserError(msg2 % self.name)
 
-        if not self.identification_document:
+        if not self.l10n_co_identification_document:
             raise UserError(msg3 % self.name)
 
         return {
-            "IDschemeID": self.check_digit,
-            "IDschemeName": self.document_type_id.code,
-            "ID": self.identification_document,
+            "IDschemeID": self.l10n_co_verification_digit,
+            "IDschemeName": self.l10n_co_identification_type_code,
+            "ID": self.l10n_co_identification_document,
         }

@@ -1,0 +1,17 @@
+id,name,l10n_co_document_code,code_dian,country_id:id,is_vat,sequence,active
+l10n_co.rut,NIT,rut,31,base.co,TRUE,1,TRUE
+l10n_co.national_citizen_id,Cédula de ciudadanía,national_citizen_id,13,base.co,FALSE,2,TRUE
+l10n_co.civil_registration,Registro civil,civil_registration,11,base.co,FALSE,3,TRUE
+l10n_co.id_card,Tarjeta de identidad,id_card,12,base.co,FALSE,4,TRUE
+l10n_co.foreign_colombian_card,Tarjeta de extranjería,foreign_colombian_card,21,base.co,False,5,TRUE
+l10n_co.foreign_resident_card,Cédula de extranjería,foreign_resident_card,22,base.co,False,6,TRUE
+l10n_latam_base.it_pass,Passport,passport,41,,FALSE,7,TRUE
+l10n_co.residence_document,PEP (Permiso Especial de Permanencia),PEP,47,base.co,FALSE,8,TRUE
+l10n_latam_base.it_fid,Documento de identificación extranjero,foreign_id_card,42,,FALSE,9,TRUE
+l10n_co.48,PPT (Permiso Protección Temporal),PPT,48,base.co,FALSE,12,TRUE
+l10n_co.external_id,NIT de otro país,external_id,50,,FALSE,10,TRUE
+l10n_co.niup_id,NIUP,niup_id,91,base.co,False,11,TRUE
+43,Sin identificación del exterior o para uso definido por la DIAN,SIN,43,base.co,TRUE,12,TRUE
+l10n_co.diplomatic_card,INACTIVO - Carné Diplomatico,diplomatic_card,,base.co,FALSE,12,FALSE
+l10n_co.id_document,INACTIVO - Cédula,id_document,,base.co,FALSE,13,FALSE
+l10n_latam_base.it_vat,VAT,rut,,,TRUE,80,FALSE

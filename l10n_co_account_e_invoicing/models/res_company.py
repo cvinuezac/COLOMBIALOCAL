@@ -107,13 +107,15 @@ class ResCompany(models.Model):
             self.certificate_file, self.certificate_password
         )
 
-        xml_soap_values["accountCode"] = self.partner_id.identification_document
-        xml_soap_values["accountCodeT"] = self.partner_id.identification_document
+        xml_soap_values["accountCode"] = self.partner_id.l10n_co_identification_document
+        xml_soap_values["accountCodeT"] = (
+            self.partner_id.l10n_co_identification_document
+        )
         xml_soap_values["softwareCode"] = self.software_id
 
         if self.have_technological_provider:
             xml_soap_values["accountCodeT"] = (
-                self.technological_provider_id.identification_document
+                self.technological_provider_id.l10n_co_identification_document
             )
 
         return xml_soap_values

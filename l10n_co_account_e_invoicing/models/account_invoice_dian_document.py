@@ -184,13 +184,13 @@ class AccountInvoiceDianDocument(models.Model):
             self.invoice_id.date_invoice, "%Y-%m-%d %H:%M:%S"
         )
 
-        if self.company_id.partner_id.document_type_id:
-            if self.company_id.partner_id.document_type_id.code != "31":
+        if self.company_id.partner_id.l10n_co_identification_type_code:
+            if self.company_id.partner_id.l10n_co_identification_type_code != "31":
                 raise UserError(msg1 % self.company_id.partner_id.name)
         else:
             raise UserError(msg2 % self.company_id.partner_id.name)
 
-        if not self.company_id.partner_id.identification_document:
+        if not self.company_id.partner_id.l10n_co_identification_document:
             raise UserError(msg3)
 
         if not date_invoice:
@@ -223,7 +223,9 @@ class AccountInvoiceDianDocument(models.Model):
 
         # nnnnnnnnnn: NIT del Facturador Electrónico sin DV, de diez (10) dígitos
         # alineados a la derecha y relleno con ceros a la izquierda.
-        nnnnnnnnnn = self.company_id.partner_id.identification_document.zfill(10)
+        nnnnnnnnnn = self.company_id.partner_id.l10n_co_identification_document.zfill(
+            10
+        )
         # El Código “ppp” es 000 para Software Propio
         ppp = "000"
 
@@ -386,9 +388,9 @@ class AccountInvoiceDianDocument(models.Model):
         )
 
         return {
-            "ProviderIDschemeID": provider.check_digit,
-            "ProviderIDschemeName": provider.document_type_id.code,
-            "ProviderID": provider.identification_document,
+            "ProviderIDschemeID": provider.l10n_co_verification_digit,
+            "ProviderIDschemeName": provider.l10n_co_identification_type_code,
+            "ProviderID": provider.l10n_co_identification_document,
             "SoftwareID": IdSoftware,
             "SoftwareSecurityCode": SoftwareSecurityCode["SoftwareSecurityCode"],
             "QRCodeURL": QRCodeURL,
@@ -567,9 +569,9 @@ class AccountInvoiceDianDocument(models.Model):
             provider = self.company_id.technological_provider_id
 
         SoftwareProvider = {
-            "ProviderIDschemeID": provider.check_digit,
-            "ProviderIDschemeName": provider.document_type_id.code,
-            "ProviderID": provider.identification_document,
+            "ProviderIDschemeID": provider.l10n_co_verification_digit,
+            "ProviderIDschemeName": provider.l10n_co_identification_type_code,
+            "ProviderID": provider.l10n_co_identification_document,
             "SoftwareID": self.company_id.software_id,
         }
         SoftwarePIN = self.company_id.software_pin
@@ -591,7 +593,7 @@ class AccountInvoiceDianDocument(models.Model):
         elif ResponseCode == "034":
             ID = "AT"
 
-        ID += receiver.identification_document + DocumentReference["ID"]
+        ID += receiver.l10n_co_identification_document + DocumentReference["ID"]
         SoftwareSecurityCode = global_functions.get_SoftwareSecurityCode(
             SoftwareProvider["SoftwareID"], SoftwarePIN, ID
         )
@@ -658,9 +660,9 @@ class AccountInvoiceDianDocument(models.Model):
             },
             "DocumentReference": DocumentReference,
             "IssuerParty": {
-                "IDschemeID": self.create_uid.partner_id.check_digit,
-                "IDschemeName": self.create_uid.partner_id.document_type_id.code,
-                "ID": self.create_uid.partner_id.identification_document,
+                "IDschemeID": self.create_uid.partner_id.l10n_co_verification_digit,
+                "IDschemeName": self.create_uid.partner_id.l10n_co_identification_type_code,
+                "ID": self.create_uid.partner_id.l10n_co_identification_document,
                 "FirstName": self.create_uid.partner_id.firstname,
                 "FamilyName": self.create_uid.partner_id.lastname,
                 "JobTitle": False,
@@ -688,15 +690,20 @@ class AccountInvoiceDianDocument(models.Model):
         # Punto 16.1.4.1 Procedencia de Vendedor - Anexo tecnico DS version 1.1
         # 10 Residente
         # 11 No Residente
-        customization_id = "11"
-        dv = False
+        xml_values["CustomizationID"] = "11"
+        xml_values["DV"] = False
 
-        if self.invoice_id.partner_id.document_type_id.code in ("11", "12", "13", "31"):
-            customization_id = "10"
-            dv = str(self.invoice_id.partner_id._compute_check_digit())
+        if self.invoice_id.partner_id.l10n_co_identification_type_code in (
+            "11",
+            "12",
+            "13",
+            "31",
+        ):
+            xml_values["CustomizationID"] = "10"
+            xml_values["DV"] = str(
+                self.invoice_id.partner_id._compute_verification_digit()
+            )
 
-        xml_values["DV"] = dv
-        xml_values["CustomizationID"] = customization_id
         # Punto 16.1.3 Tipo de Documento - Anexo tecnico DS version 1.1
         # 05 Documento soporte en adquisiciones efectuadas a sujetos no obligados a
         # expedir factura o documento equivalente
@@ -728,9 +735,16 @@ class AccountInvoiceDianDocument(models.Model):
         xml_values["CustomizationID"] = "11"
         xml_values["DV"] = False
 
-        if self.invoice_id.partner_id.document_type_id.code in ("11", "12", "13", "31"):
+        if self.invoice_id.partner_id.l10n_co_identification_type_code in (
+            "11",
+            "12",
+            "13",
+            "31",
+        ):
             xml_values["CustomizationID"] = "10"
-            xml_values["DV"] = str(self.invoice_id.partner_id._compute_check_digit())
+            xml_values["DV"] = str(
+                self.invoice_id.partner_id._compute_verification_digit()
+            )
 
         # TODO 2.0: Exclusivo en referencias a documentos (elementos DocumentReference)
         # Punto 16.1.3 Tipo de Documento - Anexo tecnico DS version 1.1
@@ -817,12 +831,12 @@ class AccountInvoiceDianDocument(models.Model):
                 "Evento;"
                 + DocumentReferenceID
                 + ";"
-                + self.company_id.partner_id.identification_document
+                + self.company_id.partner_id.l10n_co_identification_document
                 + ";"
                 + self.company_id.name
                 + ";"
                 + prefix
-                + self.invoice_id.partner_id.identification_document
+                + self.invoice_id.partner_id.l10n_co_identification_document
                 + DocumentReferenceID
                 + ";"
                 + ResponseCode
@@ -830,7 +844,7 @@ class AccountInvoiceDianDocument(models.Model):
             )
         else:
             return (
-                self.company_id.partner_id.identification_document
+                self.company_id.partner_id.l10n_co_identification_document
                 + ";"
                 + self.company_id.name
                 + ";"
@@ -881,7 +895,7 @@ class AccountInvoiceDianDocument(models.Model):
 
         if self.invoice_id.supplier_uuid:
             ParentDocumentID = (
-                self.invoice_id.partner_id.identification_document
+                self.invoice_id.partner_id.l10n_co_identification_document
                 + self.invoice_id.reference
             )
             UUIDschemeName = "CUDE"
