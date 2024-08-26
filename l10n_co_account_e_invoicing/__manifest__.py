@@ -32,9 +32,9 @@
     },
     "data": [
         "data/ir_module_category_data.xml",
-        "data/res_groups_data.xml",
         "data/product_scheme_data.xml",
         "data/ir_cron_data.xml",
+        "security/res_groups.xml",
         "security/ir.model.access.csv",
         "views/account_invoice_dian_document_views.xml",
         "views/account_invoice_views.xml",
@@ -47,6 +47,7 @@
         "views/sale_order_views.xml",
         "report/account_invoice_mail_template.xml",
         "report/account_invoice_report_template.xml",
+        "wizard/account_move_edi_document_process_views.xml",
     ],
     "installable": True,
 }

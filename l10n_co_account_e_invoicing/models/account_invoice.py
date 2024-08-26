@@ -146,7 +146,6 @@ class AccountInvoice(models.Model):
         compute="_compute_sequence_resolution_id",
         store=False,
     )
-    invoice_datetime = fields.Datetime(string="Invoice Datetime", copy=False)
     delivery_datetime = fields.Datetime(string="Delivery Datetime", copy=False)
     send_invoice_to_dian = fields.Selection(
         selection=[("0", "Immediately"), ("1", "Delayed")],
@@ -441,21 +440,21 @@ class AccountInvoice(models.Model):
         }
 
     def _get_invoice_lines(self):
-        msg2 = _("The invoice line %s has no reference")
-        msg3 = _(
+        msg1 = _("The invoice line %s has no reference")
+        msg2 = _(
             "Your product: '%s', has no reference price, contact with your "
             "administrator."
         )
-        msg4 = _(
+        msg3 = _(
             "Your tax: '%s', has no e-invoicing tax group type, contact with your "
             "administrator."
         )
-        msg5 = _(
+        msg4 = _(
             "Your withholding tax: '%s', has amount equal to zero (0), the "
             "withholding taxes must have amount different to zero (0), contact "
             "with your administrator."
         )
-        msg6 = _(
+        msg5 = _(
             "Your tax: '%s', has negative amount or an amount equal to zero (0), "
             "the taxes must have an amount greater than zero (0), contact with "
             "your administrator."
@@ -614,88 +613,134 @@ class AccountInvoice(models.Model):
 
         return True
 
-    def set_dian_document(self):
-        msg = _(
-            "The 'delivery date' must be equal or greater per maximum 10 days to "
-            "the 'invoice date'."
-        )
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
-        from_zone = tz.gettz("UTC")
-        to_zone = tz.gettz(to_timezone.zone)
+    def set_edi_document(self, application_response_type=False):
+        msg = _("You must set a delivery date.")
 
-        for invoice in self:
-            if not invoice.company_id.einvoicing_enabled:
+        for invoice_id in self:
+            if not invoice_id.company_id.einvoicing_enabled:
                 return True
 
-            if invoice.journal_id.sequence_id.dian_type not in DIAN_TYPES:
-                return True
+            send_invoice_to_dian = True
+            invoice_type_code_01_02 = True
+            invoice_type_code_04 = False
 
-            if invoice.dian_document_ids.filtered(lambda d: d.state != "cancel"):
-                return True
-
-            if not invoice.invoice_datetime:
-                invoice_datetime = datetime.now().replace(tzinfo=from_zone)
-                invoice_datetime = invoice_datetime.astimezone(to_zone).strftime(
-                    "%Y-%m-%d %H:%M:%S"
+            if application_response_type:
+                dian_document_id = invoice_id.dian_document_ids.filtered(
+                    lambda d: d.application_response_type == application_response_type
                 )
-                invoice.invoice_datetime = invoice_datetime
 
-            if (
-                invoice.company_id.automatic_delivery_datetime
-                and invoice.company_id.additional_hours_delivery_datetime
-                and not invoice.delivery_datetime
-            ):
-                invoice_datetime = invoice.invoice_datetime
-                hours_added = timedelta(
-                    hours=invoice.company_id.additional_hours_delivery_datetime
+                if dian_document_id and dian_document_id.state == "done":
+                    return True
+                elif not dian_document_id:
+                    dian_document_id = self.env["account.invoice.dian.document"].create(
+                        {
+                            "company_id": invoice_id.company_id.id,
+                            "invoice_id": invoice_id.id,
+                            "application_response_type": application_response_type,
+                        }
+                    )
+            else:
+                if invoice_id.journal_id.sequence_id.dian_type not in DIAN_TYPES:
+                    return True
+
+                if invoice_id.dian_document_ids.filtered(lambda d: d.state != "cancel"):
+                    return True
+
+                if (
+                    invoice_id.company_id.automatic_delivery_datetime
+                    and invoice_id.company_id.additional_hours_delivery_datetime
+                    and not invoice_id.delivery_datetime
+                ):
+                    invoice_date = self.date_invoice
+                    invoice_datetime = datetime(
+                        invoice_date.year, invoice_date.month, invoice_date.day, 8
+                    )
+                    hours_added = timedelta(
+                        hours=invoice_id.company_id.additional_hours_delivery_datetime
+                    )
+                    invoice_id.delivery_datetime = invoice_datetime + hours_added
+
+                if not invoice_id.delivery_datetime:
+                    raise UserError(msg)
+
+                invoice_id.set_invoice_lines_price_reference()
+                xml_filename = False
+                zipped_filename = False
+                ar_xml_filename = False
+                ad_zipped_filename = False
+
+                for dian_document_id in invoice_id.dian_document_ids:
+                    xml_filename = dian_document_id.xml_filename
+                    zipped_filename = dian_document_id.zipped_filename
+                    ar_xml_filename = dian_document_id.ar_xml_filename
+                    ad_zipped_filename = dian_document_id.ad_zipped_filename
+                    break
+
+                dian_document_obj = self.env["account.invoice.dian.document"]
+                dian_document_id = dian_document_obj.create(
+                    {
+                        "invoice_id": invoice_id.id,
+                        "company_id": invoice_id.company_id.id,
+                        "xml_filename": xml_filename,
+                        "zipped_filename": zipped_filename,
+                        "ar_xml_filename": ar_xml_filename,
+                        "ad_zipped_filename": ad_zipped_filename,
+                    }
                 )
-                invoice.delivery_datetime = invoice_datetime + hours_added
+                send_invoice_to_dian = invoice_id.send_invoice_to_dian == "0"
+                invoice_type_code_01_02 = invoice_id.invoice_type_code in ("01", "02")
+                invoice_type_code_04 = invoice_id.invoice_type_code == "04"
 
-            if not invoice.delivery_datetime:
-                raise UserError(msg)
-
-            date_invoice = invoice.date_invoice
-            delivery_date = datetime.strftime(invoice.delivery_datetime, "%Y-%m-%d")
-            delivery_date = datetime.strptime(delivery_date, "%Y-%m-%d").date()
-            days = (delivery_date - date_invoice).days
-
-            if days < 0 or days > 10:
-                raise UserError(msg)
-
-            invoice.set_invoice_lines_price_reference()
-            xml_filename = False
-            zipped_filename = False
-            ar_xml_filename = False
-            ad_zipped_filename = False
-
-            for dian_document_id in invoice.dian_document_ids:
-                xml_filename = dian_document_id.xml_filename
-                zipped_filename = dian_document_id.zipped_filename
-                ar_xml_filename = dian_document_id.ar_xml_filename
-                ad_zipped_filename = dian_document_id.ad_zipped_filename
-                break
-
-            dian_document_obj = self.env["account.invoice.dian.document"]
-            dian_document_id = dian_document_obj.create(
-                {
-                    "invoice_id": invoice.id,
-                    "company_id": invoice.company_id.id,
-                    "xml_filename": xml_filename,
-                    "zipped_filename": zipped_filename,
-                    "ar_xml_filename": ar_xml_filename,
-                    "ad_zipped_filename": ad_zipped_filename,
-                }
-            )
             set_files = dian_document_id.action_set_files()
 
-            if invoice.send_invoice_to_dian == "0":
+            if send_invoice_to_dian:
                 if set_files:
-                    if invoice.invoice_type_code in ("01", "02"):
+                    if invoice_type_code_01_02:
                         dian_document_id.action_send_zipped_file()
-                    elif invoice.invoice_type_code == "04":
+                    elif invoice_type_code_04:
                         dian_document_id.action_send_email()
                 else:
                     dian_document_id.send_failure_email()
+
+        return True
+
+    @api.onchange("supplier_uuid")
+    def _onchange_supplier_uuid(self):
+        if self.supplier_uuid and self.invoice_type_code == "05":
+            self.invoice_type_code = "01"
+
+    @api.multi
+    def action_ApplicationResponse_030(self):
+        for invoice_id in self:
+            invoice_id.set_edi_document("030")
+
+        return True
+
+    @api.multi
+    def action_ApplicationResponse_031(self):
+        for invoice_id in self:
+            invoice_id.set_edi_document("031")
+
+        return True
+
+    @api.multi
+    def action_ApplicationResponse_032(self):
+        for invoice_id in self:
+            invoice_id.set_edi_document("032")
+
+        return True
+
+    @api.multi
+    def action_ApplicationResponse_033(self):
+        for invoice_id in self:
+            invoice_id.set_edi_document("033")
+
+        return True
+
+    @api.multi
+    def action_ApplicationResponse_034(self):
+        for invoice_id in self:
+            invoice_id.set_edi_document("034")
 
         return True
 
@@ -705,99 +750,30 @@ class AccountInvoice(models.Model):
 
         for invoice_id in self:
             if invoice_id.sequence_resolution_id:
-                invoice_id.set_dian_document()
+                invoice_id.set_edi_document()
             elif invoice_id.supplier_uuid:
                 invoice_id.action_ApplicationResponse_030()
 
         return res
 
-    @api.onchange("supplier_uuid")
-    def _onchange_supplier_uuid(self):
-        if self.supplier_uuid and self.invoice_type_code == "05":
-            self.invoice_type_code = "01"
-
     @api.multi
     def action_cancel(self):
         msg = _("You cannot cancel a invoice sent to the DIAN and that was approved.")
         res = super(AccountInvoice, self).action_cancel()
+        user_id = self.env["res.users"].search([("id", "=", self.env.user.id)])
+        allow_cancel_invoices = user_id.has_group(
+            "l10n_co_account_e_invoicing.group_allow_cancel_invoices"
+        )
 
-        for invoice in self:
-            for dian_document in invoice.dian_document_ids:
-                if dian_document.state == "done":
-                    raise UserError(msg)
-                else:
-                    dian_document.state = "cancel"
+        for invoice_id in self:
+            dian_document_states = invoice_id.dian_document_ids.mapped("state")
+
+            if "done" not in dian_document_states:
+                invoice_id.dian_document_ids.write({"state": "cancel"})
+
+                return res
+
+            if not allow_cancel_invoices:
+                raise UserError(msg)
 
         return res
-
-    def set_dian_document_ApplicationResponse(self, application_response_type):
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
-        from_zone = tz.gettz("UTC")
-        to_zone = tz.gettz(to_timezone.zone)
-
-        for invoice_id in self:
-            if not invoice_id.company_id.einvoicing_enabled:
-                return True
-
-            dian_document_id = invoice_id.dian_document_ids.filtered(
-                lambda d: d.state != "done"
-                and d.application_response_type == application_response_type
-            )
-
-            if not dian_document_id:
-                issue_datetime = datetime.now().replace(tzinfo=from_zone)
-                issue_datetime = issue_datetime.astimezone(to_zone).strftime(
-                    "%Y-%m-%d %H:%M:%S"
-                )
-                dian_document_id = self.env["account.invoice.dian.document"].create(
-                    {
-                        "company_id": invoice_id.company_id.id,
-                        "invoice_id": invoice_id.id,
-                        "issue_datetime": issue_datetime,
-                        "application_response_type": application_response_type,
-                    }
-                )
-
-            set_files = dian_document_id.action_set_files()
-
-            if set_files:
-                dian_document_id.action_send_zipped_file()
-            else:
-                dian_document_id.send_failure_email()
-
-        return True
-
-    @api.multi
-    def action_ApplicationResponse_030(self):
-        for invoice_id in self:
-            invoice_id.set_dian_document_ApplicationResponse("030")
-
-        return True
-
-    @api.multi
-    def action_ApplicationResponse_031(self):
-        for invoice_id in self:
-            invoice_id.set_dian_document_ApplicationResponse("031")
-
-        return True
-
-    @api.multi
-    def action_ApplicationResponse_032(self):
-        for invoice_id in self:
-            invoice_id.set_dian_document_ApplicationResponse("032")
-
-        return True
-
-    @api.multi
-    def action_ApplicationResponse_033(self):
-        for invoice_id in self:
-            invoice_id.set_dian_document_ApplicationResponse("033")
-
-        return True
-
-    @api.multi
-    def action_ApplicationResponse_034(self):
-        for invoice_id in self:
-            invoice_id.set_dian_document_ApplicationResponse("034")
-
-        return True

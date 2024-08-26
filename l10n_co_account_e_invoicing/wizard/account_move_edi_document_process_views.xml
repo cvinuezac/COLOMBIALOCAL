@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_move_edi_document_process_form" model="ir.ui.view">
+        <field name="model">account.move.edi.document.process</field>
+        <field name="arch" type="xml">
+            <form string="Account Move EDI Document Process">
+                <group>
+                    <field name="action"/>
+                </group>
+                <footer>
+                    <button string="Process" name="action_edi_document_process" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_move_edi_document_process_action" model="ir.actions.act_window">
+        <field name="name">Account Move EDI Document Process</field>
+        <field name="res_model">account.move.edi.document.process</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form,tree</field>
+        <field name="view_id" ref="account_move_edi_document_process_form"/>
+        <field name="target">new</field>
+        <field name="binding_model_id"
+            ref="account.model_account_invoice"/>
+    </record>
+</odoo>

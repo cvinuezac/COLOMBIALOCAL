@@ -338,9 +338,9 @@ class AccountInvoiceDianDocument(models.Model):
         else:
             QRCodeURL = DIAN_URL["catalogo-hab"]
 
-        invoice_datetime = self.invoice_id.invoice_datetime
-        IssueDate = datetime.strftime(invoice_datetime, "%Y-%m-%d")
-        IssueTime = datetime.strftime(invoice_datetime, "%H:%M:%S-05:00")
+        issue_datetime = self.issue_datetime
+        IssueDate = datetime.strftime(issue_datetime, "%Y-%m-%d")
+        IssueTime = datetime.strftime(issue_datetime, "%H:%M:%S-05:00")
         delivery_datetime = self.invoice_id.delivery_datetime
         ActualDeliveryDate = datetime.strftime(delivery_datetime, "%Y-%m-%d")
         ActualDeliveryTime = datetime.strftime(delivery_datetime, "%H:%M:%S-05:00")
@@ -860,15 +860,22 @@ class AccountInvoiceDianDocument(models.Model):
         if self.invoice_id.warn_inactive_certificate:
             raise ValidationError(_("There is no an active certificate."))
 
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
+        from_zone = tz.gettz("UTC")
+        to_zone = tz.gettz(to_timezone.zone)
+        issue_datetime = datetime.now().replace(tzinfo=from_zone)
+        self.issue_datetime = issue_datetime.astimezone(to_zone).strftime(
+            "%Y-%m-%d %H:%M:%S"
+        )
+
         if not self.xml_filename or not self.zipped_filename:
             self._set_filenames()
 
         xml_file = self._get_xml_file()
 
         if xml_file:
-            zipped_file = self._get_zipped_file()
-            self.write({"xml_file": xml_file})
-            self.write({"zipped_file": zipped_file})
+            self.xml_file = xml_file
+            self.zipped_file = self._get_zipped_file()
         else:
             return xml_file
 
