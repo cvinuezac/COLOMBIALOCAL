@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_fiscal_responsibility_tree" model="ir.ui.view">
+        <field name="model">account.fiscal.responsibility</field>
+        <field name="arch" type="xml">
+            <tree string="Fiscal Responsibilities">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_fiscal_responsibility_form" model="ir.ui.view">
+        <field name="model">account.fiscal.responsibility</field>
+        <field name="arch" type="xml">
+            <form string="Fiscal Responsibilities">
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="account_fiscal_responsibility_search" model="ir.ui.view">
+        <field name="model">account.fiscal.responsibility</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                <field name="code" filter_domain="[('code', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="account_fiscal_responsibility_action" model="ir.actions.act_window">
+        <field name="name">Fiscal Responsibilities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.fiscal.responsibility</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_fiscal_responsibility_tree"/>
+        <field name="search_view_id" ref="account_fiscal_responsibility_search"/>
+    </record>
+
+    <menuitem id="account_fiscal_responsibility_menu" name="Fiscal Responsibilities"
+        action="account_fiscal_responsibility_action" parent="account.account_account_menu" sequence="5"/>
+</odoo>

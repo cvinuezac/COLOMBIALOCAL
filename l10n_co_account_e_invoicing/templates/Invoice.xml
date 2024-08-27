@@ -204,9 +204,7 @@
 					schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
 					schemeID="{{AccountingSupplierParty.CompanyIDschemeID}}"
 					schemeName="{{AccountingSupplierParty.CompanyIDschemeName}}">{{AccountingSupplierParty.CompanyID}}</cbc:CompanyID>
-				<!--TODO 2.0: listName el anexo dice que eliminar o valor No aplica,
-				pero para consumidor final dice informar 49-->
-				<cbc:TaxLevelCode listName="{{AccountingSupplierParty.listName}}">{{AccountingSupplierParty.TaxLevelCode}}</cbc:TaxLevelCode>
+				<cbc:TaxLevelCode>{{AccountingSupplierParty.TaxLevelCode}}</cbc:TaxLevelCode>
 				<cac:RegistrationAddress>
 					<cbc:ID>{{AccountingSupplierParty.AddressID}}</cbc:ID>
 					<cbc:CityName>{{AccountingSupplierParty.AddressCityName}}</cbc:CityName>
@@ -256,9 +254,7 @@
 								schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
 								schemeID=""
 								schemeName=""></cbc:CompanyID>
-							<TODO 2.0: listName el anexo dice que eliminar o valor No aplica,
-							pero para consumidor final dice informar 49>
-							<cbc:TaxLevelCode listName=""></cbc:TaxLevelCode>
+							<cbc:TaxLevelCode></cbc:TaxLevelCode>
 							<cac:TaxScheme>
 								<cbc:ID></cbc:ID>
 								<cbc:Name></cbc:Name>
@@ -335,8 +331,7 @@
 					schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
 					schemeName="{{AccountingCustomerParty.CompanyIDschemeName}}">{{AccountingCustomerParty.CompanyID}}</cbc:CompanyID>
 				{% endif %}
-				<!--TODO 2.0: listName el anexo dice que eliminar o valor No aplica, pero para consumidor final dice informar 49-->
-				<cbc:TaxLevelCode listName="{{AccountingCustomerParty.listName}}">{{AccountingCustomerParty.TaxLevelCode}}</cbc:TaxLevelCode>
+				<cbc:TaxLevelCode>{{AccountingCustomerParty.TaxLevelCode}}</cbc:TaxLevelCode>
 				{% if AccountingCustomerParty.CompanyID != '222222222222' %}
 				<cac:RegistrationAddress>
 					<cbc:ID>{{AccountingCustomerParty.AddressID}}</cbc:ID>
@@ -457,9 +452,7 @@
 					schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
 					schemeID="1"
 					schemeName="31">981223983</cbc:CompanyID>
-				<TODO 2.0: listName el anexo dice que eliminar o valor No aplica,
-				pero para consumidor final dice informar 49>
-				<cbc:TaxLevelCode listName="">O-99</cbc:TaxLevelCode>
+				<cbc:TaxLevelCode>O-99</cbc:TaxLevelCode>
 				<cac:RegistrationAddress>
 					<cbc:ID>11001</cbc:ID>
 					<cbc:CityName>Bogotá, D.c. </cbc:CityName>

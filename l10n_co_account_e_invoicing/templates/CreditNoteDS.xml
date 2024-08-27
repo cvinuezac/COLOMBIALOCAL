@@ -126,8 +126,7 @@
 					{% if DV %}schemeID="{{DV}}"{% endif %}
 					{% if CustomizationID != '10' %}schemeName="{{AccountingSupplierParty.CompanyIDschemeName}}"{% endif %}
 					{% if CustomizationID == '10' %}schemeName="31"{% endif %}>{{AccountingSupplierParty.CompanyID}}</cbc:CompanyID>
-				<!--TODO 2.0: listName el anexo no aparece, en la ejemplificacion si-->
-				<cbc:TaxLevelCode listName="{{AccountingSupplierParty.listName}}">{{AccountingSupplierParty.TaxLevelCode}}</cbc:TaxLevelCode>
+				<cbc:TaxLevelCode>{{AccountingSupplierParty.TaxLevelCode}}</cbc:TaxLevelCode>
 				<cac:TaxScheme>
 					<cbc:ID>{{AccountingSupplierParty.TaxSchemeID}}</cbc:ID>
 					<cbc:Name>{{AccountingSupplierParty.TaxSchemeName}}</cbc:Name>
@@ -150,8 +149,7 @@
 					schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
 					schemeName="{{AccountingCustomerParty.CompanyIDschemeName}}">{{AccountingCustomerParty.CompanyID}}</cbc:CompanyID>
 				{% endif %}
-				<!--TODO 2.0: listName el anexo no aparece, en la ejemplificacion si-->
-				<cbc:TaxLevelCode listName="{{AccountingCustomerParty.listName}}">{{AccountingCustomerParty.TaxLevelCode}}</cbc:TaxLevelCode>
+				<cbc:TaxLevelCode>{{AccountingCustomerParty.TaxLevelCode}}</cbc:TaxLevelCode>
 				<cac:TaxScheme>
 					<cbc:ID>{{AccountingCustomerParty.TaxSchemeID}}</cbc:ID>
 					<cbc:Name>{{AccountingCustomerParty.TaxSchemeName}}</cbc:Name>

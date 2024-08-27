@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 20:14+0000\n"
-"PO-Revision-Date: 2024-08-26 20:14+0000\n"
+"POT-Creation-Date: 2024-08-27 01:51+0000\n"
+"PO-Revision-Date: 2024-08-27 01:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,62 +21,62 @@ msgid "${object.dian_document_mail_subject}"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:94
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:95
 #, python-format
 msgid "'%s' does not have a DIAN document type established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:90
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:217
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:91
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:202
 #, python-format
 msgid "'%s' does not have a city established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:92
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:219
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:93
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:204
 #, python-format
 msgid "'%s' does not have a country established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:180
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:248
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:233
 #, python-format
 msgid "'%s' does not have a document type established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:100
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:103
 #, python-format
 msgid "'%s' does not have a fiscal position correctly configured."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:101
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:102
 #, python-format
 msgid "'%s' does not have a fiscal position established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice_dian_document.py:181
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:99
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:249
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:100
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:234
 #, python-format
 msgid "'%s' does not have a identification document established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:91
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:218
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:92
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:203
 #, python-format
 msgid "'%s' does not have a state established."
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:93
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:247
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:94
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:232
 #, python-format
 msgid "'%s' does not have a verification digit established."
 msgstr ""
@@ -516,7 +516,7 @@ msgid "E-Invoicing"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:102
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:101
 #, python-format
 msgid "E-Invoicing Agent: '%s' does not have a E-Invoicing Email."
 msgstr ""
@@ -1075,6 +1075,7 @@ msgid "The\n"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
+#: sql_constraint:account.invoice:0
 #: code:addons/l10n_co_account_e_invoicing/models/account_invoice.py:217
 #, python-format
 msgid "The Supplier CUFE must be unique"
@@ -1095,7 +1096,7 @@ msgid "The cost price + this percentage will be the reference price"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:95
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:96
 #, python-format
 msgid "The document type of '%s' does not seem to correspond with the person type."
 msgstr ""
@@ -1107,7 +1108,7 @@ msgid "The document type of '%s' is not NIT"
 msgstr ""
 
 #. module: l10n_co_account_e_invoicing
-#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:83
+#: code:addons/l10n_co_account_e_invoicing/models/res_partner.py:84
 #, python-format
 msgid "The field 'E-Invoicing Email' is not correctly filled.\n"
 "\n"

@@ -25,14 +25,14 @@ class AccountInvoice(models.Model):
 
     @api.model
     def _default_operation_type(self):
-        user = self.env["res.users"].search([("id", "=", self.env.user.id)])
+        user_id = self.env.user
         view_operation_type_field = False
 
         if (
-            user.has_group(
+            user_id.has_group(
                 "l10n_co_account_e_invoicing.group_view_operation_type_field"
             )
-            and self.env.user.id != SUPERUSER_ID
+            and user_id.id != SUPERUSER_ID
         ):
             view_operation_type_field = True
 
@@ -50,12 +50,14 @@ class AccountInvoice(models.Model):
 
     @api.model
     def _default_invoice_type_code(self):
-        user = self.env["res.users"].search([("id", "=", self.env.user.id)])
+        user_id = self.env.user
         view_invoice_type_field = False
 
         if (
-            user.has_group("l10n_co_account_e_invoicing.group_view_invoice_type_field")
-            and self.env.user.id != SUPERUSER_ID
+            user_id.has_group(
+                "l10n_co_account_e_invoicing.group_view_invoice_type_field"
+            )
+            and user_id.id != SUPERUSER_ID
         ):
             view_invoice_type_field = True
 
@@ -760,8 +762,7 @@ class AccountInvoice(models.Model):
     def action_cancel(self):
         msg = _("You cannot cancel a invoice sent to the DIAN and that was approved.")
         res = super(AccountInvoice, self).action_cancel()
-        user_id = self.env["res.users"].search([("id", "=", self.env.user.id)])
-        allow_cancel_invoices = user_id.has_group(
+        allow_cancel_invoices = self.env.user.has_group(
             "l10n_co_account_e_invoicing.group_allow_cancel_invoices"
         )
 

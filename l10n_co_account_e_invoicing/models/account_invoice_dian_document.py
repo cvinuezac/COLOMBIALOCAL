@@ -180,8 +180,9 @@ class AccountInvoiceDianDocument(models.Model):
         msg2 = _("'%s' does not have a document type established.")
         msg3 = _("'%s' does not have a identification document established.")
         msg4 = _("There is no date range corresponding to the date of your invoice.")
-        date_invoice = datetime.strftime(
-            self.invoice_id.date_invoice, "%Y-%m-%d %H:%M:%S"
+        invoice_date = (
+            datetime.strftime(self.invoice_id.date_invoice, "%Y-%m-%d %H:%M:%S")
+            or fields.Date.today()
         )
 
         if self.company_id.partner_id.l10n_co_identification_type_code:
@@ -193,11 +194,8 @@ class AccountInvoiceDianDocument(models.Model):
         if not self.company_id.partner_id.l10n_co_identification_document:
             raise UserError(msg3)
 
-        if not date_invoice:
-            date_invoice = fields.Date.today()
-
         daterange = self.env["date.range"].search(
-            [("date_start", "<=", date_invoice), ("date_end", ">=", date_invoice)]
+            [("date_start", "<=", invoice_date), ("date_end", ">=", invoice_date)]
         )
 
         if (
@@ -232,7 +230,7 @@ class AccountInvoiceDianDocument(models.Model):
         if self.company_id.have_technological_provider:
             ppp = self.company_id.assignment_code
         # aa: Dos (2) últimos dígitos año calendario
-        aa = date_invoice[2:4]
+        aa = invoice_date[2:4]
         # dddddddd: consecutivo del paquete de archivos comprimidos enviados;
         # de ocho (8) dígitos decimales alineados a la derecha y ajustado a la
         # izquierda con ceros; en el rango:
@@ -860,10 +858,14 @@ class AccountInvoiceDianDocument(models.Model):
         if self.invoice_id.warn_inactive_certificate:
             raise ValidationError(_("There is no an active certificate."))
 
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         from_zone = tz.gettz("UTC")
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         to_zone = tz.gettz(to_timezone.zone)
-        issue_datetime = datetime.now().replace(tzinfo=from_zone)
+        issue_datetime = fields.Date.today()
+        issue_datetime = datetime(
+            issue_datetime.year, issue_datetime.month, issue_datetime.day, 8
+        )
+        issue_datetime = issue_datetime.replace(tzinfo=from_zone)
         self.issue_datetime = issue_datetime.astimezone(to_zone).strftime(
             "%Y-%m-%d %H:%M:%S"
         )
@@ -885,8 +887,8 @@ class AccountInvoiceDianDocument(models.Model):
         ProfileExecutionID = self.company_id.profile_execution_id
         ad_zipped_filename = self.ad_zipped_filename
         ID = ad_zipped_filename.replace(".zip", "")
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         from_zone = tz.gettz("UTC")
+        to_timezone = timezone(self.env.user.tz or "America/Bogota")
         to_zone = tz.gettz(to_timezone.zone)
         issue_datetime = datetime.now().replace(tzinfo=from_zone)
         IssueDate = issue_datetime.astimezone(to_zone).strftime("%Y-%m-%d")

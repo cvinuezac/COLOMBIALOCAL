@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-24 08:34+0000\n"
-"PO-Revision-Date: 2024-08-24 08:34+0000\n"
+"POT-Creation-Date: 2024-08-27 00:39+0000\n"
+"PO-Revision-Date: 2024-08-27 00:39+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,7 @@ msgid "Add Debit Note"
 msgstr "Agregar nota de débito"
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__code
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__code
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__code
 #: model:ir.model.fields,field_description:l10n_co_account.field_uom_uom__code
@@ -59,6 +60,16 @@ msgid "Correction Concept"
 msgstr "Concepto de corrección"
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_co_account
 #: selection:account.invoice.refund.reason,type:0
 #: model:ir.model,name:l10n_co_account.model_account_invoice_refund
 msgid "Credit Note"
@@ -83,9 +94,44 @@ msgid "Debit Note"
 msgstr "Nota de débito"
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_co_account
 #: model:ir.model,name:l10n_co_account.model_account_fiscal_position
 msgid "Fiscal Position"
 msgstr "Posición fiscal"
+
+#. module: l10n_co_account
+#: model:ir.actions.act_window,name:l10n_co_account.account_fiscal_responsibility_action
+#: model:ir.model,name:l10n_co_account.model_account_fiscal_responsibility
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_position__fiscal_responsibility_ids
+#: model:ir.ui.menu,name:l10n_co_account.account_fiscal_responsibility_menu
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.account_fiscal_responsibility_form
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.account_fiscal_responsibility_tree
+msgid "Fiscal Responsibilities"
+msgstr "Responsabilidades fiscales"
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:account.fiscal.position,tax_detail:0
+msgid "INC"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:account.fiscal.position,tax_detail:0
+msgid "IVA"
+msgstr ""
+
+#. module: l10n_co_account
+#: selection:account.fiscal.position,tax_detail:0
+msgid "IVA e INC"
+msgstr ""
 
 #. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__l10n_co_identification_document
@@ -121,12 +167,28 @@ msgid "Juridical Person"
 msgstr "Persona jurídica"
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__industry_id
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_users__industry_id
 msgid "Main Industry"
 msgstr "Sector principal"
 
 #. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_responsibility__name
 #: model:ir.model.fields,field_description:l10n_co_account.field_account_invoice_refund_reason__name
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner_industry__name
 msgid "Name"
@@ -137,6 +199,11 @@ msgstr "Nombre"
 #: selection:res.partner,company_type:0
 msgid "Natural Person"
 msgstr "Persona natural"
+
+#. module: l10n_co_account
+#: selection:account.fiscal.position,tax_detail:0
+msgid "No aplica"
+msgstr ""
 
 #. module: l10n_co_account
 #: selection:res.partner.industry,type:0
@@ -154,6 +221,11 @@ msgid "Product Unit of Measure"
 msgstr "Unidad de medida del producto"
 
 #. module: l10n_co_account
+#: model_terms:ir.ui.view,arch_db:l10n_co_account.account_fiscal_responsibility_search
+msgid "Search"
+msgstr "Búsqueda"
+
+#. module: l10n_co_account
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_partner__secondary_industry_ids
 #: model:ir.model.fields,field_description:l10n_co_account.field_res_users__secondary_industry_ids
 msgid "Secondary Industries"
@@ -163,6 +235,11 @@ msgstr "Sectores secundarios"
 #: model:l10n_latam.identification.type,name:l10n_co_account.43
 msgid "Sin identificación del exterior o para uso definido por la DIAN"
 msgstr ""
+
+#. module: l10n_co_account
+#: model:ir.model.fields,field_description:l10n_co_account.field_account_fiscal_position__tax_detail
+msgid "Tax Detail"
+msgstr "Detalle tributario"
 
 #. module: l10n_co_account
 #: code:addons/l10n_co_account/models/res_partner_industry.py:20

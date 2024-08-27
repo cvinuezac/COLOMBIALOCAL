@@ -13,8 +13,12 @@ class ResPartner(models.Model):
     l10n_co_identification_type_code = fields.Char(
         related="l10n_latam_identification_type_id.code_dian", store=False
     )
-    l10n_co_identification_document = fields.Char(string="Identification Document")
-    l10n_co_verification_digit = fields.Char(string="Verification Digit", size=1)
+    l10n_co_identification_document = fields.Char(
+        string="Identification Document", placeholder="Identification Document"
+    )
+    l10n_co_verification_digit = fields.Char(
+        string="Verification Digit", placeholder="Verification Digit", size=1
+    )
     industry_id = fields.Many2one(domain="[('type', '!=', 'view')]")
     secondary_industry_ids = fields.Many2many(
         domain="[('id', '!=', industry_id), ('type', '!=', 'view')]"

@@ -24,7 +24,7 @@
 				schemeID="{{SenderParty.CompanyIDschemeID}}"
 				{% endif %}
 				schemeName="{{SenderParty.CompanyIDschemeName}}">{{SenderParty.CompanyID}}</cbc:CompanyID>
-			<cbc:TaxLevelCode listName="{{SenderParty.listName}}">{{SenderParty.TaxLevelCode}}</cbc:TaxLevelCode>
+			<cbc:TaxLevelCode>{{SenderParty.TaxLevelCode}}</cbc:TaxLevelCode>
 			<cac:TaxScheme>
 				<cbc:ID>{{SenderParty.TaxSchemeID}}</cbc:ID>
 				<cbc:Name>{{SenderParty.TaxSchemeName}}</cbc:Name>
@@ -39,7 +39,7 @@
 				schemeID="{{ReceiverParty.CompanyIDschemeID}}"
 				{% endif %}
 				schemeName="{{ReceiverParty.CompanyIDschemeName}}">{{ReceiverParty.CompanyID}}</cbc:CompanyID>
-			<cbc:TaxLevelCode listName="{{ReceiverParty.listName}}">{{ReceiverParty.TaxLevelCode}}</cbc:TaxLevelCode>
+			<cbc:TaxLevelCode>{{ReceiverParty.TaxLevelCode}}</cbc:TaxLevelCode>
 			<cac:TaxScheme>
 				<cbc:ID>{{ReceiverParty.TaxSchemeID}}</cbc:ID>
 				<cbc:Name>{{ReceiverParty.TaxSchemeName}}</cbc:Name>

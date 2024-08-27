@@ -1,0 +1,23 @@
+id,code,name,description,type
+account_tax_group_type_co_01,01,IVA,Impuesto sobre la Ventas,tax
+account_tax_group_type_co_02,02,IC,Impuesto al Consumo Departamental Nominal,tax
+account_tax_group_type_co_03,03,ICA,"Impuesto de Industria, Comercio y Aviso",tax
+account_tax_group_type_co_04,04,INC,Impuesto Nacional al Consumo,tax
+account_tax_group_type_co_05,05,ReteIVA,Retención sobre el IVA,withholding_tax
+account_tax_group_type_co_06,06,ReteRenta,Retención sobre Renta,withholding_tax
+account_tax_group_type_co_07,07,ReteICA,Retención sobre el ICA,withholding_tax
+account_tax_group_type_co_08,08,IC Porcentual,Impuesto al Consumo Departamental Porcentual,tax
+account_tax_group_type_co_20,20,FtoHorticultura,Cuota de Fomento Hortifrutícula,tax
+account_tax_group_type_co_21,21,Timbre,Impuesto de Timbre,tax
+account_tax_group_type_co_22,22,INC Bolsas,Impuesto Nacional al Consumo de Bolsa Plástica,tax
+account_tax_group_type_co_23,23,INCarbono,Impuesto Nacional del Carbono,tax
+account_tax_group_type_co_24,24,INCombustibles,Impuesto Nacional a los Combustibles,tax
+account_tax_group_type_co_25,25,Sobretasa Combustibles,Sobretasa a los combustibles,tax
+account_tax_group_type_co_26,26,Sordicom,Contribución minoristas (Combustibles),tax
+account_tax_group_type_co_30,30,IC Datos,Impuesto al Consumo de Datos,tax
+account_tax_group_type_co_32,32,ICL,Impuesto al Consumo de Licores,tax
+account_tax_group_type_co_33,33,INPP,Impuesto nacional productos plásticos,tax
+account_tax_group_type_co_34,34,IBUA,Impuesto a las bebidas ultraprocesadas azucaradas,tax
+account_tax_group_type_co_35,35,ICUI,"Impuesto a los productos comestibles ultraprocesados industrialmente y/o con alto contenido de azúcares añadidos, sodio o grasas saturadas",tax
+account_tax_group_type_co_36,36,ADV,AD VALOREM,tax
+account_tax_group_type_co_ZZ,ZZ,Nombre de la figura tributaria,"Otros tributos, tasas, contribuciones, y similares",tax

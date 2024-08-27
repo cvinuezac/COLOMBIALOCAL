@@ -5,7 +5,8 @@ import re
 from odoo import api, models, fields, _
 from odoo.exceptions import UserError, ValidationError
 
-DOCUMENT_TYPE_CODES = ["11", "12", "13", "21", "22", "31", "41", "42", "47", "50", "91"]
+ID_TYPE_CODES = ["11", "12", "13", "21", "22", "31", "41", "42", "47", "48", "50", "91"]
+TAX_DETAILS = {"01": "IVA", "04": "INC", "ZA": "IVA e INC", "ZZ": "No aplica"}
 
 
 class ResPartner(models.Model):
@@ -45,10 +46,9 @@ class ResPartner(models.Model):
 
     @api.multi
     def _get_view_einvoicing_email_field(self):
-        user = self.env["res.users"].search([("id", "=", self.env.user.id)])
         view_einvoicing_email_field = False
 
-        if user.has_group(
+        if self.env.user.has_group(
             "l10n_co_account_e_invoicing.group_view_einvoicing_email_fields"
         ):
             view_einvoicing_email_field = True
@@ -58,10 +58,9 @@ class ResPartner(models.Model):
 
     @api.multi
     def _get_edit_is_einvoicing_agent_field(self):
-        user = self.env["res.users"].search([("id", "=", self.env.user.id)])
         edit_is_einvoicing_agent_field = False
 
-        if user.has_group(
+        if self.env.user.has_group(
             "l10n_co_account_e_invoicing.group_edit_is_einvoicing_agent_field"
         ):
             edit_is_einvoicing_agent_field = True
@@ -97,38 +96,37 @@ class ResPartner(models.Model):
             "person type."
         )
         msg7 = _("'%s' does not have a identification document established.")
-        msg8 = _("'%s' does not have a fiscal position correctly configured.")
+        msg8 = _("E-Invoicing Agent: '%s' does not have a E-Invoicing Email.")
         msg9 = _("'%s' does not have a fiscal position established.")
-        msg10 = _("E-Invoicing Agent: '%s' does not have a E-Invoicing Email.")
-        name = self.name
-        zip_code = False
+        msg10 = _("'%s' does not have a fiscal position correctly configured.")
+        partner_name = self.name
+        fiscal_postion_id = self.property_account_position_id
+        identification_type_code = self.l10n_co_identification_type_code
         identification_document = self.l10n_co_identification_document
         telephone = False
 
         if self.country_id:
             if self.country_id.code == "CO":
                 if not self.zip_id:
-                    raise UserError(msg1 % self.name)
+                    raise UserError(msg1 % partner_name)
                 elif not self.state_id:
-                    raise UserError(msg2 % self.name)
+                    raise UserError(msg2 % partner_name)
         else:
-            raise UserError(msg3 % self.name)
-
-        identification_type_code = self.l10n_co_identification_type_code
+            raise UserError(msg3 % partner_name)
 
         if not identification_type_code:
-            raise UserError(msg5 % self.name)
+            raise UserError(msg5 % partner_name)
 
         if identification_type_code == "31" and not self.l10n_co_verification_digit:
-            raise UserError(msg4 % self.name)
+            raise UserError(msg4 % partner_name)
 
         # Punto 6.2.1. Documento de identificación (Tipo de Identificador Fiscal):
         # cbc:CompanyID.@schemeName; sts:ProviderID.@schemeName del anexo técnico version 1.7
-        if identification_type_code not in DOCUMENT_TYPE_CODES:
+        if identification_type_code not in ID_TYPE_CODES:
             if self.company_type == "company":
-                raise UserError(msg5 % self.name)
+                raise UserError(msg5 % partner_name)
             else:
-                name = "consumidor final"
+                partner_name = "consumidor final"
                 identification_type_code = "13"
                 identification_document = "222222222222"
 
@@ -138,73 +136,58 @@ class ResPartner(models.Model):
         ) or (
             self.company_type == "person" and identification_type_code in ("31", "50")
         ):
-            raise UserError(msg6 % self.name)
+            raise UserError(msg6 % partner_name)
 
         if not identification_document:
-            raise UserError(msg7 % self.name)
-
-        if self.property_account_position_id:
-            if (
-                not self.property_account_position_id.tax_level_code_ids
-                or not self.property_account_position_id.party_tax_scheme_id
-                or not self.property_account_position_id.listname
-            ):
-                raise UserError(msg8 % self.name)
-
-            tax_level_codes = ""
-            tax_scheme_code = self.property_account_position_id.party_tax_scheme_id.code
-            tax_scheme_name = self.property_account_position_id.party_tax_scheme_id.name
-        else:
-            raise UserError(msg9 % self.name)
+            raise UserError(msg7 % partner_name)
 
         if (
             self.is_einvoicing_agent in ("yes", "not_but")
             or not self.is_einvoicing_agent
         ) and not self.einvoicing_email:
-            raise UserError(msg10 % self.name)
+            raise UserError(msg8 % partner_name)
 
-        if self.send_zip_code:
-            if self.zip_id:
-                zip_code = self.zip_id.name
+        if not fiscal_postion_id:
+            raise UserError(msg9 % partner_name)
 
-        for tax_level_code_id in self.property_account_position_id.tax_level_code_ids:
-            if tax_level_codes == "":
-                tax_level_codes = tax_level_code_id.code
-            else:
-                tax_level_codes += ";" + tax_level_code_id.code
+        fiscal_responsibility_ids = fiscal_postion_id.fiscal_responsibility_ids
 
-        if self.phone and self.mobile:
-            telephone = self.phone + " / " + self.mobile
-        elif self.lastname:
-            telephone = self.phone
-        elif self.lastname2:
-            telephone = self.mobile
+        if not fiscal_responsibility_ids or not fiscal_postion_id.tax_detail:
+            raise UserError(msg10 % partner_name)
 
         if identification_document == "222222222222":
             tax_level_codes = "R-99-PN"
             tax_scheme_code = "ZZ"
-            tax_scheme_name = "No causa"
+        else:
+            fiscal_responsibility_codes = fiscal_responsibility_ids.mapped("code")
+            tax_level_codes = ";".join(fiscal_responsibility_codes)
+            tax_scheme_code = fiscal_postion_id.tax_detail
 
-            if self.property_account_position_id.listname != "49":
-                raise UserError(msg7 % self.name)
+        if self.phone and self.mobile:
+            telephone = self.phone + " / " + self.mobile
+        elif self.phone:
+            telephone = self.phone
+        elif self.mobile:
+            telephone = self.mobile
 
         return {
             "AdditionalAccountID": "1" if self.company_type == "company" else "2",
             "PartyName": self.commercial_name,
-            "RegistrationName": name,
+            "RegistrationName": partner_name,
             "AddressID": self.zip_id.city_id.code or "",
             "AddressCityName": (self.zip_id.city_id.name or (self.city or "")).title(),
-            "AddressPostalZone": zip_code,
+            "AddressPostalZone": (
+                self.zip_id.name if (self.send_zip_code and self.zip_id) else False
+            ),
             "AddressCountrySubentity": self.state_id.name or "",
             "AddressCountrySubentityCode": self.state_id.code or "",
             "AddressLine": self.street or "",
             "CompanyIDschemeID": self.l10n_co_verification_digit,
             "CompanyIDschemeName": identification_type_code,
             "CompanyID": identification_document,
-            "listName": self.property_account_position_id.listname,
             "TaxLevelCode": tax_level_codes,
             "TaxSchemeID": tax_scheme_code,
-            "TaxSchemeName": tax_scheme_name,
+            "TaxSchemeName": TAX_DETAILS[tax_scheme_code],
             "CorporateRegistrationSchemeName": self.coc_registration_number,
             "CountryIdentificationCode": self.country_id.code,
             "CountryName": self.country_id.name_dian,

@@ -4,8 +4,13 @@
         <field name="model">account.fiscal.position</field>
         <field name="inherit_id" ref="account.view_account_position_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="fiscal_responsibility_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                <field name="tax_detail" required="1"/>
+            </xpath>
+
             <xpath expr="//field[@name='auto_apply']" position="after">
-                <field name="company_type" required='1'/>
+                <field name="company_type" required="1"/>
             </xpath>
         </field>
     </record>

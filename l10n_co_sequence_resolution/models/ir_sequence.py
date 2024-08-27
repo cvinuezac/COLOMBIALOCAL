@@ -74,8 +74,8 @@ class IrSequence(models.Model):
             if self.number_increment != 1:
                 self.number_increment = 1
 
-            timezone = pytz.timezone(self.env.user.tz or 'America/Bogota')
             from_zone = tz.gettz('UTC')
+            timezone = pytz.timezone(self.env.user.tz or 'America/Bogota')
             to_zone = tz.gettz(timezone.zone)
             current_date = datetime.now().replace(tzinfo=from_zone)
             current_date = current_date.astimezone(to_zone).strftime('%Y-%m-%d')
