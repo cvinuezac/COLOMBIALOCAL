@@ -72,3 +72,18 @@ class ResPartner(models.Model):
         return (
             (11 - verification_digit) if verification_digit >= 2 else verification_digit
         )
+
+    @api.model
+    def name_search(self, name, args=None, operator="ilike", limit=100):
+        args = args or []
+
+        if name:
+            args = [
+                "|",
+                "|",
+                ("display_name", operator, name),
+                ("vat", operator, name),
+                ("email", operator, name),
+            ] + args
+
+        return self.search(args, limit=limit).name_get()

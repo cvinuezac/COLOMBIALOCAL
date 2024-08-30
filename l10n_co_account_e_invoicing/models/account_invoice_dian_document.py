@@ -855,20 +855,20 @@ class AccountInvoiceDianDocument(models.Model):
             )
 
     def action_set_files(self):
+        if self.application_response_type:
+            if self.invoice_id.dian_document_ids.filtered(
+                lambda d: d.application_response_type == self.application_response_type
+                and d.state == "done"
+            ):
+                self.unlink()
+
         if self.invoice_id.warn_inactive_certificate:
             raise ValidationError(_("There is no an active certificate."))
 
-        from_zone = tz.gettz("UTC")
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
-        to_zone = tz.gettz(to_timezone.zone)
-        issue_datetime = fields.Date.today()
-        issue_datetime = datetime(
-            issue_datetime.year, issue_datetime.month, issue_datetime.day, 8
-        )
-        issue_datetime = issue_datetime.replace(tzinfo=from_zone)
-        self.issue_datetime = issue_datetime.astimezone(to_zone).strftime(
-            "%Y-%m-%d %H:%M:%S"
-        )
+        if not self.validation_datetime:
+            to_zone = tz.gettz(timezone("America/Bogota").zone)
+            issue_datetime = datetime.now(to_zone).replace(hour=8, minute=0, second=0)
+            self.issue_datetime = issue_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
         if not self.xml_filename or not self.zipped_filename:
             self._set_filenames()
@@ -887,12 +887,10 @@ class AccountInvoiceDianDocument(models.Model):
         ProfileExecutionID = self.company_id.profile_execution_id
         ad_zipped_filename = self.ad_zipped_filename
         ID = ad_zipped_filename.replace(".zip", "")
-        from_zone = tz.gettz("UTC")
-        to_timezone = timezone(self.env.user.tz or "America/Bogota")
-        to_zone = tz.gettz(to_timezone.zone)
-        issue_datetime = datetime.now().replace(tzinfo=from_zone)
-        IssueDate = issue_datetime.astimezone(to_zone).strftime("%Y-%m-%d")
-        IssueTime = issue_datetime.astimezone(to_zone).strftime("%H:%M:%S-05:00")
+        to_zone = tz.gettz(timezone("America/Bogota").zone)
+        issue_datetime = datetime.now(to_zone)  # .replace(hour=8, minute=0, second=0)
+        IssueDate = issue_datetime.strftime("%Y-%m-%d")
+        IssueTime = issue_datetime.strftime("%H:%M:%S-05:00")
         DocumentReferenceID = ""
 
         if self.invoice_id.type == "out_invoice":
