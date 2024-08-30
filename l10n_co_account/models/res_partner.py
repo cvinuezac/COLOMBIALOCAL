@@ -10,6 +10,7 @@ class ResPartner(models.Model):
     company_type = fields.Selection(
         selection=[("person", "Natural Person"), ("company", "Juridical Person")]
     )
+    l10n_latam_identification_type_id = fields.Many2one(default=False)
     l10n_co_identification_type_code = fields.Char(
         related="l10n_latam_identification_type_id.code_dian", store=False
     )
@@ -23,6 +24,13 @@ class ResPartner(models.Model):
     secondary_industry_ids = fields.Many2many(
         domain="[('id', '!=', industry_id), ('type', '!=', 'view')]"
     )
+
+    @api.onchange("country_id")
+    def _onchange_country(self):
+        if self.country_id.code == "CO":
+            self.l10n_latam_identification_type_id = False
+        else:
+            super(ResPartner, self)._onchange_country()
 
     @api.onchange(
         "country_id",
