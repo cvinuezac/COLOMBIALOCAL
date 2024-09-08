@@ -18,7 +18,7 @@
         "account_fiscal_year",
         "partner_coc",
         "partner_commercial_name",
-        "partner_other_names",
+        "partner_multi_name",
         "product_brand",
         "sale",
     ],
